@@ -1,7 +1,6 @@
 import express from "express";
 
+const db = require("../models");
 const router = express.Router();
-
-//Import required models
 
 //Create Get and Post Routes
