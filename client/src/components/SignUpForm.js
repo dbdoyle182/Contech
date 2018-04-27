@@ -1,9 +1,10 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, TextField } from 'material-ui';
+import { Card, TextField, RaisedButton, CardText } from 'material-ui';
+import PropTypes from 'prop-types';
 
 
-const SignUpFrom = ({
+const SignUpForm = ({
     onSubmit,
     onChange,
     errors,
@@ -25,15 +26,51 @@ const SignUpFrom = ({
                 />
             </div>
 
+            <div className="field-line">
+                <TextField
+                    floatingLabelText='Username'
+                    name='username'
+                    errorText={errors.username}
+                    onChange={onChange}
+                    value={user.username}
+                />
+            </div>
+
             <div className='field-line'>
                 <TextField
                     floatingLabelText='Email'
                     name='email'
-                    errorText={error.email}
+                    errorText={errors.email}
                     onChange={onChange}
                     value={user.email}
                 />
             </div>
+
+            <div className='field-line'>
+                <TextField
+                    floatingLabelText='Password'
+                    type='password'
+                    name='password'
+                    onChange={onChange}
+                    errorText={errors.password}
+                    value={user.password}
+                />
+            </div>
+
+            <div className='button-line'>
+                <RaisedButton type='submit' label='Create New Account' primary />
+            </div>
+
+            <CardText>Already have an account? <Link to={'/login'}>Log in</Link></CardText>
         </form>
     </Card>
-)
+);
+
+SignUpForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+    errors: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired
+};
+
+export default SignUpForm;
