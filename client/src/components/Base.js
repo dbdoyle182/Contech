@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 
-const Base = ({ children }) => (
+const Base = () => (
     <div>
         <div className='top-bar'>
             <div className='top-bar-left'>
@@ -16,17 +15,9 @@ const Base = ({ children }) => (
             </div>
 
         </div>
-
-
-        
-
-
     </div>
 
 );
 
-Base.propTypes = {
-    children: PropTypes.object.isRequired
-};
 
 export default Base;
