@@ -16,10 +16,10 @@ const terms = require("./routes/terms.js");
 const comments = require("./routes/comments.js");
 const quizzes = require("./routes/quizzes.js");
 const auth = require("./routes/auth.js");
-app.use("/terms", terms);
-app.use("/comments", comments);
-app.use("/quizzes", quizzes);
-app.use("/auth", auth);
+app.use("/api/terms", terms);
+app.use("/api/comments", comments);
+app.use("/api/quizzes", quizzes);
+app.use("/api/auth", auth);
 
 //Set mongoose to leverage built in promises and connect to Mongo DB
 mongoose.Promise = Promise;
