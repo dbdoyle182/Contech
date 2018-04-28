@@ -10,9 +10,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("./client/public/"));
+
 // Add routes, both API and view
-const routes = require("./controllers/Controller.js");
-app.use("/", routes);
+const terms = require("./routes/terms.js");
+const comments = require("./routes/comments.js");
+const quizzes = require("./routes/quizzes.js");
+const auth = require("./routes/auth.js");
+app.use("/terms", terms);
+app.use("/comments", comments);
+app.use("/quizzes", quizzes);
+app.use("/auth", auth);
 
 //Set mongoose to leverage built in promises and connect to Mongo DB
 mongoose.Promise = Promise;
