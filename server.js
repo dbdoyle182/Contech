@@ -11,15 +11,15 @@ app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("./client/public/"));
 
-// Add routes, both API and view
+// Import routes, both API and view
 const terms = require("./routes/terms.js");
 const comments = require("./routes/comments.js");
 const quizzes = require("./routes/quizzes.js");
 const auth = require("./routes/auth.js");
-app.use("/api/terms", terms);
-app.use("/api/comments", comments);
-app.use("/api/quizzes", quizzes);
-app.use("/api/auth", auth);
+app.use(terms);
+app.use(comments);
+app.use(quizzes);
+app.use(auth);
 
 //Set mongoose to leverage built in promises and connect to Mongo DB
 mongoose.Promise = Promise;

@@ -8,3 +8,5 @@ const router = express.Router();
 //Get Route for saved comments on a term
 
 //Post Route for adding a new comment on a term
+
+export default router;

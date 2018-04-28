@@ -16,3 +16,5 @@ const router = express.Router();
 //Get Route for term-of-the-day
 
 //Post Route for user adding a new term
+
+export default router;

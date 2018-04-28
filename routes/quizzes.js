@@ -6,3 +6,5 @@ const router = express.Router();
 //----Create Routes----
 
 //Get Route for daily quiz question
+
+export default router;
