@@ -17,7 +17,7 @@ app.use("/", routes);
 //Set mongoose to leverage built in promises and connect to Mongo DB
 mongoose.Promise = Promise;
 // If deployed, use deployed database. Otherwise, use local database.
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dictionary");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/DevDic");
 mongoose.connect(MONGODB_URI);
 mongoose.set("debug", true);
 
