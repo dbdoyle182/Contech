@@ -16,12 +16,12 @@ const TermSchema = new Schema({
     type: String,
     required: true
   },
-  related: {
+  tags: {
     type: Array,
     default: undefined,
     required: true
   },
-  tags: {
+  related: {
     type: Array,
     default: undefined,
     required: true
