@@ -3,12 +3,11 @@ const bodyParser = require("body-parser");
 const passport = require('passport');
 const config = require('./config');
 
-
-
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-const db = require('./models')
+require('./models').connect(config.dbUri);
+
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -30,8 +29,8 @@ app.use('/api', authCheckMiddleware);
 
 const authRoutes = require('./routes/auth');
 const apiRoutes = require('./routes/api');
-app.use(authRoutes);
-app.use(apiRoutes);
+app.use('/auth', authRoutes);
+app.use('/api', apiRoutes);
 
 // start the server
 

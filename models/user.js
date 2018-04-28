@@ -1,45 +1,36 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
-  var User = sequelize.define('User', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4
-    },
-    name: {
-        type: DataTypes.STRING,
-        unique: true,
-    },
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+
+const UserSchema = new mongoose.Schema({
     email: {
-      type: DataTypes.STRING,
-      unique: true,
-      validate: {
-        isEmail: {
-          msg: 'Must be a valid email address'
-        },
-        len: {
-          args: [4,50],
-          msg: 'Email must be an appropriate email length'
-        }
-      }
+        type: String,
+        index: { unique: true }
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: {
-          args: [7],
-          msg: 'Password must be at least 7 characters in length'
-        }
-      }
-    }, 
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false 
-    }
-  }, {
-    freezeTableName: true
-  });
-  return User;
+    password: String,
+    name: String,
+    username: String
+});
+
+UserSchema.methods.comparePassword = function comparePassword(password, callback) {
+    bcrypt.compare(password, this.password, callback);
 };
+
+UserSchema.pre('save', function saveHook (next) {
+    const user = this;
+
+    if (!user.isModified('password')) return next();
+
+    return bcrypt.genSalt((saltError, salt) => {
+        if (saltError) { return next(saltError); }
+
+        return bcrypt.hash(user.password, salt, (hashError, hash) => {
+            if (hashError) { return next(hashError); }
+
+            user.password = hash;
+
+            return next();
+        });
+    });
+});
+
+module.exports = mongoose.model('User', UserSchema);

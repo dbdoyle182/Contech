@@ -4,8 +4,8 @@ import SignUpForm from '../components/SignUpForm.js';
 
 class SignUpPage extends Component {
 
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
 
 
         this.state = {
@@ -40,7 +40,8 @@ class SignUpPage extends Component {
         const name = encodeURIComponent(this.state.user.name);
         const email = encodeURIComponent(this.state.user.email);
         const password = encodeURIComponent(this.state.user.password);
-        const formData = `name=${name}&email=${email}&password=${password}`;
+        const username = encodeURIComponent(this.state.user.username);
+        const formData = `name=${name}&email=${email}&password=${password}&username=${username}`;
 
         // create an AJAX request
         const xhr = new XMLHttpRequest();
@@ -52,7 +53,9 @@ class SignUpPage extends Component {
             this.setState({
                 errors: {}
             });
-            console.log('The form is valid');
+            localStorage.setItem('successMessage', xhr.response.message);
+
+            this.props.history.push('/login')
         } else {
             const errors = xhr.response.errors ? xhr.response.errors : {};
             errors.summary = xhr.response.message;

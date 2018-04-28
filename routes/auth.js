@@ -1,7 +1,8 @@
 const express = require('express');
 const validator = require('validator');
+const passport = require('passport');
 
-const router = express.Router();
+const router =  new express.Router();
 
 
 
@@ -68,7 +69,7 @@ function validateLoginForm(payload) {
     };
 }
 
-router.post('/auth/signup', (req, res) => {
+router.post('/signup', (req, res, next) => {
     const validationResult = validateSignupForm(req.body);
     if (!validationResult.success) {
       return res.status(400).json({
@@ -77,11 +78,33 @@ router.post('/auth/signup', (req, res) => {
         errors: validationResult.errors
       });
     }
-  
-    return res.status(200).end();
+
+    return passport.authenticate('local-signup', (err) => {
+        if (err) {
+            if (err.name === 'MongoError' && err.code === 11000) {
+                return res.status(409).json({
+                    success: false,
+                    message: 'Check the form for errors.',
+                    errors: {
+                        email: 'This email is already taken.'
+                    }
+                });
+            }
+
+            return res.status(400).json({
+                success: false,
+                message: 'Could not process the form.'
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: 'You have successfull signed up! Now you may log in.'
+        });
+    })(req, res, next);
   });
   
-router.post('/auth/login', (req, res) => {
+router.post('/login', (req, res, next) => {
     const validationResult = validateLoginForm(req.body);
     if (!validationResult.success) {
         return res.status(400).json({
@@ -91,8 +114,28 @@ router.post('/auth/login', (req, res) => {
         });
     }
 
-    return res.status(200).end();
-});
-  
+    return passport.authenticate('local-login', (err, token, userData) => {
+        if (err) {
+            if (err.name === 'IncorrectCredentialsError') {
+                return res.status(400).json({
+                    success: false,
+                    message: err.message
+                });
+            }
+
+            return res.status(400).json({
+                success: false,
+                message: 'Could not process the form.'
+            });
+        }
+
+        return res.json({
+            success: true,
+            message: 'You have successfully logged in!',
+            token,
+            user: userData
+        });
+    })(req, res, next);
+});  
   
 module.exports = router;

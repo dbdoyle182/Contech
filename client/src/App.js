@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import HomePage from './components/HomePage';
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import LoginPage from './containers/LoginPage.js';
 import SignUpPage from './containers/SignUpPage.js';
-import Base from './components/Base.js'
+import Base from './components/Base.js';
+import DashboardPage from './components/Dashboard.js';
+import Auth from './utils/Auth.js'
 
 const App = () => (
 
@@ -11,9 +13,10 @@ const App = () => (
         <div>
             <Base />
             <Switch>
-              <Route exact path='/' component={HomePage} />
-              <Route exact path='/login' component={LoginPage} />
-              <Route exact path='/signup' component={SignUpPage} />
+              <Route exact path='/' component={(Auth.isUserAuthenticated()) ? DashboardPage : HomePage } />
+              <Route path='/login' component={LoginPage} />
+              <Route path='/signup' component={SignUpPage} />
+              <Route path='/logout' component={(Auth.deauthenticateUser()) && HomePage} />
             </Switch>  
         </div>
       </Router>  

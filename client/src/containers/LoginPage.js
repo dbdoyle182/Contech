@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import LoginForm from '../components/LoginForm.js';
+import Auth from '../utils/Auth'
 
 class LoginPage extends Component {
 
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
 
+        const storedMessage = localStorage.getItem('successMessage');
+        let successMessage = '';
+
+        if (storedMessage) {
+            successMessage = storedMessage;
+            localStorage.removeItem('successMessage');
+        }
 
         this.state = {
             errors: {},
+            successMessage,
             user: {
                 email: '',
                 password: ''
@@ -42,7 +51,9 @@ class LoginPage extends Component {
                     errors: {}
                 });
 
-                console.log('The form is valid');
+                Auth.authenticateUser(xhr.response.token);
+
+                this.context.replace('/')
             } else {
                 // failure
 

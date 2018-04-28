@@ -1,4 +1,4 @@
-const User = require('sequelize').Model('User');
+const User = require('mongoose').model('User');
 const PassportLocalStrategy = require('passport-local').Strategy;
 
 
