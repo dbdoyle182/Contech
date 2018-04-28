@@ -1,5 +1,4 @@
-import express from "express";
-
+const express = require("express");
 const db = require("../models");
 const router = express.Router();
 
@@ -17,4 +16,4 @@ const router = express.Router();
 
 //Post Route for user adding a new term
 
-export default router;
+module.exports = router;

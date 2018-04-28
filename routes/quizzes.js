@@ -1,5 +1,4 @@
-import express from "express";
-
+const express = require("express");
 const db = require("../models");
 const router = express.Router();
 
@@ -7,4 +6,4 @@ const router = express.Router();
 
 //Get Route for daily quiz question
 
-export default router;
+module.exports = router;

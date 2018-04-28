@@ -1,5 +1,4 @@
-import express from "express";
-
+const express = require("express");
 const db = require("../models");
 const router = express.Router();
 
@@ -9,4 +8,4 @@ const router = express.Router();
 
 //Post Route for adding a new comment on a term
 
-export default router;
+module.exports = router;

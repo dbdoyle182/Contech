@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const TermSchema = new Schema({
@@ -38,4 +37,4 @@ const TermSchema = new Schema({
 //Create the Term model with mongoose.
 const Term = mongoose.model("Term", TermSchema);
 
-export default Term;
+module.exports = Term;
