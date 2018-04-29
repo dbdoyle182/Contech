@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+//Exporting an object containing all Models.
 module.exports.connect = (uri) => {
   mongoose.connect(uri);
 
@@ -12,5 +12,8 @@ module.exports.connect = (uri) => {
   });
 
 
-  require('./user');
+  Term: require("./Term");
+  Quiz: require("./Quiz");
+  User: require("./User");
+  Comment: require("./Comment")
 };

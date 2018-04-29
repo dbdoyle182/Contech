@@ -1,4 +1,4 @@
 {
-    "dbUri": "mongodb://localhost/dummymongodatabase",
+    "dbUri": "mongodb://localhost/DevDic",
     "jwtSecret": "a secret phrase!!"
 }
