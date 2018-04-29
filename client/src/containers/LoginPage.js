@@ -52,8 +52,8 @@ class LoginPage extends Component {
                 });
 
                 Auth.authenticateUser(xhr.response.token);
-
-                this.context.replace('/')
+                console.log(this.props)
+                this.props.history.push('/')
             } else {
                 // failure
 
@@ -88,6 +88,7 @@ class LoginPage extends Component {
                 onChange={this.changeUser}
                 errors={this.state.errors}
                 user={this.state.user}
+                successMessage={this.state.successMessage}
             />
         );
     }

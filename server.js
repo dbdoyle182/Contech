@@ -12,8 +12,8 @@ require('./models').connect(config.dbUri);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets
-app.use(express.static('./server/static/'))
-app.use(express.static("/client/dist/"));
+// app.use(express.static('./server/static/'))
+// app.use(express.static("/client/dist/"));
 // Add routes, both API and view
 
 app.use(passport.initialize());

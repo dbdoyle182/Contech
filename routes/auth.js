@@ -81,7 +81,8 @@ router.post('/signup', (req, res, next) => {
 
     return passport.authenticate('local-signup', (err) => {
         if (err) {
-            if (err.name === 'MongoError' && err.code === 11000) {
+            console.log(err)
+            if (err.name === 'BulkWriteError' && err.code === 11000) {
                 return res.status(409).json({
                     success: false,
                     message: 'Check the form for errors.',
@@ -99,7 +100,7 @@ router.post('/signup', (req, res, next) => {
 
         return res.status(200).json({
             success: true,
-            message: 'You have successfull signed up! Now you may log in.'
+            message: 'You have successfully signed up! Now you may log in.'
         });
     })(req, res, next);
   });

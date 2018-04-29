@@ -6,9 +6,13 @@ import SignUpPage from './containers/SignUpPage.js';
 import Base from './components/Base.js';
 import DashboardPage from './components/Dashboard.js';
 import Auth from './utils/Auth.js'
+import LogoutFunction from './containers/LogoutFunction';
 
-const App = () => (
-
+class App extends Component { 
+  
+  
+  render() {
+    return (
       <Router>
         <div>
             <Base />
@@ -16,12 +20,12 @@ const App = () => (
               <Route exact path='/' component={(Auth.isUserAuthenticated()) ? DashboardPage : HomePage } />
               <Route path='/login' component={LoginPage} />
               <Route path='/signup' component={SignUpPage} />
-              <Route path='/logout' component={(Auth.deauthenticateUser()) && HomePage} />
+              <Route path='/logout' component={LogoutFunction} />
             </Switch>  
         </div>
-      </Router>  
-
-      
-    );
+      </Router>
+    )  
+  }    
+}
 
 export default App;
