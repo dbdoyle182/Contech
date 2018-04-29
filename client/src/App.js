@@ -3,10 +3,10 @@ import HomePage from './components/HomePage';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LoginPage from './containers/LoginPage.js';
 import SignUpPage from './containers/SignUpPage.js';
-import Base from './components/Base.js';
 import DashboardPage from './components/Dashboard.js';
 import Auth from './utils/Auth.js'
 import LogoutFunction from './containers/LogoutFunction';
+import Navbar from './components/Navbar.js';
 
 class App extends Component { 
   
@@ -25,11 +25,11 @@ class App extends Component {
     return (
       <Router>
         <div>
-            <Base />
+            <Navbar />
             <Switch>
               <Route exact path='/' render={() => (
                 Auth.isUserAuthenticated() ? (
-                  <DashboardPage secretData={'this is a secret'} />
+                  <DashboardPage secretData={`Welcome ${Auth.getUsername()}`} />
                 ) : (
                   <HomePage/>
                 )

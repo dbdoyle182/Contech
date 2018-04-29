@@ -12,6 +12,12 @@ class DashboardPage extends Component {
     }
 
     componentDidMount() {
+        const username = Auth.getUsername();
+        if (username) {
+            this.setState({
+                secretData: `Welcome ${username}`
+            })
+        }
         const xhr = new XMLHttpRequest();
         xhr.open('get', '/api/dashboard');
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

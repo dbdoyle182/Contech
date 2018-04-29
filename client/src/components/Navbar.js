@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/Auth'
 
-const Base = () => (
+const Navbar = () => (
     <div>
         <div className='top-bar'>
             <div className='top-bar-left'>
@@ -25,4 +25,4 @@ const Base = () => (
 );
 
 
-export default Base;
+export default Navbar;

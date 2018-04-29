@@ -1,3 +1,4 @@
+// Route to show that authentication is working. Can be deleted once unnecessary
 const express = require('express');
 
 const router = express.Router();

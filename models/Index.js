@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-//Exporting an object containing all Models.
+//Exports and connects the models 
 module.exports.connect = (uri) => {
   mongoose.connect(uri);
 

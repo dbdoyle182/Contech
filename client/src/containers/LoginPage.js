@@ -49,8 +49,8 @@ class LoginPage extends Component {
                 this.setState({
                     errors: {}
                 });
-
-                Auth.authenticateUser(xhr.response.token);
+                console.log(xhr.response.user.username)
+                Auth.authenticateUser(xhr.response.token, xhr.response.user.username);
                 this.props.history.push('/')
             } else {
                 // failure
@@ -65,7 +65,6 @@ class LoginPage extends Component {
             }
             });
             xhr.send(formData);
-            console.log(formData)
         }
     
 

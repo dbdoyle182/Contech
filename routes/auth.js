@@ -5,7 +5,7 @@ const passport = require('passport');
 const router =  new express.Router();
 
 
-
+// Validates the sign up form on the clientside
 function validateSignupForm(payload) {
     const errors = {};
     let isFormValid = true;
@@ -42,7 +42,7 @@ function validateSignupForm(payload) {
     };
 }
 
-
+// Validates the login form on the clientside
 function validateLoginForm(payload) {
     const errors = {};
     let isFormValid = true;
@@ -69,6 +69,7 @@ function validateLoginForm(payload) {
     };
 }
 
+// Posts the user information to the MongoDB 
 router.post('/signup', (req, res, next) => {
     const validationResult = validateSignupForm(req.body);
     if (!validationResult.success) {
