@@ -7,7 +7,7 @@ class DashboardPage extends Component {
         super(props);
 
         this.state = {
-            secretData: ''
+            secretData: 'This is the secret data'
         };
     }
 
@@ -18,6 +18,7 @@ class DashboardPage extends Component {
         xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
         xhr.responseType = 'json';
         xhr.addEventListener('load', () => {
+            console.log('-----------')
             console.log(xhr.response.message)
             if (xhr.status === 200) {
                 this.setState({
@@ -26,6 +27,8 @@ class DashboardPage extends Component {
             }
         });
         xhr.send();
+        console.log(this.state.secretData)
+
     }
 
     render() {

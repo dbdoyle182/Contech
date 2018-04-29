@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import LoginForm from '../components/LoginForm.js';
 import Auth from '../utils/Auth'
 
@@ -52,7 +51,6 @@ class LoginPage extends Component {
                 });
 
                 Auth.authenticateUser(xhr.response.token);
-                console.log(this.props)
                 this.props.history.push('/')
             } else {
                 // failure
@@ -67,6 +65,7 @@ class LoginPage extends Component {
             }
             });
             xhr.send(formData);
+            console.log(formData)
         }
     
 
