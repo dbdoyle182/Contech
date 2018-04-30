@@ -1,90 +1,140 @@
-.button_box2 {
-    margin: 20px 10px;
-}
-/*-------------------------------------*/
-.cf:before, .cf:after{
-    content:"";
-    display:table;
-}
-.cf:after{
-    clear:both;
-}
-.cf{
-    zoom:1;
-}
-/*-------------------------------------*/
-
-.form-wrapper-2 {
-    width: 330px;
-    background: #555;
-    border-radius: 10px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
-}
-
-.form-wrapper-2 input {
-    width: 210px;
-    height: 20px;
-    padding: 10px 5px;
-    float: left;
-    border: 0;
-    background: #eee;
-    border-radius: 3px 0 0 3px;
-    font: 'Raleway', sans-serif;
-}
-
-.form-wrapper-2 input:focus {
-    outline: 0;
-    background: #fff;
-    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-}
-
-.form-wrapper-2 input::placeholder {
-    color: #999;
-    font-weight: normal;
-    font-style: italic;
-    font: 'Raleway', sans-serif;
-}
-
-.form-wrapper-2 button {
-    overflow: visible;
+.inputbox {
+    margin: 40px 0;
+    height: 50px;
+    width: 300px;
     position: relative;
-    float: right;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inputbox input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 16.5px 0;
     border: 0;
-    padding: 0;
-    cursor: pointer;
-    height: 40px;
-    width: 110px;
-    font: bold 15px/40px 'Raleway', sans-serif;
-    color: #fff;
-    text-transform: uppercase;
-    background: #9b9b9b;
-    border-radius: 0 3px 3px 0;
-    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
-}
-
-.form-wrapper-2 button:hover{
-    background: #4e4e4e;
-}
-
-.form-wrapper-2 button:active,
-.form-wrapper-2 button:focus{
-    background: #5e5e5e;
-}
-
-.form-wrapper-2 button:before {
-    content: '';
+    background: none;
+    width: 50px;
     position: absolute;
-    border-width: 8px 8px 8px 0;
-    border-style: solid solid solid none;
-    border-color: transparent #9b9b9b transparent;
-    top: 12px;
-    left: -6px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
+    transition-delay: 0s, 0.4s, 0s;
+    box-shadow: 0 0 0 1px currentColor;
+    color: inherit;
+    cursor: pointer;
+    padding: 16.5px 0;
+    padding-right: 50px;
+    font-weight: lighter;
+    font-family: "Roboto";
 }
 
-.form-wrapper-2 button:hover:before{
-    border-right-color: #4e4e4e;
+.inputbox input:focus, .inputbox input:valid {
+    width: 100%;
+    transition-delay: 0.4s, 0s, 0.4s;
+    outline: 0;
+    border-radius: 0;
+    cursor: text;
+    padding-left: 16.5px;
 }
 
-.form-wrapper-2 button:focus:before{
-    border-right-color: #4e4e4e;
+.inputbox input:focus + .del, .inputbox input:valid + .del {
+    pointer-events: all;
+    left: calc(100% - 25px);
+    transition-delay: 0.4s;
+}
+.inputbox input:focus + .del:focus, .inputbox input:valid + .del:focus {
+    box-shadow: 0 0 0 1px currentColor;
+    height: 37.5px;
+    width: 37.5px;
+}
+
+/* .inputbox input:focus + .del:before, .inputbox input:valid + .del:before {
+    transform: translate(-50%, -50%) rotate(-45deg) scaleY(0.7);
+    transition-delay: 0s;
+}
+
+.inputbox input:focus + .del:after, .inputbox input:valid + .del:after {
+    transform: translate(-50%, -50%) rotate(45deg) scaleY(0.7);
+    transition-delay: 0.2s;
+} */
+
+.inputbox .del {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    background: none;
+    border-radius: 100%;
+    border: 0;
+    pointer-events: none;
+    transition: left 0.4s ease-in-out;
+    transition-delay: 0s;
+    color: inherit;
+    cursor: pointer;
+}
+
+.inputbox .del:focus {
+    outline: none;
+}
+
+.inputbox .del:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: currentColor;
+    width: 1px;
+    height: 37.5px;
+    transform: translate(32.25px, 32.25px) translate(-50%, -50%) rotate(-45deg) scaleY(1);
+    transition: transform 0.2s ease-in-out;
+    transition-delay: 0.6s;
+}
+
+.inputbox .del:after {
+    content: "Search";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: currentColor;
+    width: 1px;
+    height: 37.5px;
+    transform: translate(-50%, -50%) rotate(45deg) scaleY(0);
+    transition: transform 0.2s ease-in-out;
+    transition-delay: 0.4s;
+}
+
+@media only screen and (min-width: 1020px)  {
+
+    .inputbox input:focus, .inputbox input:valid {
+        width: 40em;
+    }
+
+    .inputbox input:focus + .del, .inputbox input:valid + .del {
+        pointer-events: all;
+        left: calc(100% + 220px);
+        transition-delay: 0.1s;
+    }
+  
+}
+
+@media only screen and (min-width: 1300px)  {
+
+    .inputbox input:focus, .inputbox input:valid {
+        width: 60em;
+    }
+
+    .inputbox input:focus + .del, .inputbox input:valid + .del {
+        pointer-events: all;
+        left: calc(100% + 250px);
+        transition-delay: 0.1s;
+    }
+  
 }

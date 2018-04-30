@@ -2,10 +2,10 @@ import React from "react";
 import "./SearchBar.css";
 
 const SearchBar = props => (
-    <div className="button_box2">
-        <form className="form-wrapper-2 cf">
+   <div>
+        <form className="inputbox">
         <input type="text" placeholder="Search here..." required/>
-        <button type="submit">Search</button>
+        <button className="del" type="submit">Search</button>
         </form>
     </div>
 );

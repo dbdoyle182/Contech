@@ -4,14 +4,17 @@ import SearchBar from "./SearchBar/SearchBar";
 import Browse from "./Browse/Browse";
 import Quiz from "./Quiz/Quiz";
 import WordOfTheDay from "./WordOfTheDay/WordOfTheDay";
+import "./HomePage.css";
 
 const HomePage = () => (
     <Card className='container'>
         <CardTitle title="React Application" subtitle="This is the home page." />
         <SearchBar/>
-        <Browse/>
-        <Quiz/>
-        <WordOfTheDay/>
+        <div className="flex-container">
+            <Browse/>
+            <Quiz/>
+            <WordOfTheDay/>
+        </div>
     </Card>
 );
 
