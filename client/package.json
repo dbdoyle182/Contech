@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001/",
+  "homepage": "https://frozen-shore-60235.herokuapp.com/",
   "dependencies": {
     "axios": "^0.18.0",
     "prop-types": "^15.6.1",
