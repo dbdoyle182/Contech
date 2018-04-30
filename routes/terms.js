@@ -7,10 +7,10 @@ const router = express.Router();
 //Get Route for all terms
 router.get("/term/all", (req, res) => {
   db.Term.find({})
-    .then(function(data) {
+    .then(data => {
       res.json(data);
     })
-    .catch(function(err) {
+    .catch(err => {
       res.json(err);
     });
 });
@@ -19,6 +19,8 @@ router.get("/term/all", (req, res) => {
 
 //Get Route for term by alphabet letter search
 router.get("/term/:letter", (req, res) => {
+  console.log(req.query);
+  console.log(req.params.letter);
   const letter = req.params.letter;
   db.Term.find({
     word: /^letter/
