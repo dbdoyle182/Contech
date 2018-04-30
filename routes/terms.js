@@ -34,6 +34,20 @@ router.get("/search/:letter", (req, res) => {
 });
 
 //Get Route for term by filter search
+router.get("search/:filter", (req, res) => {
+  console.log(req.query);
+  console.log(req.params.filter);
+  const filter = req.params.filter;
+  db.Term.find({
+    tag: filter
+  })
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
 
 //Get Route for term-of-the-day
 
