@@ -8,6 +8,7 @@ import Auth from './utils/Auth.js'
 import LogoutFunction from './containers/LogoutFunction';
 import Navbar from './components/Navbar.js';
 import BrowseBar from './components/BrowseBar'
+import TermFormPage from './containers/TermFormPage';
 
 class App extends Component { 
 
@@ -27,6 +28,7 @@ class App extends Component {
               <Route path='/login' component={LoginPage} />
               <Route path='/signup' component={SignUpPage} />
               <Route path='/logout' component={LogoutFunction} />
+              <Route path='/addterm' component={TermFormPage} />
               <Route path ='/browser' component={BrowseBar}/>
             </Switch>  
         </div>
