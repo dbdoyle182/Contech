@@ -32,7 +32,11 @@ const apiRoutes = require('./routes/api');
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 
-app.use(express.static("./client/public/"));
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static("./client/build/"));
+} else {
+  app.use(express.static('./client/public/'))
+}
 
 // Import routes, both API and view
 const terms = require("./routes/terms.js");
