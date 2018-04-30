@@ -1,0 +1,14 @@
+.wordoftheday {
+    background: gray;
+    padding: 100px 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+@media only screen and (min-width: 1020px)  {
+
+    .wordoftheday {
+      width: 25%;
+    }
+  
+  }

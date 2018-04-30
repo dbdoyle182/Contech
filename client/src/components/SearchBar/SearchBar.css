@@ -1,0 +1,90 @@
+.button_box2 {
+    margin: 20px 10px;
+}
+/*-------------------------------------*/
+.cf:before, .cf:after{
+    content:"";
+    display:table;
+}
+.cf:after{
+    clear:both;
+}
+.cf{
+    zoom:1;
+}
+/*-------------------------------------*/
+
+.form-wrapper-2 {
+    width: 330px;
+    background: #555;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+}
+
+.form-wrapper-2 input {
+    width: 210px;
+    height: 20px;
+    padding: 10px 5px;
+    float: left;
+    border: 0;
+    background: #eee;
+    border-radius: 3px 0 0 3px;
+    font: 'Raleway', sans-serif;
+}
+
+.form-wrapper-2 input:focus {
+    outline: 0;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+.form-wrapper-2 input::placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+    font: 'Raleway', sans-serif;
+}
+
+.form-wrapper-2 button {
+    overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 110px;
+    font: bold 15px/40px 'Raleway', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    background: #9b9b9b;
+    border-radius: 0 3px 3px 0;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}
+
+.form-wrapper-2 button:hover{
+    background: #4e4e4e;
+}
+
+.form-wrapper-2 button:active,
+.form-wrapper-2 button:focus{
+    background: #5e5e5e;
+}
+
+.form-wrapper-2 button:before {
+    content: '';
+    position: absolute;
+    border-width: 8px 8px 8px 0;
+    border-style: solid solid solid none;
+    border-color: transparent #9b9b9b transparent;
+    top: 12px;
+    left: -6px;
+}
+
+.form-wrapper-2 button:hover:before{
+    border-right-color: #4e4e4e;
+}
+
+.form-wrapper-2 button:focus:before{
+    border-right-color: #4e4e4e;
+}
