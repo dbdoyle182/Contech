@@ -16,6 +16,20 @@ router.get("/term/all", (req, res) => {
 });
 
 //Get Route for term by user input search
+router.get("search/:input", (req, res) => {
+  console.log(req.query);
+  console.log(req.params.input);
+  const input = req.params.input;
+  db.Term.find({
+    word: input
+  })
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
 
 //Get Route for term by alphabet letter search
 router.get("/search/:letter", (req, res) => {
