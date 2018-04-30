@@ -15,5 +15,5 @@ module.exports.connect = (uri) => {
   Term: require("./Term");
   Quiz: require("./Quiz");
   User: require("./User");
-  Comment: require("./Comment")
+  Comment: require("./Comment");
 };

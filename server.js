@@ -13,9 +13,7 @@ require('./models').connect(process.env.MONGODB_URI || config.dbUri);
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// Serve up static assets
-// app.use(express.static('./server/static/'))
-// app.use(express.static("/client/dist/"));
+
 // Add routes, both API and view
 
 app.use(passport.initialize());
