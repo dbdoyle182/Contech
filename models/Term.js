@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const TermSchema = new Schema({
   //Schema properties
-  term: {
+  word: {
     type: String,
     required: true
   },

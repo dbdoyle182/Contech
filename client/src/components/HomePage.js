@@ -7,6 +7,7 @@ import WordOfTheDay from "./WordOfTheDay/WordOfTheDay";
 import "./HomePage.css";
 
 const HomePage = () => (
+    
     <Card className='container'>
         <CardTitle title="React Application" subtitle="This is the home page." />
         <SearchBar/>
