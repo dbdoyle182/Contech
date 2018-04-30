@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/Auth'
 
+
+// You may change any of the className properties and add any tags you would like, this is a basic navbar
 const Navbar = () => (
     <div>
         <div className='top-bar'>

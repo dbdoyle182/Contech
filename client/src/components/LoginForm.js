@@ -14,6 +14,7 @@ const LoginForm = ({
     successMessage,
     user
 }) => (
+    // Feel free to change anything outside of the form tags. You can also change any of the classNames in accordance with style
     <Card className='container'>
         <form action='/' onSubmit={onSubmit}>
             <h2 className='card-heading'>Login</h2>

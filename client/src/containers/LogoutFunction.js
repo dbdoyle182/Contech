@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Auth from '../utils/Auth';
 
+// This component is a faulty destination that logs the user out and then automatically pushes to the home route
 class LogoutFunction extends Component {
 
     componentDidMount() {

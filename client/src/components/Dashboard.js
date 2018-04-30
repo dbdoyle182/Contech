@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 
+// We can delete this page once it is no longer necessary
 const Dashboard = ({ secretData }) => (
     <Card className="container">
         <CardTitle

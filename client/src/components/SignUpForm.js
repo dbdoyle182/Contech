@@ -10,6 +10,7 @@ const SignUpForm = ({
     errors,
     user,
 }) => (
+    // Same deal as the login form, try and avoid altering the the structure of the form page.
     <Card className='container'>
         <form action='/' onSubmit={onSubmit}>
             <h2 className='card-heading'>Sign Up</h2>
