@@ -53,7 +53,7 @@ router.get("search/:filter", (req, res) => {
   console.log(req.params.filter);
   const filter = req.params.filter;
   db.Term.find({
-    tag: filter
+    tags: filter
   })
     .then(data => {
       res.json(data);
