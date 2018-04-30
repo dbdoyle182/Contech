@@ -7,19 +7,9 @@ import DashboardPage from './components/Dashboard.js';
 import Auth from './utils/Auth.js'
 import LogoutFunction from './containers/LogoutFunction';
 import Navbar from './components/Navbar.js';
+import BrowseBar from './components/BrowseBar'
 
 class App extends Component { 
-  
-  state = {
-    authenticated: Auth.isUserAuthenticated(),
-  }
-
-  componentDidMount() {
-    this.setState({
-      authenticated: Auth.isUserAuthenticated()
-    })
-    console.log(Auth.isUserAuthenticated())
-  }
 
   render() {
     return (
@@ -37,6 +27,7 @@ class App extends Component {
               <Route path='/login' component={LoginPage} />
               <Route path='/signup' component={SignUpPage} />
               <Route path='/logout' component={LogoutFunction} />
+              <Route path ='/browser' component={BrowseBar}/>
             </Switch>  
         </div>
       </Router>
