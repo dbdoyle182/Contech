@@ -18,7 +18,7 @@ router.get("/term/all", (req, res) => {
 //Get Route for term by user input search
 
 //Get Route for term by alphabet letter search
-router.get("/term/:letter", (req, res) => {
+router.get("/search/:letter", (req, res) => {
   console.log(req.query);
   console.log(req.params.letter);
   const letter = req.params.letter;
