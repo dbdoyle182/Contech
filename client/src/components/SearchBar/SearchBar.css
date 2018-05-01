@@ -8,10 +8,11 @@
     border-radius: 2px;
     font-size: 2rem;
     padding: 1rem;
-    border: 2px solid #9ea3a3;
+    border: 2px solid transparent;
     width: 70%;
     transition: all 0.3s;
     color: #414141;
+    box-shadow: 0px 3px 9px #737373;
 }
  
 .search-box:focus {
