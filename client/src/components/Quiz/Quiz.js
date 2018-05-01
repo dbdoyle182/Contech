@@ -1,17 +1,43 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Quiz.css";
+import axios from 'axios';
 
-const Quiz = props => (
+class Quiz extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+        this.state = {
+            quiz: {}
+        }
+    }
+
+
+    componentDidMount() {
+        axios.get('/quizquestions')
+            .then(res =>{
+                this.setState({ quiz: res.data[0] })
+                console.log(this.state.quiz)
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+    }    
+    
+    render() {
+
+    return (
     <div className="quiz">
-        <h2 className="title">Quiz</h2>
-        <h1 className="question">Which of the following is NOT a programming language?</h1>
+        <h2 className="title"></h2>
+        <h1 className="question">{this.state.quiz.question}</h1>
         <ul>
-            <li>PHP</li>
-            <li>JavaScript</li>
-            <li>Bootstrap</li>
-            <li>C#</li>
+            <li>{this.state.quiz.choice1}</li>
+            <li>{this.state.quiz.choice2}</li>
+            <li>{this.state.quiz.choice3}</li>
+            <li>{this.state.quiz.choice4}</li>
         </ul>
     </div>
-);
+    )
+    }
+};
 
 export default Quiz;
