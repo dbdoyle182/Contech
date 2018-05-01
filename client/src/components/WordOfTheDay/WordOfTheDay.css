@@ -1,6 +1,5 @@
 .wordoftheday {
     background: #c5c5c5;
-    padding: 100px 20px;
     text-align: center;
     margin: 15px;
     box-shadow: 0px 3px 9px #737373;
@@ -12,10 +11,26 @@
     transform: scale(1.02);
 }
 
+.title {
+    background: rgba(149, 199, 27, 0.55);
+    margin: 0 0 30px 0;
+    padding: 20px;
+}
+
+.word {
+    margin: 50px 0 0 0;
+}
+
+.definition {
+    font-style: italic;
+    padding: 10px;
+    font-size: 20px;
+}
+
 @media only screen and (min-width: 1020px)  {
 
     .wordoftheday {
-      width: 25%;
+      width: 28%;
       box-shadow: -8px 8px 8px #7d7d7d;
     }
   
