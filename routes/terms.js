@@ -16,7 +16,7 @@ router.get("/term/all", (req, res) => {
 });
 
 //Get Route for term by user input search
-router.get("search/:input", (req, res) => {
+router.get("/search/:input", (req, res) => {
   console.log(req.query);
   console.log(req.params.input);
   const input = req.params.input;
