@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Quiz.css";
 import axios from 'axios';
+import moment from 'moment';
 
 class Quiz extends Component {
     constructor(props, context) {
@@ -27,7 +28,7 @@ class Quiz extends Component {
 
     return (
     <div className="quiz">
-        <h2 className="title"></h2>
+        <h2 className="title">{moment().format('dddd')}'s Quiz</h2>
         <h1 className="question">{this.state.quiz.question}</h1>
         <ul>
             <li>{this.state.quiz.choice1}</li>

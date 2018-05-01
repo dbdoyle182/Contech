@@ -9,7 +9,6 @@ import "./HomePage.css";
 const HomePage = () => (
     
     <Card className='container'>
-        <CardTitle title="React Application" subtitle="This is the home page." />
         <SearchBar />
         <div className="flex-container">
             <Browse/>

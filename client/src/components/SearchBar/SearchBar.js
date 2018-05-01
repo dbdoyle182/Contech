@@ -80,8 +80,8 @@ class SearchBar extends React.Component {
             (<div>
                 {this.state.results.map(result => {
                     return (
-                        <div>
-                            <h5><Link to={`/term/${result.word}`} component={LoginPage}>{result.word}</Link></h5>
+                        <div key={result._id}>
+                            <h5><Link to={`/term/${result.word}`}>{result.word}</Link></h5>
                         </div>
                     )
                 })}
