@@ -30,7 +30,7 @@ class SearchBar extends React.Component {
     
 
     handleChange = event => {
-        event.preventDefault();
+        
         const search = event.target.value;
         this.setState({
             search
@@ -41,25 +41,28 @@ class SearchBar extends React.Component {
         event.preventDefault();
         axios.get(`/search/${this.state.search}`)
             .then(res => {
-                if (res.data.length > 1) {
-                    console.log(res.data)
-                    this.setState({
-                        results: res.data
-                    }) 
-                } else {
-                    console.log(res.data)
-                    // Redirect to the page with res.data.word
-                }
+
+                console.log(res.data)
+                // if (res.data.length > 1) {
+                //     console.log(res.data)
+                //     this.setState({
+                //         results: res.data
+                //     }) 
+                // } else {
+                //     console.log(res.data)
+                //     // Redirect to the page with res.data.word
+                // }
             })
             .catch(err => console.log(err))
         
     }
 
     render() {
-        return (<div>
-            <form className="inputbox">
-            <input name='search' value={this.state.search} type="text" placeholder="Search here..." onChange={this.handleChange} required/>
-            <button className="del" type="submit" onSubmit={this.handleFormSubmit}></button>
+        return (
+        <div className="search">
+            <form onSubmit={this.handleFormSubmit}>
+                <input name='search' value={this.state.search} type="text"  placeholder='Search here....' onChange={this.handleChange} className="search-box" required/>
+                <button type="submit" className="search-btn" ></button>
             </form>
         </div>
         )

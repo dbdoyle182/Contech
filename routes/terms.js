@@ -48,7 +48,7 @@ router.get("/search/:letter", (req, res) => {
 });
 
 //Get Route for term by filter search
-router.get("search/:filter", (req, res) => {
+router.get("/search/:filter", (req, res) => {
   console.log(req.query);
   console.log(req.params.filter);
   const filter = req.params.filter;
