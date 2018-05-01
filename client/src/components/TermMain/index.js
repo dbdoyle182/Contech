@@ -1,1 +1,1 @@
-export { default } from "./TermMain";
+export { default } from "./TermMain.js";

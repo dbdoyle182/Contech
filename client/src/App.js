@@ -7,6 +7,7 @@ import DashboardPage from './components/Dashboard.js';
 import Auth from './utils/Auth.js'
 import LogoutFunction from './containers/LogoutFunction';
 import Navbar from './components/Navbar.js';
+import TermPage from './components/TermPage';
 import BrowseBar from './components/BrowseBar'
 
 class App extends Component { 
@@ -24,6 +25,7 @@ class App extends Component {
                   <HomePage/>
                 )
               )} />
+              <Route path='/term' component={TermPage} />
               <Route path='/login' component={LoginPage} />
               <Route path='/signup' component={SignUpPage} />
               <Route path='/logout' component={LogoutFunction} />

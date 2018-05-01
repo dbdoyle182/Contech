@@ -1,9 +1,15 @@
 import React from 'react';
 import { Card, CardTitle } from 'material-ui/Card';
-import TermMain from "./TermMain";
-import TermTags from "./TermTags";
-import TermRelevant from "./TermRelevant";
-import TermExtended from "./TermExtended";
+import TermMain from "../TermMain";
+import TermTags from "../TermTags";
+import TermRelevant from "../TermRelevant";
+import TermExtended from "../TermExtended";
+import TermComments from "../TermComments";
+import SearchBar from "../SearchBar";
+
+
+
+
 
 
 const TermPage = () => (
@@ -12,9 +18,11 @@ const TermPage = () => (
         <CardTitle title="React Application" subtitle="This is the term page." />
         <SearchBar/>
         <div className="flex-container">
-            <Browse/>
-            <Quiz/>
-            <WordOfTheDay/>
+            <TermMain/>
+            <TermTags/>
+            <TermRelevant/>
+            <TermExtended/>
+            <TermComments/>
         </div>
     </Card>
 );
