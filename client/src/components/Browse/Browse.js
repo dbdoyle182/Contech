@@ -3,9 +3,7 @@ import "./Browse.css";
 
 const Browse = props => (
     <div className="browse">
-        <div className="">
-            Browse
-        </div>
+        <h2 className="title">Browse</h2>
     </div>
 );
 

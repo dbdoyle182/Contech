@@ -1,6 +1,5 @@
 .quiz {
     background: #c5c5c5;
-    padding: 100px 20px;
     text-align: center;
     margin: 15px;
     box-shadow: 0px 3px 9px #737373;
@@ -12,10 +11,39 @@
     transform: scale(1.02);
 }
 
+.title {
+    background: rgba(149, 199, 27, 0.55);
+    margin: 0 0 20px 0;
+    padding: 20px;
+}
+
+.question {
+    padding: 10px;
+}
+
+ul {
+    text-align: left;
+    font-size: 20px;
+    list-style: none;
+    padding: 10px;
+}
+
+li {
+    background: #9abd1d;
+    margin: 5px;
+    box-shadow: 0px 3px 9px #737373;
+    padding: 10px;
+}
+
+li:hover {
+    background: #7d9917;
+    box-shadow: 0px 4px 10px #646464;
+}
+
 @media only screen and (min-width: 1020px)  {
 
     .quiz {
-      width: 25%;
+      width: 30%;
       box-shadow: -8px 8px 8px #7d7d7d;
     }
   
