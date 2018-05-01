@@ -9,31 +9,45 @@ const Navbar = () => (
     <header className="" >
         <nav className="flex">
             <div className='flex-start'>
-                <Link to='/'>
+                <Link to='/' className={
+            window.location.pathname === "/" ? "nav-link active" : "nav-link"
+          }>
                     <span className="logo-text">ConTech</span>
                 </Link>
             </div>
         {Auth.isUserAuthenticated() ? (
             <div className='flex-end'>
-                <Link to='/'>
+                <Link to='/' className={
+            window.location.pathname === "/" ? "nav-link active" : "nav-link"
+          }>
                     <span className="nav-link">Home</span>
                 </Link>
-                <Link to='/logout'>
+                <Link to='/logout' className={
+            window.location.pathname === "/" ? "nav-link active" : "nav-link"
+          }>
                     <span className="nav-link">Log Out</span>
                 </Link>
             </div>
         ) : (
             <div className='flex-end'>
-                <Link to='/'>
+                <Link to='/' className={
+            window.location.pathname === "/" ? "nav-link active" : "nav-link"
+          }>
                     <span className="nav-link">Home</span>
                 </Link>
-                <Link to='/term'>
+                <Link to='/term' className={
+            window.location.pathname === "/" ? "nav-link active" : "nav-link"
+          }>
                     <span className="nav-link">TermTest</span>
                 </Link>
-                <Link to='/login'>
+                <Link to='/login' className={
+            window.location.pathname === "/" ? "nav-link active" : "nav-link"
+          }>
                     <span className="nav-link">Log In</span>
                 </Link>
-                <Link to='/signup'>
+                <Link to='/signup' className={
+            window.location.pathname === "/" ? "nav-link active" : "nav-link"
+          }>
                     <span className="nav-link">Sign Up</span>
                 </Link>
             </div>

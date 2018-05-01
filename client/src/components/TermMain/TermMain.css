@@ -4,7 +4,7 @@
     text-align: center;
     margin: 15px;
     box-shadow: 0px 3px 9px #737373;
-    width:100%;
+    width:90%;
 }
 
 .termMain:hover {
@@ -16,7 +16,7 @@
 @media only screen and (min-width: 1020px)  {
 
     .termMain {
-      width: 66%;
+      width: 60%;
       box-shadow: -8px 8px 8px #7d7d7d;
     }
   

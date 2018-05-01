@@ -7,15 +7,10 @@ import TermExtended from "../TermExtended";
 import TermComments from "../TermComments";
 import SearchBar from "../SearchBar";
 
-
-
-
-
-
 const TermPage = () => (
     
     <Card className='container'>
-        <CardTitle title="React Application" subtitle="This is the term page." />
+        <CardTitle />
         <SearchBar/>
         <div className="flex-container">
             <TermMain/>

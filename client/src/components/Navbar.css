@@ -8,7 +8,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* margin-left: 5%; */
+    padding-top: 10px;
 }
 
 .flex-start {
@@ -27,8 +27,12 @@ header {
 .logo-text,
 .nav-link {
     color: white;
-    text-decoration: none;
-    margin-top: 10px;
+    text-decoration: transparent;
+    text-decoration-color: transparent;
+}
+
+.active {
+    color: red;
 }
 
 .logo-text {
@@ -37,5 +41,5 @@ header {
 
 .nav-link {
     color: white;
-    padding: 7px 10px 0px 0px;
+    padding: 7px 10px;
 }
