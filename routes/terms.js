@@ -21,7 +21,7 @@ router.get("/search/:input", (req, res) => {
   console.log(req.params.input);
   const input = req.params.input;
   db.Term.find({
-    word: input
+    word: new RegExp('^'+input+'$', "i")
   })
     .then(data => {
       res.json(data);

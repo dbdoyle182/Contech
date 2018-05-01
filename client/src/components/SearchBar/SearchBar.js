@@ -1,6 +1,8 @@
 import React from "react";
 import "./SearchBar.css";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import LoginPage from '../../containers/LoginPage'
 
 class SearchBar extends React.Component {
     constructor(props, context) {
@@ -9,7 +11,8 @@ class SearchBar extends React.Component {
         this.state = {
             search: '',
             auto: [],
-            results: []
+            results: [],
+            resultsNum: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -22,7 +25,7 @@ class SearchBar extends React.Component {
                { const currentWords = res.data;
                 const newWords = [];
                 newWords.push(currentWords);
-                console.log(currentWords)
+                
                 this.setState({ auto: newWords })}
             )
             .catch(err => console.log(err));
@@ -42,16 +45,23 @@ class SearchBar extends React.Component {
         axios.get(`/search/${this.state.search}`)
             .then(res => {
 
-                console.log(res.data)
-                // if (res.data.length > 1) {
-                //     console.log(res.data)
-                //     this.setState({
-                //         results: res.data
-                //     }) 
-                // } else {
-                //     console.log(res.data)
-                //     // Redirect to the page with res.data.word
-                // }
+                if (res.data.length > 1) {
+                    console.log('More than 1 response') 
+                    this.setState({ 
+                        results: res.data,
+                        resultsNum: res.data.length
+                    })
+                } else if (res.data.length === 1) {
+                    console.log('One response')
+                    window.location.replace(`/term/${res.data[0].word}`)
+                    // Redirect to the page with res.data.word
+                } else {
+                    console.log('There were no responses')
+                    this.setState({ 
+                        results: res.data,
+                        resultsNum: res.data.length
+                    })
+                }
             })
             .catch(err => console.log(err))
         
@@ -59,11 +69,27 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-        <div className="search">
-            <form onSubmit={this.handleFormSubmit}>
-                <input name='search' value={this.state.search} type="text"  placeholder='Search here....' onChange={this.handleChange} className="search-box" required/>
-                <button type="submit" className="search-btn" ></button>
-            </form>
+        <div>
+            <div className="search">
+                <form onSubmit={this.handleFormSubmit}>
+                    <input name='search' value={this.state.search} type="text"  placeholder='Search here....' onChange={this.handleChange} className="search-box" required/>
+                    <button type="submit" className="search-btn" ></button>
+                </form>
+            </div>
+            {this.state.resultsNum > 1 &&
+            (<div>
+                {this.state.results.map(result => {
+                    return (
+                        <div key={result._id}>
+                            <h5><Link to={`/term/${result.word}`}>{result.word}</Link></h5>
+                        </div>
+                    )
+                })}
+            </div>)}
+            {this.state.resultsNum === 0 && (
+                <div><h2>There were no available responses</h2></div>
+            )}
+            
         </div>
         )
     }
