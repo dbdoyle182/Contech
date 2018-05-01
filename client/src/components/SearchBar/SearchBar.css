@@ -27,7 +27,6 @@
     box-shadow: 0 0 0 1px currentColor;
     color: inherit;
     cursor: pointer;
-    padding: 16.5px 0;
     padding-right: 50px;
     font-weight: lighter;
     font-family: "Roboto";
@@ -40,6 +39,7 @@
     border-radius: 0;
     cursor: text;
     padding-left: 16.5px;
+    box-shadow: 0px 3px 9px #737373;
 }
 
 .inputbox input:focus + .del, .inputbox input:valid + .del {
@@ -53,7 +53,7 @@
     width: 37.5px;
 }
 
-/* .inputbox input:focus + .del:before, .inputbox input:valid + .del:before {
+.inputbox input:focus + .del:before, .inputbox input:valid + .del:before {
     transform: translate(-50%, -50%) rotate(-45deg) scaleY(0.7);
     transition-delay: 0s;
 }
@@ -61,7 +61,7 @@
 .inputbox input:focus + .del:after, .inputbox input:valid + .del:after {
     transform: translate(-50%, -50%) rotate(45deg) scaleY(0.7);
     transition-delay: 0.2s;
-} */
+}
 
 .inputbox .del {
     position: absolute;
@@ -99,7 +99,7 @@
 }
 
 .inputbox .del:after {
-    content: "Search";
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -119,7 +119,7 @@
 
     .inputbox input:focus + .del, .inputbox input:valid + .del {
         pointer-events: all;
-        left: calc(100% + 220px);
+        left: calc(100% + 150px);
         transition-delay: 0.1s;
     }
   

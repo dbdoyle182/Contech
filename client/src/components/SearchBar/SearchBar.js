@@ -5,7 +5,7 @@ const SearchBar = props => (
    <div>
         <form className="inputbox">
         <input type="text" placeholder="Search here..." required/>
-        <button className="del" type="submit">Search</button>
+        <button className="del" type="submit"></button>
         </form>
     </div>
 );
