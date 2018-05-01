@@ -7,7 +7,7 @@ import DashboardPage from './components/Dashboard.js';
 import Auth from './utils/Auth.js'
 import LogoutFunction from './containers/LogoutFunction';
 import Navbar from './components/Navbar.js';
-import BrowseBar from './components/BrowseBar'
+import TermFormPage from './containers/TermFormPage';
 
 class App extends Component { 
 
@@ -17,17 +17,13 @@ class App extends Component {
         <div>
             <Navbar />
             <Switch>
-              <Route exact path='/' render={() => (
-                Auth.isUserAuthenticated() ? (
-                  <DashboardPage secretData={`Welcome ${Auth.getUsername()}`} />
-                ) : (
-                  <HomePage/>
-                )
-              )} />
+              <Route exact path='/' component={HomePage} />
               <Route path='/login' component={LoginPage} />
               <Route path='/signup' component={SignUpPage} />
               <Route path='/logout' component={LogoutFunction} />
-              <Route path ='/browser' component={BrowseBar}/>
+              <Route path='/addterm' component={TermFormPage} />
+              <Route path='/search/:input' component={HomePage} />
+
             </Switch>  
         </div>
       </Router>

@@ -10,8 +10,9 @@ const Navbar = () => (
             <div className='top-bar-left'>
                 <Link to='/'>React App</Link>
             </div>
-            {Auth.isUserAuthenticated() ? (
+            {Auth.isUserAuthenticated() ? (                
                 <div className='top-bar-right'>
+                    <Link to='/addterm'>Add Term</Link>
                     <Link to='/logout'>Log out</Link>
                 </div>
             ) : (
