@@ -2,7 +2,8 @@ import React from "react";
 import "./SearchBar.css";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import LoginPage from '../../containers/LoginPage'
+import LoginPage from '../../containers/LoginPage';
+import AutoComplete from 'material-ui/AutoComplete';
 
 class SearchBar extends React.Component {
     constructor(props, context) {
@@ -21,22 +22,24 @@ class SearchBar extends React.Component {
 
     componentDidMount() {
         axios.get('/term/all')
-            .then(res => 
-               { const currentWords = res.data;
-                const newWords = [];
-                newWords.push(currentWords);
-                
-                this.setState({ auto: newWords })}
-            )
+            .then(res => { 
+                const currentWords = res.data;
+                const newWords = currentWords.map(word => word.word)
+                this.setState({ 
+                    auto: newWords 
+                })
+                console.log(this.state.auto)
+            })
             .catch(err => console.log(err));
+            
         }
     
 
-    handleChange = event => {
+    handleChange = inputValue => {
         
-        const search = event.target.value;
+        const input = inputValue
         this.setState({
-            search
+            search: input
         });
     };
 
@@ -69,10 +72,19 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-        <div>
+        <div className='container'>
             <div className="search">
                 <form onSubmit={this.handleFormSubmit}>
-                    <input name='search' value={this.state.search} type="text"  placeholder='Search here....' onChange={this.handleChange} className="search-box" required/>
+                    <AutoComplete
+                        floatingLabelText="Search here....."
+                        filter={AutoComplete.fuzzyFilter}
+                        dataSource={this.state.auto}
+                        maxSearchResults={5}
+                        onUpdateInput={this.handleChange}
+                        className='search-box'
+                        fullWidth={true}
+                        required
+                    />
                     <button type="submit" className="search-btn" ></button>
                 </form>
             </div>
