@@ -9,14 +9,6 @@ class SearchBar extends React.Component {
     constructor(props, context) {
         super(props, context);
 
-<<<<<<< HEAD
-    <div className="search">
-        <form>
-            <input type="text" className="search-box" required/>
-            <button type="submit" value="" className="search-btn"></button>
-        </form>
-    </div>
-=======
         this.state = {
             search: '',
             auto: [],
@@ -41,7 +33,6 @@ class SearchBar extends React.Component {
             .catch(err => console.log(err));
             
         }
->>>>>>> 0c4aa788974e03968682cedfd0b145960476ab73
     
 
     handleChange = inputValue => {
