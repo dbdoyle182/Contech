@@ -72,7 +72,7 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-        <div className='container'>
+        <div className=''>
             <div className="search">
                 <form onSubmit={this.handleFormSubmit}>
                     <AutoComplete

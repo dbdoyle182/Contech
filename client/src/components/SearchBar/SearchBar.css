@@ -1,5 +1,5 @@
 .search {
-    margin: 40px 0;
+    margin: 40px 60px;
     text-align: center;
     position: relative;
 }
@@ -7,7 +7,7 @@
 .search-box {
     border-radius: 2px;
     font-size: 2rem;
-    padding: 1rem;
+    padding: 0 0 0 5px;
     border: 2px solid transparent;
     width: 70%;
     transition: all 0.3s;
@@ -16,12 +16,12 @@
     text-align: center;
 }
  
-.search-box:focus {
+/* .search-box:focus {
     width: 85%;
     outline: none;
     border: 2px solid #707070;
     box-shadow: none;
-}
+} */
 
 .search-btn {
     height: 100%;
@@ -29,7 +29,7 @@
     margin-top: -2em;
     position: absolute;
     top: 50%;
-    right: 15%;
+    right: 5%;
     opacity: 0.3;
     background-color: transparent;
     border: 0;
@@ -39,7 +39,7 @@
     transition: all 0.3s;
 }
 
-.search-btn:hover {
+/* .search-btn:hover {
     outline: none;
     opacity: 0.6;
     cursor: pointer;
@@ -53,4 +53,4 @@
 .search-box:focus .search-btn {
     right: 10%;
     opacity: 0.6;
-}
+} */
