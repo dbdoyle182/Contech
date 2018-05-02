@@ -49,7 +49,7 @@ class LoginPage extends Component {
                 this.setState({
                     errors: {}
                 });
-                console.log(xhr.response.user.username)
+                
                 Auth.authenticateUser(xhr.response.token, xhr.response.user.username);
                 this.props.history.push('/')
             } else {
