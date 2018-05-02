@@ -43,8 +43,8 @@ class TermPage extends Component {
                         <TermMain word={this.state.word.word} summary={this.state.word.summary}/>
                     </div>
                     <div className="TermPage-flex-container25">
-                        <TermTags tag={this.state.word.tags}/>
-                        <TermRelevant relevant={this.state.word.related}/>
+                        <TermTags />
+                        <TermRelevant />
                     </div>
                 </div>
                 <TermExtended word={this.state.word.word} definition={this.state.word.definition}/>

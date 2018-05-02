@@ -3,7 +3,7 @@ import "./TermTags.css";
 
 const TermTags = props => (
     <div className="termTags">
-        {props.tag}
+        This needs to be worked on!
     </div>
 );
 

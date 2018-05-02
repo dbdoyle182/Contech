@@ -5,7 +5,7 @@ const TermRelevant = props => (
     
 
     <div className="termRelevant">
-        {props.relevant}
+        This needs to be worked on!
     </div>
 );
 
