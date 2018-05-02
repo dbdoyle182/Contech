@@ -9,7 +9,8 @@ import "./HomePage.css";
 const HomePage = () => (
     
     <Card className='container'>
-        <SearchBar />
+        <CardTitle title="ConTech" subtitle="Putting tech into context." />
+        <SearchBar/>
         <div className="flex-container">
             <Browse/>
             <Quiz/>

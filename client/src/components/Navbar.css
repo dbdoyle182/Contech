@@ -1,0 +1,45 @@
+header {
+    position: relative;
+    height: 50px;
+    background-color: rgb(56, 56, 56);
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.flex-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 5%;
+}
+.flex-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 5%;
+}
+
+.logo-text,
+.nav-link {
+    color: white;
+    text-decoration: transparent;
+    text-decoration-color: transparent;
+}
+
+.active {
+    color: red;
+}
+
+.logo-text {
+    font-size: 20px;
+}
+
+.nav-link {
+    color: white;
+    padding: 7px 10px;
+}
