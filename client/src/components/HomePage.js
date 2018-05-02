@@ -11,8 +11,8 @@ const HomePage = () => (
     <Card className='container'>
         <CardTitle title="React Application" subtitle="This is the home page." />
         <SearchBar/>
+        <Browse/>
         <div className="flex-container">
-            <Browse/>
             <Quiz/>
             <WordOfTheDay/>
         </div>
