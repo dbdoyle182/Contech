@@ -12,10 +12,16 @@ const TermPage = () => (
     <Card className='container'>
         <CardTitle />
         <SearchBar/>
-        <div className="flex-container">
-            <TermMain/>
-            <TermTags/>
-            <TermRelevant/>
+        <div className="TermPage-flex-container">
+            <div className="row">
+                <div>
+                    <TermMain/>
+                </div>
+                <div className="TermPage-flex-container25">
+                    <TermTags/>
+                    <TermRelevant/>
+                </div>
+            </div>
             <TermExtended/>
             <TermComments/>
         </div>

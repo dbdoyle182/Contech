@@ -9,6 +9,7 @@ import LogoutFunction from './containers/LogoutFunction';
 import Navbar from './components/Navbar.js';
 import TermPage from './components/TermPage';
 import BrowseBar from './components/BrowseBar'
+import TermFormPage from './containers/TermFormPage';
 
 class App extends Component { 
 
@@ -18,18 +19,14 @@ class App extends Component {
         <div>
             <Navbar />
             <Switch>
-              <Route exact path='/' render={() => (
-                Auth.isUserAuthenticated() ? (
-                  <DashboardPage secretData={`Welcome ${Auth.getUsername()}`} />
-                ) : (
-                  <HomePage/>
-                )
-              )} />
-              <Route path='/term' component={TermPage} />
+              <Route exact path='/' component={HomePage} />
               <Route path='/login' component={LoginPage} />
               <Route path='/signup' component={SignUpPage} />
               <Route path='/logout' component={LogoutFunction} />
-              <Route path ='/browser' component={BrowseBar}/>
+              <Route path='/term' component={TermPage} />
+              <Route path='/addterm' component={TermFormPage} />
+              <Route path='/term/:input' component={TermFormPage} />
+
             </Switch>  
         </div>
       </Router>
