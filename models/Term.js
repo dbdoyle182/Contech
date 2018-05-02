@@ -15,15 +15,17 @@ const TermSchema = new Schema({
     type: String,
     required: true
   },
-  tags: {
-    type: Array,
-    default: undefined,
-    required: true
+  tags1: {
+    type: String
   },
-  related: {
-    type: Array,
-    default: undefined,
-    required: true
+  tags2: {
+    type: String
+  },
+  related1: {
+    type: String
+  },
+  related2: {
+    type: String
   },
   //Any term can have an array of comments. Populate term with associated comments
   comments: [
