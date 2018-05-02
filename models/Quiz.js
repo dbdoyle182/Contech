@@ -8,7 +8,8 @@ const QuizSchema = new Schema({
   choice2: String,
   choice3: String,
   choice4: String,
-  answer: String
+  answer: String,
+  day: String
 });
 
 //Create the Quiz model with mongoose.

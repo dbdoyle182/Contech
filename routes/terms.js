@@ -21,7 +21,7 @@ router.get("/search/:input", (req, res) => {
   console.log(req.params.input);
   const input = req.params.input;
   db.Term.find({
-    word: input
+    word: new RegExp('^'+input+'$', "i")
   })
     .then(data => {
       res.json(data);
@@ -32,12 +32,12 @@ router.get("/search/:input", (req, res) => {
 });
 
 //Get Route for term by alphabet letter search
-router.get("/search/:letter", (req, res) => {
+router.get("/searchBy/:letter", (req, res) => {
   console.log(req.query);
   console.log(req.params.letter);
   const letter = req.params.letter;
   db.Term.find({
-    word: /^letter/
+    word: new RegExp('^'+letter, "i")
   })
     .then(data => {
       res.json(data);
