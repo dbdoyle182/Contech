@@ -30,17 +30,17 @@ class TermPage extends Component {
             .catch(err => console.log(err));
     }
 
-    componentDidUpdate() {
-        axios.get(this.props.match.params.input)
-            .then(res => {
-                this.setState({
-                    word: res.data[0],
-                    comments: res.data[0].comments
-                })
-                console.log(this.state.word)
-            })
-            .catch(err => console.log(err));
-    }
+    // componentDidUpdate() {
+    //     axios.get(this.props.match.params.input)
+    //         .then(res => {
+    //             this.setState({
+    //                 word: res.data[0],
+    //                 comments: res.data[0].comments
+    //             })
+    //             console.log(this.state.word)
+    //         })
+    //         .catch(err => console.log(err));
+    // }
 
 
 
@@ -56,7 +56,7 @@ class TermPage extends Component {
                     </div>
                     <div className="TermPage-flex-container25">
                         <TermTags tags1={this.state.word.tags1} tags2={this.state.word.tags2}/>
-                        <TermRelevant relevant1={this.state.word.related1} relevant2={this.state.word.related2}/>
+                        <TermRelevant relevant1={this.state.word.related1} relevant2={this.state.word.related2} />
                     </div>
                 </div>
                 <TermExtended word={this.state.word.word} definition={this.state.word.definition}/>
