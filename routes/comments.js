@@ -8,9 +8,10 @@ const router = express.Router();
 router.post("/newComment/:id", (req, res) => {
   db.Comment.create(req.body)
     .then(dbComm => {
+      console.log(dbComm._id)
       return db.Term.findOneAndUpdate(
         { _id: req.params.id },
-        { comment: comm._id },
+        {$push: { comments: dbComm._id }},
         { new: true }
       );
     })
