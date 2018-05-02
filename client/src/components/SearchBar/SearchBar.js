@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
                 this.setState({ 
                     auto: newWords 
                 })
-                console.log(this.state.auto)
+                
             })
             .catch(err => console.log(err));
             
@@ -49,17 +49,17 @@ class SearchBar extends React.Component {
             .then(res => {
 
                 if (res.data.length > 1) {
-                    console.log('More than 1 response') 
+                    
                     this.setState({ 
                         results: res.data,
                         resultsNum: res.data.length
                     })
                 } else if (res.data.length === 1) {
-                    console.log('One response')
-                    window.location.replace(`/term/${res.data[0].word}`)
+                    
+                    window.location.replace(`/search/${res.data[0].word}`)
                     // Redirect to the page with res.data.word
                 } else {
-                    console.log('There were no responses')
+                    
                     this.setState({ 
                         results: res.data,
                         resultsNum: res.data.length

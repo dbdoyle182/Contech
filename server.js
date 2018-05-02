@@ -42,9 +42,11 @@ if(process.env.NODE_ENV === 'production') {
 const terms = require("./routes/terms.js");
 const comments = require("./routes/comments.js");
 const quizzes = require("./routes/quizzes.js");
+const user = require('./routes/user.js');
 app.use(terms);
 app.use(comments);
 app.use(quizzes);
+app.use(user);
 
 // If deployed, use deployed database. Otherwise, use local database.
 mongoose.set("debug", true);

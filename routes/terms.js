@@ -22,7 +22,7 @@ router.get("/search/:input", (req, res) => {
   const input = req.params.input;
   db.Term.find({
     word: new RegExp('^'+input+'$', "i")
-  })
+  }).populate('comments').populate('users')
     .then(data => {
       res.json(data);
     })
