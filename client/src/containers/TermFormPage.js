@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card, TextField, RaisedButton, MenuItem, RadioButton, RadioButtonGroup} from 'material-ui'
+import { Card, TextField, RaisedButton, MenuItem, RadioButton, RadioButtonGroup} from 'material-ui';
+import axios from 'axios';
 
 const filtertags = ['Git','Framework','Library','Language','Data','Software','World Wide Web', 'Language Feature', 'Miscellaneous','Frontend','Backend'];
 
@@ -17,13 +18,17 @@ class TermFormPage extends Component {
             tags1: '',
             tags2: '',
             related1:'',
-            related2: ''
+            related2: '',
+            filter1: '',
+            filter2: ''
         };
 
 
         this.processForm = this.processForm.bind(this);
         this.changeWord = this.changeWord.bind(this);
         this.selectItems = this.selectItems.bind(this);
+        this.selectFilter1 = this.selectFilter1.bind(this);
+        this.selectFilter2 = this.selectFilter2.bind(this);
     }
     
 
@@ -33,6 +38,39 @@ class TermFormPage extends Component {
         this.setState({
             [name]: value
         });
+
+        if(name === 'tags1') {
+            axios.get('/filterBy/' + value)
+                .then(res => {
+                    const filters = res.data;
+                    const filterArray = [];
+                    filters.map(filter => {
+                        filterArray.push(filter.word)
+                    })
+                    this.setState({
+                        filter1: filterArray
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
+        if(name === 'tags2') {
+            axios.get('/filterBy/' + value)
+                .then(res => {
+                    const filters = res.data;
+                    const filterArray = [];
+                    filters.map(filter => {
+                        filterArray.push(filter.word)
+                    })
+                    this.setState({
+                        filter2: filterArray
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
     }
 
 
@@ -48,6 +86,27 @@ class TermFormPage extends Component {
         return filtertags.map(tag => (
             <RadioButton
                 key={filtertags.indexOf(tag)}
+                value={tag}
+                label={tag}
+            />
+        ));
+    }
+
+    selectFilter1() {
+        console.log(this.state.filter1)
+        return this.state.filter1.map(tag => (
+            <RadioButton
+                key={this.state.filter1.indexOf(tag)}
+                value={tag}
+                label={tag}
+            />
+        ));
+    }
+
+    selectFilter2() {
+        return this.state.filter2.map(tag => (
+            <RadioButton
+                key={this.state.filter2.indexOf(tag)}
                 value={tag}
                 label={tag}
             />
@@ -105,6 +164,7 @@ class TermFormPage extends Component {
                     <RadioButtonGroup name='tags1' value={this.state.tags1} onChange={this.changeWord}>
                         {this.selectItems()}
                     </RadioButtonGroup>
+                    <br />
                 </div>
 
                 {this.state.tags1 !== '' && <div className='field-line'>
@@ -112,10 +172,25 @@ class TermFormPage extends Component {
                     <RadioButtonGroup name='tags2' value={this.state.tags2} onChange={this.changeWord}>
                         {this.selectItems()}
                     </RadioButtonGroup>
+                    <br />
                 </div>}
 
-                <div className='field-line'>
-                </div>
+                
+                {this.state.filter1 !== '' && <div className='field-line'>
+                    <h4>First Related Term</h4>
+                    <RadioButtonGroup name='related1' value={this.state.related1} onChange={this.changeWord}>
+                        {this.selectFilter1()}
+                    </RadioButtonGroup>
+                    <br />
+                </div>}
+
+                {this.state.filter2 !== '' && this.state.related1 !== '' && <div className='field-line'>
+                    <h4>Second Related Term</h4>
+                    <RadioButtonGroup name='related2' value={this.state.related2} onChange={this.changeWord}>
+                        {this.selectFilter1()}
+                    </RadioButtonGroup>
+                    <br />
+                </div>}
 
                 <div className='button-line'>
                     <RaisedButton type='submit' label='Add this term' primary/>
