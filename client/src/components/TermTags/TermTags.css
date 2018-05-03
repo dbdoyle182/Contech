@@ -1,28 +1,28 @@
 .termTags {
     padding: 10px 10px;
     margin: 15px;
+    text-align: center;
     width: 100%;
 }
 .termTags h4 {
     font-size: 1.5rem;
     line-height: 1.8rem;
-    padding-bottom: 12px;
+    padding-bottom: 7px;
 }
 
 .termTags button {
     font-size: 1rem;
     background-color: #57BC90;
+    border: 1px solid #57BC90;
     padding: 8px;
-}
-
-.termTags:hover {
-    transition: all .3s ease-out;
-    transform: scale(1.02);
+    margin: 5px;
+    text-decoration: none;
 }
 
 @media only screen and (min-width: 700px)  {
 
     .termTags {
+        text-align: left;
     }
   
 }

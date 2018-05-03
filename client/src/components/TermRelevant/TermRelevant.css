@@ -1,5 +1,6 @@
 .termRelevant {
     padding: 10px 10px;
+    text-align: center;
     margin: 15px;
     width: 100%;
 }
@@ -15,14 +16,10 @@
     padding: 8px;
 }
 
-.termRelevant:hover {
-    transition: all .3s ease-out;
-    transform: scale(1.02);
-}
-
 @media only screen and (min-width: 700px)  {
 
     .termRelevant {
+        text-align: left;
     }
   
 }

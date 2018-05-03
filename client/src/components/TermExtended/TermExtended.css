@@ -11,11 +11,14 @@
     color: white;
     font-size: 1.7rem;
     line-height: 1.5;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .termExtended p {
     margin: 15px;
-    font-size: 1.2rem
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    font-family: 'Lora', serif;
 }
 
 .termExtended:hover {
