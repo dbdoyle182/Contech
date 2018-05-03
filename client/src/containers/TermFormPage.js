@@ -187,7 +187,7 @@ class TermFormPage extends Component {
                 {this.state.filter2 !== '' && this.state.related1 !== '' && <div className='field-line'>
                     <h4>Second Related Term</h4>
                     <RadioButtonGroup name='related2' value={this.state.related2} onChange={this.changeWord}>
-                        {this.selectFilter1()}
+                        {this.selectFilter2()}
                     </RadioButtonGroup>
                     <br />
                 </div>}
