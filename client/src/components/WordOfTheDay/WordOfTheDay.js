@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./WordOfTheDay.css";
-import axios from 'axios';
+import axios from "axios";
 
 class WordOfTheDay extends Component {
-constructor(props, context) {
+  constructor(props, context) {
     super(props, context);
 
     this.state = {
@@ -29,8 +29,9 @@ constructor(props, context) {
         <h2 className="title">Word of the Moment</h2>
         <h1 className="word">{this.state.word.word}</h1>
         <p className="definition">{this.state.word.summary}</p>
-    </div>)
-    }
-};
+      </div>
+    );
+  }
+}
 
 export default WordOfTheDay;

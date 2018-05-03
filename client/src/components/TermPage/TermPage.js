@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import { Card, CardTitle } from 'material-ui/Card';
+import React, { Component } from "react";
+import { Card, CardTitle } from "material-ui/Card";
 import TermMain from "../TermMain";
 import TermTags from "../TermTags";
 import TermRelevant from "../TermRelevant";
 import TermExtended from "../TermExtended";
 import TermComments from "../TermComments";
 import SearchBar from "../SearchBar";
-import axios from 'axios';
+import axios from "axios";
+import CodeSandbox from "../CodeSandbox";
 
 class TermPage extends Component {
-    constructor(props, context) {
-        super(props, context);
+  constructor(props, context) {
+    super(props, context);
 
         this.state = {
             word: {},
@@ -64,9 +65,22 @@ class TermPage extends Component {
                 </div>
                 <TermExtended word={this.state.word.word} definition={this.state.word.definition}/>
                 <TermComments id={this.state.word._id} comments={this.state.comments}/>
+
             </div>
-        </Card>
-    )}
+          </div>
+          <TermExtended
+            word={this.state.word.word}
+            definition={this.state.word.definition}
+          />
+          <TermComments
+            id={this.state.word._id}
+            comments={this.state.comments}
+          />
+          <CodeSandbox />
+        </div>
+      </Card>
+    );
+  }
 }
 
 export default TermPage;

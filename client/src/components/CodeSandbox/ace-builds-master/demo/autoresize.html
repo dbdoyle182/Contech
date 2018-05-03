@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Editor</title>
+    <style type="text/css" media="screen">
+        #editor {
+            border: 1px solid lightgray;
+            margin: auto;
+            height: 200px;
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <pre id="editor">minHeight = 2 lines</pre>
+
+    <!-- load ace -->
+    <script src="../src/ace.js"></script>
+    <script>
+        var editor = ace.edit("editor", {
+            theme: "ace/theme/twilight",
+            mode: "ace/mode/javascript",
+            autoScrollEditorIntoView: true,
+            maxLines: 200,
+            minLines: 20
+        });
+        editor.setOption("enableEmmet", true);
+    </script>
+
+    <script src="./show_own_source.js"></script>
+
+</body>
+
+</html>
