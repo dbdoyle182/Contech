@@ -18,7 +18,8 @@ class SearchBar extends React.Component {
             search: '',
             auto: [],
             results: [],
-            resultsNum: ''
+            resultsNum: '',
+            browseResults: []
         }
 
         this.handleChange = this.handleChange.bind(this);

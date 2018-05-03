@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, TextField, RaisedButton, MenuItem, RadioButton, RadioButtonGroup} from 'material-ui';
+import { Card, TextField, RaisedButton, RadioButton, RadioButtonGroup} from 'material-ui';
 import axios from 'axios';
 
 const filtertags = ['Git','Framework','Library','Language','Data','Software','World Wide Web', 'Language Feature', 'Miscellaneous','Frontend','Backend'];
@@ -44,9 +44,7 @@ class TermFormPage extends Component {
                 .then(res => {
                     const filters = res.data;
                     const filterArray = [];
-                    filters.map(filter => {
-                        filterArray.push(filter.word)
-                    })
+                    filters.map(filter => filterArray.push(filter.word))
                     this.setState({
                         filter1: filterArray
                     })
@@ -60,9 +58,7 @@ class TermFormPage extends Component {
                 .then(res => {
                     const filters = res.data;
                     const filterArray = [];
-                    filters.map(filter => {
-                        filterArray.push(filter.word)
-                    })
+                    filters.map(filter => filterArray.push(filter.word))
                     this.setState({
                         filter2: filterArray
                     })

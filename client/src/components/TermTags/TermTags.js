@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import "./TermTags.css";
 
 class TermTags extends React.Component {  
