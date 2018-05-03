@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 import LoginPage from '../../containers/LoginPage';
 import AutoComplete from 'material-ui/AutoComplete';
 
+const searchStyles = {
+    fontSize: '25px',
+    padding: '15px 0 10px 0',
+    transition: 'all .3s ease-in-out'
+};
+
 class SearchBar extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -76,7 +82,10 @@ class SearchBar extends React.Component {
             <div className="search">
                 <form onSubmit={this.handleFormSubmit}>
                     <AutoComplete
-                        floatingLabelText="Search here....."
+                        hintText="Search for a Term..."
+                        hintStyle={{margin: '10px 0 10px 10px'}}
+                        textFieldStyle={searchStyles}
+                        underlineShow={false}
                         filter={AutoComplete.fuzzyFilter}
                         dataSource={this.state.auto}
                         maxSearchResults={5}

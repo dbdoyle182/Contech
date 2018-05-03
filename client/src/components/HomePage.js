@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle } from 'material-ui/Card';
+import { Card } from 'material-ui/Card';
 import SearchBar from "./SearchBar/SearchBar";
 import Browse from "./Browse/Browse";
 import Quiz from "./Quiz/Quiz";
@@ -9,13 +9,18 @@ import "./HomePage.css";
 const HomePage = () => (
     
     <Card className='container'>
-        <CardTitle title="ConTech" subtitle="Putting tech into context." />
-        <SearchBar/>
-        <Browse/>
+    <div className="homepage">
+        <div className="main-header">
+            <h1 className="main-title">ConTECH</h1>
+            <h3 className="subtitle">Putting tech into context.</h3>
+            <SearchBar/>
+            <Browse/>
+        </div>
         <div className="flex-container">
             <Quiz/>
             <WordOfTheDay/>
         </div>
+    </div>
     </Card>
 );
 
