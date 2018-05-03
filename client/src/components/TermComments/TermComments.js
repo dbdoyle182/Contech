@@ -59,10 +59,11 @@ class TermComments extends Component {
         return (
             <div className="termComments">
                 {(this.props.comments).map(comment => {
+                    console.log(comment.body.split('\n').join('<br>'))
                     return (
                     <div key={comment._id}>
                         <div>{comment.authorName}</div>
-                        <div>{comment.body}</div>
+                        <div style={{ whiteSpace:'pre-wrap', textAlign: 'left'}} >{comment.body}</div>
                     </div>
                     )
                 })}
@@ -70,7 +71,8 @@ class TermComments extends Component {
                 {Auth.isUserAuthenticated() &&
                     <div>
                         <form onSubmit={this.onSubmit.bind(this)} >
-                            <input name='comment' type='text' value={this.state.title} onChange={this.handleChange.bind(this)} />
+                            <textarea name='comment' type='text' value={this.state.title} onChange={this.handleChange.bind(this)} />
+                            <button type='submit'>Submit</button>
                         </form>
                     </div>
                 }
