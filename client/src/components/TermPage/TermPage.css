@@ -1,28 +1,46 @@
-body {
-    background-color: #f0f0f0;
+.entire-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-@media only screen and (min-width: 700px)  {
+.row-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
 
-    .TermPage-flex-container {
-        display: flex;
-        flex-direction: row;
-    }
-    .row {
+.float-left {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.float-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 700px)  {
+    .row-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        width: 90%;
     }
-    .TermPage-LeftSection {
-        max-width: 400px;
+    .float-left {
+        display: flex;
         flex-direction: row;
-        width: 60%;
+        width: 70%;
     }
-    .TermPage-RightSection {
-        max-width: 200px;
+    .float-right {
         display: flex;
         flex-direction: column;
-        width: 20%;
+        justify-content: flex-end;
+        width: 30%;
     }
-  
 }
