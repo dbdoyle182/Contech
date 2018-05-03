@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, TextField, RaisedButton, MenuItem, SelectField, Checkbox } from 'material-ui'
+import { Card, TextField, RaisedButton, MenuItem, RadioButton, RadioButtonGroup} from 'material-ui'
 
 const filtertags = ['Git','Framework','Library','Language','Data','Software','World Wide Web', 'Language Feature', 'Miscellaneous','Frontend','Backend'];
 
@@ -24,7 +24,6 @@ class TermFormPage extends Component {
         this.processForm = this.processForm.bind(this);
         this.changeWord = this.changeWord.bind(this);
         this.selectItems = this.selectItems.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
     
 
@@ -47,19 +46,12 @@ class TermFormPage extends Component {
 
     selectItems() {
         return filtertags.map(tag => (
-            <MenuItem
+            <RadioButton
                 key={filtertags.indexOf(tag)}
-                value={this.state.tags1}
-                primaryText={tag}
-                name='tags1'
+                value={tag}
+                label={tag}
             />
         ));
-    }
-
-    handleChange = (event, index, value) => {
-        console.log(index)
-        console.log(value)
-        this.setState({value})
     }
 
     render() {
@@ -109,19 +101,18 @@ class TermFormPage extends Component {
                 </div>
 
                 <div className='field-line'>
-                    <SelectField
-                        floatingLabelText='Category Tag'
-                        value={this.state.tags1}
-                        onChange={this.handleChange}
-                        name='tags1'
-                    >
-                    {this.selectItems()}
-                    </SelectField>
+                    <h4>First Category</h4>
+                    <RadioButtonGroup name='tags1' value={this.state.tags1} onChange={this.changeWord}>
+                        {this.selectItems()}
+                    </RadioButtonGroup>
                 </div>
 
-                <div className='field-line'>
-                    
-                </div>
+                {this.state.tags1 !== '' && <div className='field-line'>
+                    <h4>Second Category</h4>
+                    <RadioButtonGroup name='tags2' value={this.state.tags2} onChange={this.changeWord}>
+                        {this.selectItems()}
+                    </RadioButtonGroup>
+                </div>}
 
                 <div className='field-line'>
                 </div>
