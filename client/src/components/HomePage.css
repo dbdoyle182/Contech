@@ -1,11 +1,49 @@
+.homepage {
+    font-family: 'Lora', serif;
+    background: #cccccc;
+    padding: 0 0 20px 0;
+}
+
+.main-header {
+    background: linear-gradient(57deg, #77c9d4, #57bc90);
+    padding: 0 0 90px 0;
+    -webkit-clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
+    clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
+}
+
+.main-title {
+    text-align: center;
+    padding: 70px 0 5px 0;
+    font-size: 4.5em;
+    margin: 0;
+    color: #fff;
+    text-shadow: 1px 2px #616060;
+}
+
+.subtitle {
+    text-align: center;
+    font-style: italic;
+    color: white;
+    font-size: 1.1em;
+}
 
 @media only screen and (min-width: 1020px)  {
 
     .flex-container {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    .main-title {
+        padding: 110px 0 5px 0;
+        font-size: 5.5em;
+    }
+
+    .subtitle {
+        margin: 10px 0 0 0;
+        font-size: 1.2em;
     }
   
 }
