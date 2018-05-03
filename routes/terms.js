@@ -61,7 +61,21 @@ router.get("/filterBy/:filter", (req, res) => {
     });
 });
 
-//Get Route for term-of-the-day
+//Get Route for letter and filter search
+
+router.get('/browseBy/:filter/:letter', (req, res) => {
+  const filter = req.params.filter
+  const letter = req.params.letter
+  db.Term.find({
+    word: new RegExp('^'+letter, "i")
+  }).or([{'tags1':filter}, {'tags2':filter}])
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.json(err);
+    })
+})
 
 //Post Route for user adding a new term
 router.post("/newTerm", (req, res) => {

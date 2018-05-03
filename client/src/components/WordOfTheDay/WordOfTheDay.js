@@ -16,7 +16,7 @@ constructor(props, context) {
             .then(res => {
                 const number = Math.floor(Math.random() * res.data.length)
                 this.setState({ word: res.data[number]})
-                console.log(this.state.word)
+                
             })
             .catch(err => console.log(err));
     }
