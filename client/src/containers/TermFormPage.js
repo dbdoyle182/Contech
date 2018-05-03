@@ -77,10 +77,23 @@ class TermFormPage extends Component {
 
     processForm(event) {
         event.preventDefault();
-        
-
-        console.log(this.state)
+        axios.post('/newTerm', ({
+            word: this.state.word,
+            summary: this.state.summary,
+            definition: this.state.definition,
+            tags1: this.state.tags1,
+            tags2: this.state.tags2,
+            related1: this.state.related1,
+            related2: this.state.related2
+        }))
+            .then(
+                console.log('New term has been posted')
+            )
+            .catch(err => {
+                console.log(err)
+            })
     }
+    
 
     selectItems() {
         return filtertags.map(tag => (
@@ -93,7 +106,6 @@ class TermFormPage extends Component {
     }
 
     selectFilter1() {
-        console.log(this.state.filter1)
         return this.state.filter1.map(tag => (
             <RadioButton
                 key={this.state.filter1.indexOf(tag)}
