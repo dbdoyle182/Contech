@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card, TextField, RaisedButton, MenuItem, SelectField } from 'material-ui'
+import { Card, TextField, RaisedButton, MenuItem, RadioButton, RadioButtonGroup} from 'material-ui';
+import axios from 'axios';
 
 const filtertags = ['Git','Framework','Library','Language','Data','Software','World Wide Web', 'Language Feature', 'Miscellaneous','Frontend','Backend'];
 
@@ -11,38 +12,65 @@ class TermFormPage extends Component {
 
         this.state = {
             errors: {},
-            word: {
-                word: '',
-                summary: '',
-                definition: '',
-                tags: []
-            }
+            word: '',
+            summary: '',
+            definition: '',
+            tags1: '',
+            tags2: '',
+            related1:'',
+            related2: '',
+            filter1: '',
+            filter2: ''
         };
 
 
         this.processForm = this.processForm.bind(this);
         this.changeWord = this.changeWord.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.menuItems = this.menuItems.bind(this);
+        this.selectItems = this.selectItems.bind(this);
+        this.selectFilter1 = this.selectFilter1.bind(this);
+        this.selectFilter2 = this.selectFilter2.bind(this);
     }
     
 
     changeWord(event) {
-        const field = event.target.name;
-        const word = this.state.word;
-        word[field] = event.target.value;
-
-
+        const { name, value } = event.target;
+        
         this.setState({
-            word
-        })
-    }
+            [name]: value
+        });
 
-    handleChange(event, index, values) {
-
-        this.setState({
-            tag: values
-        })
+        if(name === 'tags1') {
+            axios.get('/filterBy/' + value)
+                .then(res => {
+                    const filters = res.data;
+                    const filterArray = [];
+                    filters.map(filter => {
+                        filterArray.push(filter.word)
+                    })
+                    this.setState({
+                        filter1: filterArray
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
+        if(name === 'tags2') {
+            axios.get('/filterBy/' + value)
+                .then(res => {
+                    const filters = res.data;
+                    const filterArray = [];
+                    filters.map(filter => {
+                        filterArray.push(filter.word)
+                    })
+                    this.setState({
+                        filter2: filterArray
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
     }
 
 
@@ -51,23 +79,42 @@ class TermFormPage extends Component {
         event.preventDefault();
         
 
-        console.log(this.state.word)
+        console.log(this.state)
     }
 
-    menuItems(values) {
-        return filtertags.map((tag) => (
-            <MenuItem
-                key={tag}
-                insetChildren={true}
-                checked={values && values.indexOf(tag) > -1}
+    selectItems() {
+        return filtertags.map(tag => (
+            <RadioButton
+                key={filtertags.indexOf(tag)}
                 value={tag}
-                primaryText={tag}
+                label={tag}
+            />
+        ));
+    }
+
+    selectFilter1() {
+        console.log(this.state.filter1)
+        return this.state.filter1.map(tag => (
+            <RadioButton
+                key={this.state.filter1.indexOf(tag)}
+                value={tag}
+                label={tag}
+            />
+        ));
+    }
+
+    selectFilter2() {
+        return this.state.filter2.map(tag => (
+            <RadioButton
+                key={this.state.filter2.indexOf(tag)}
+                value={tag}
+                label={tag}
             />
         ));
     }
 
     render() {
-        const {tags} = this.state.word.tags
+        
         return (
             
             <Card className='container'>
@@ -113,28 +160,43 @@ class TermFormPage extends Component {
                 </div>
 
                 <div className='field-line'>
-                    <SelectField
-                        multiple={true}
-                        hintText='Select tags'
-                        value={tags}
-                        onChange={this.handleChange}
-                    >
-                        {this.menuItems(tags)}
-                    </SelectField>
+                    <h4>First Category</h4>
+                    <RadioButtonGroup name='tags1' value={this.state.tags1} onChange={this.changeWord}>
+                        {this.selectItems()}
+                    </RadioButtonGroup>
+                    <br />
                 </div>
 
-            <div className='field-line'>
+                {this.state.tags1 !== '' && <div className='field-line'>
+                    <h4>Second Category</h4>
+                    <RadioButtonGroup name='tags2' value={this.state.tags2} onChange={this.changeWord}>
+                        {this.selectItems()}
+                    </RadioButtonGroup>
+                    <br />
+                </div>}
+
                 
-            </div>
+                {this.state.filter1 !== '' && <div className='field-line'>
+                    <h4>First Related Term</h4>
+                    <RadioButtonGroup name='related1' value={this.state.related1} onChange={this.changeWord}>
+                        {this.selectFilter1()}
+                    </RadioButtonGroup>
+                    <br />
+                </div>}
 
-            <div className='field-line'>
-            </div>
+                {this.state.filter2 !== '' && this.state.related1 !== '' && <div className='field-line'>
+                    <h4>Second Related Term</h4>
+                    <RadioButtonGroup name='related2' value={this.state.related2} onChange={this.changeWord}>
+                        {this.selectFilter2()}
+                    </RadioButtonGroup>
+                    <br />
+                </div>}
 
-            <div className='button-line'>
-                <RaisedButton type='submit' label='Add this term' primary/>
-            </div>
-        </form>
-    </Card>
+                <div className='button-line'>
+                    <RaisedButton type='submit' label='Add this term' primary/>
+                </div>
+            </form>
+        </Card>
         )
     }
 }

@@ -2,8 +2,13 @@ import React from "react";
 import "./SearchBar.css";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import LoginPage from '../../containers/LoginPage';
 import AutoComplete from 'material-ui/AutoComplete';
+
+const searchStyles = {
+    fontSize: '25px',
+    padding: '15px 0 10px 0',
+    transition: 'all .3s ease-in-out'
+};
 
 class SearchBar extends React.Component {
     constructor(props, context) {
@@ -28,7 +33,7 @@ class SearchBar extends React.Component {
                 this.setState({ 
                     auto: newWords 
                 })
-                console.log(this.state.auto)
+                
             })
             .catch(err => console.log(err));
             
@@ -49,17 +54,17 @@ class SearchBar extends React.Component {
             .then(res => {
 
                 if (res.data.length > 1) {
-                    console.log('More than 1 response') 
+                    
                     this.setState({ 
                         results: res.data,
                         resultsNum: res.data.length
                     })
                 } else if (res.data.length === 1) {
-                    console.log('One response')
-                    window.location.replace(`/term/${res.data[0].word}`)
+                    
+                    window.location.replace(`/search/${res.data[0].word}`)
                     // Redirect to the page with res.data.word
                 } else {
-                    console.log('There were no responses')
+                    
                     this.setState({ 
                         results: res.data,
                         resultsNum: res.data.length
@@ -72,11 +77,14 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-        <div className='container'>
+        <div className=''>
             <div className="search">
                 <form onSubmit={this.handleFormSubmit}>
                     <AutoComplete
-                        floatingLabelText="Search here....."
+                        hintText="Search for a Term..."
+                        hintStyle={{margin: '10px 0 10px 10px'}}
+                        textFieldStyle={searchStyles}
+                        underlineShow={false}
                         filter={AutoComplete.fuzzyFilter}
                         dataSource={this.state.auto}
                         maxSearchResults={5}

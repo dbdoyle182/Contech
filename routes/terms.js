@@ -22,7 +22,7 @@ router.get("/search/:input", (req, res) => {
   const input = req.params.input;
   db.Term.find({
     word: new RegExp('^'+input+'$', "i")
-  })
+  }).populate('comments').populate('users')
     .then(data => {
       res.json(data);
     })
@@ -48,13 +48,11 @@ router.get("/searchBy/:letter", (req, res) => {
 });
 
 //Get Route for term by filter search
-router.get("/search/:filter", (req, res) => {
+router.get("/filterBy/:filter", (req, res) => {
   console.log(req.query);
   console.log(req.params.filter);
   const filter = req.params.filter;
-  db.Term.find({
-    tags: filter
-  })
+  db.Term.find().or([{'tags1':filter}, {'tags2':filter}])
     .then(data => {
       res.json(data);
     })
