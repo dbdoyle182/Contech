@@ -1,0 +1,46 @@
+.entire-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.float-left {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.float-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 700px)  {
+    .row-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+    }
+    .float-left {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+    }
+    .float-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 30%;
+    }
+}

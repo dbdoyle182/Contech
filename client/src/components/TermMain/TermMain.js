@@ -4,7 +4,7 @@ import "./TermMain.css";
 const TermMain = () => (
     <div className="termMain">
             <h2>Term</h2>
-            <p>short definition placeholder. It won't be too long</p>
+            <p>Def: short definition placeholder. It won't be too long</p>
     </div>
 );
 

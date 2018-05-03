@@ -1,22 +1,38 @@
 .termComments {
-    background: #c5c5c5;
-    padding: 100px 20px;
-    text-align: center;
+    background: #fff;
     margin: 15px;
-    box-shadow: 0px 3px 9px #737373;
-    width: 90%
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    width: 100%;
 }
 
+.termComments h3 {
+    background-color: #015249;
+    color: white;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    text-align: center;
+
+}
+
+
+.termComments button {
+    text-align: center;
+}
+
+.termComments .commentContainer {
+    margin: 15px;
+    text-align: left;
+
+}
 .termComments:hover {
-    box-shadow: -12px 13px 16px #5d5d5d;
     transition: all .3s ease-out;
     transform: scale(1.02);
 }
 
-@media only screen and (min-width: 1020px)  {
+@media only screen and (min-width: 700px)  {
 
     .termComments {
-      box-shadow: -8px 8px 8px #7d7d7d;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     }
   
 }

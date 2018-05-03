@@ -3,7 +3,8 @@ import "./TermRelevant.css";
 
 const TermRelevant = props => (
     <div className="termRelevant">
-        RelTerm1 RelTerm2
+    <h4>Relevant</h4>
+        <span>RelTerm1</span> <span>RelTerm2</span>
     </div>
 );
 

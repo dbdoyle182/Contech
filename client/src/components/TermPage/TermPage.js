@@ -6,6 +6,7 @@ import TermRelevant from "../TermRelevant";
 import TermExtended from "../TermExtended";
 import TermComments from "../TermComments";
 import SearchBar from "../SearchBar";
+import "./TermPage.css";
 
 const TermPage = () => (
     
@@ -14,10 +15,10 @@ const TermPage = () => (
         <SearchBar/>
         <div className="TermPage-flex-container">
             <div className="row">
-                <div>
+                <div className="TermPage-leftSection">
                     <TermMain/>
                 </div>
-                <div className="TermPage-flex-container25">
+                <div className="TermPage-RightSection">
                     <TermTags/>
                     <TermRelevant/>
                 </div>

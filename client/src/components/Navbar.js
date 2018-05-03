@@ -45,6 +45,11 @@ const Navbar = () => (
           }>
                      <span className="nav-link">Add Term</span>
                 </Link>
+                <Link to='/testero' className={
+            window.location.pathname === "/" ? "nav-link active" : "nav-link"
+          }>
+                     <span className="nav-link">Testero</span>
+                </Link>
                 <Link to='/login' className={
             window.location.pathname === "/" ? "nav-link active" : "nav-link"
           }>

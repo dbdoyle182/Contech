@@ -3,9 +3,12 @@ import "./TermComments.css";
 
 const TermComments = props => (
     <div className="termComments">
-            <h4>User Comments</h4>
+            <h3>User Comments</h3>
             <button>Add a comment</button>
-            <p>Sample comment by a user</p>
+            <div className="commentContainer">
+                <p>Sample comment 1 by a user</p>
+                <p>Sample crazy comment 2 by a user</p>
+            </div>
     </div>
 );
 
