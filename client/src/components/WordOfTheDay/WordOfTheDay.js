@@ -26,7 +26,7 @@ constructor(props, context) {
     
         return (
     <div className="wordoftheday">
-        <h2 className="title">Word of the Day(?)</h2>
+        <h2 className="title">Word of the Moment</h2>
         <h1 className="word">{this.state.word.word}</h1>
         <p className="definition">{this.state.word.summary}</p>
     </div>)
