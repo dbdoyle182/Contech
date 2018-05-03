@@ -15,10 +15,10 @@ const TermSchema = new Schema({
     type: String,
     required: true
   },
-  tags1: {
+  tag1: {
     type: String
   },
-  tags2: {
+  tag2: {
     type: String
   },
   related1: {
