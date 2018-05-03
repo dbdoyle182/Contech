@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 import AutoComplete from 'material-ui/AutoComplete';
 
 const searchStyles = {
-    fontSize: '25px',
-    padding: '15px 0 10px 0',
-    transition: 'all .3s ease-in-out'
+    fontSize: '20px',
+    padding: '15px 0 10px 0'
 };
 
 class SearchBar extends React.Component {
@@ -79,7 +78,7 @@ class SearchBar extends React.Component {
         return (
         <div className=''>
             <div className="search">
-                <form onSubmit={this.handleFormSubmit}>
+                <form className='search-box' onSubmit={this.handleFormSubmit}>
                     <AutoComplete
                         hintText="Search for a Term..."
                         hintStyle={{margin: '10px 0 10px 10px'}}
@@ -87,9 +86,8 @@ class SearchBar extends React.Component {
                         underlineShow={false}
                         filter={AutoComplete.fuzzyFilter}
                         dataSource={this.state.auto}
-                        maxSearchResults={5}
+                  maxSearchResults={5}
                         onUpdateInput={this.handleChange}
-                        className='search-box'
                         fullWidth={true}
                         required
                     />

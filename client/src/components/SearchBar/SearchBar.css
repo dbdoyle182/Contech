@@ -2,16 +2,18 @@
     margin: 60px 20px;
     position: relative;
     background: #fff;
-}
-
-.search-box {
-    color: #414141;
     box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
     transition: all .3s ease-in-out;
 }
 
-.search-box:hover {
+.search:hover {
     box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
+}
+
+.search-box {
+    color: #414141;
+    transition: all .3s ease-in-out;
+    margin: 0 30px;
 }
 
 .search-btn {
