@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, TextField, RaisedButton, MenuItem, SelectField } from 'material-ui'
+import { Card, TextField, RaisedButton, MenuItem, SelectField, Checkbox } from 'material-ui'
 
 const filtertags = ['Git','Framework','Library','Language','Data','Software','World Wide Web', 'Language Feature', 'Miscellaneous','Frontend','Backend'];
 
@@ -11,38 +11,29 @@ class TermFormPage extends Component {
 
         this.state = {
             errors: {},
-            word: {
-                word: '',
-                summary: '',
-                definition: '',
-                tags: []
-            }
+            word: '',
+            summary: '',
+            definition: '',
+            tags1: '',
+            tags2: '',
+            related1:'',
+            related2: ''
         };
 
 
         this.processForm = this.processForm.bind(this);
         this.changeWord = this.changeWord.bind(this);
+        this.selectItems = this.selectItems.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.menuItems = this.menuItems.bind(this);
     }
     
 
     changeWord(event) {
-        const field = event.target.name;
-        const word = this.state.word;
-        word[field] = event.target.value;
-
-
+        const { name, value } = event.target;
+        
         this.setState({
-            word
-        })
-    }
-
-    handleChange(event, index, values) {
-
-        this.setState({
-            tag: values
-        })
+            [name]: value
+        });
     }
 
 
@@ -51,23 +42,28 @@ class TermFormPage extends Component {
         event.preventDefault();
         
 
-        console.log(this.state.word)
+        console.log(this.state)
     }
 
-    menuItems(values) {
-        return filtertags.map((tag) => (
+    selectItems() {
+        return filtertags.map(tag => (
             <MenuItem
-                key={tag}
-                insetChildren={true}
-                checked={values && values.indexOf(tag) > -1}
-                value={tag}
+                key={filtertags.indexOf(tag)}
+                value={this.state.tags1}
                 primaryText={tag}
+                name='tags1'
             />
         ));
     }
 
+    handleChange = (event, index, value) => {
+        console.log(index)
+        console.log(value)
+        this.setState({value})
+    }
+
     render() {
-        const {tags} = this.state.word.tags
+        
         return (
             
             <Card className='container'>
@@ -114,27 +110,27 @@ class TermFormPage extends Component {
 
                 <div className='field-line'>
                     <SelectField
-                        multiple={true}
-                        hintText='Select tags'
-                        value={tags}
+                        floatingLabelText='Category Tag'
+                        value={this.state.tags1}
                         onChange={this.handleChange}
+                        name='tags1'
                     >
-                        {this.menuItems(tags)}
+                    {this.selectItems()}
                     </SelectField>
                 </div>
 
-            <div className='field-line'>
-                
-            </div>
+                <div className='field-line'>
+                    
+                </div>
 
-            <div className='field-line'>
-            </div>
+                <div className='field-line'>
+                </div>
 
-            <div className='button-line'>
-                <RaisedButton type='submit' label='Add this term' primary/>
-            </div>
-        </form>
-    </Card>
+                <div className='button-line'>
+                    <RaisedButton type='submit' label='Add this term' primary/>
+                </div>
+            </form>
+        </Card>
         )
     }
 }
