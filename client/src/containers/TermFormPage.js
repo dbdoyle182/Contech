@@ -87,7 +87,7 @@ class TermFormPage extends Component {
             related2: this.state.related2
         }))
             .then(
-                console.log('New term has been posted')
+                window.location.replace('/')
             )
             .catch(err => {
                 console.log(err)
