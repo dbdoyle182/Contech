@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import "./TermTags.css";
 
-const TermTags = props => (
+class TermTags extends React.Component {  
+    render() {
+        return(
     <div className="termTags">
-        <h4>Tags</h4>
-        {props.tags1 && <button>{props.tags1}</button>}
-        {props.tags2 && <button>{props.tags2}</button>}
-    </div>
-);
+        {this.props.tags1 && <div>{this.props.tags1}</div>}
+        {this.props.tags2 && <div>{this.props.tags2}</div>}
+    </div>)}
+};
 
 export default TermTags;
