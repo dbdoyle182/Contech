@@ -5,7 +5,6 @@ import AceEditor from "react-ace";
 
 import "brace/mode/jsx";
 import "brace/mode/javascript";
-import "brace/theme/monokai";
 import "brace/ext/language_tools";
 import "brace/ext/searchbox";
 
