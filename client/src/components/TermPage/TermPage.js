@@ -58,13 +58,8 @@ class TermPage extends Component {
                     <div className="float-left">
                         <TermMain word={this.state.word.word} summary={this.state.word.summary}/>
                     </div>
-<<<<<<< HEAD
                     <div className="float-right">
-                        <TermTags tags1={this.state.word.tags1} tags2={this.state.word.tags2}/>
-=======
-                    <div className="TermPage-flex-container25">
                         <TermTags tags1={this.state.word.tags1} tags2={this.state.word.tags2} filterHandler={this.filterHandler}/>
->>>>>>> 92ac0a1d41aa7a621821c661be658ab02bfff27f
                         <TermRelevant relevant1={this.state.word.related1} relevant2={this.state.word.related2} />
                     </div>
                 </div>

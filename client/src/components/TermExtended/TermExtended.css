@@ -7,10 +7,11 @@
 }
 
 .termExtended h3 {
-    background-color: #015249;
-    color: white;
+    background: linear-gradient(57deg, #77c9d4, #57bc90);
+    color: #015249;
     font-size: 1.7rem;
-    line-height: 1.5;
+    font-weight: 600;
+    line-height: 1.8;
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -23,7 +24,7 @@
 
 .termExtended:hover {
     transition: all .3s ease-out;
-    transform: scale(1.02);
+    box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
 }
 
 @media only screen and (min-width: 700px)  {

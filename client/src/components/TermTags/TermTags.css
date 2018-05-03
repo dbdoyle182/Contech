@@ -4,25 +4,47 @@
     text-align: center;
     width: 100%;
 }
+
 .termTags h4 {
     font-size: 1.5rem;
     line-height: 1.8rem;
-    padding-bottom: 7px;
+    padding-bottom: 20px;
 }
 
-.termTags button {
+.termTags span {
     font-size: 1rem;
-    background-color: #57BC90;
-    border: 1px solid #57BC90;
+    background-color: #015249;
+    border: 1px solid #015249;
     padding: 8px;
     margin: 5px;
-    text-decoration: none;
+    color: white;
 }
+/* Teal #77C9D4 */
+/* Green #57BC90 */
 
 @media only screen and (min-width: 700px)  {
 
     .termTags {
+        text-align: center;
+    }
+    .termTags span {
+        margin-left: 0px;
+        display: block;
+    }
+  
+}
+
+@media only screen and (min-width: 830px)  {
+
+    .termTags {
         text-align: left;
+    }
+    .termTags span {
+        margin-left: 5px;
+        display: inline;
+    }
+    .termTags span:nth-of-type(1) {
+        margin-left: 0px;
     }
   
 }

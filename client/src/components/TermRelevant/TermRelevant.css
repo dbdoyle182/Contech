@@ -1,25 +1,56 @@
 .termRelevant {
     padding: 10px 10px;
-    text-align: center;
     margin: 15px;
+    text-align: center;
     width: 100%;
 }
 .termRelevant h4 {
     font-size: 1.5rem;
     line-height: 1.8rem;
-    padding-bottom: 12px;
+    padding-bottom: 5px;
 }
 
 .termRelevant button {
     font-size: 1rem;
-    background-color: #77C9D4;
+    background-color: #015249;
+    border: 1px solid #015249;
     padding: 8px;
+    margin: 5px;
+}    
+
+.relevantLink {
+    text-decoration: none;
+    color: white;
 }
+
+/* Teal #77C9D4 */
+/* Green #57BC90 */
 
 @media only screen and (min-width: 700px)  {
 
     .termRelevant {
+        text-align: center;
+    }
+
+    .termRelevant button {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 830px)  {
+
+    .termRelevant {
         text-align: left;
+    }
+
+    .termRelevant button {
+        margin-left: 5px;
+        width: auto;
+    }
+    
+    .termRelevant button:nth-of-type(1) {
+        margin-left: 0px;
     }
   
 }
