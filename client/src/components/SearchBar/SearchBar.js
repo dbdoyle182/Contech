@@ -2,7 +2,6 @@ import React from "react";
 import "./SearchBar.css";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import LoginPage from '../../containers/LoginPage';
 import AutoComplete from 'material-ui/AutoComplete';
 
 const searchStyles = {

@@ -22,6 +22,11 @@ const Navbar = () => (
           }>
                     <span className="nav-link">Home</span>
                 </Link>
+                <Link to='/addterm' className={
+                    window.location.pathname === "/" ? "nav-link active" : "nav-link"
+                  }>
+                    <span className="nav-link">Add Term</span>
+                </Link>
                 <Link to='/logout' className={
             window.location.pathname === "/" ? "nav-link active" : "nav-link"
           }>
@@ -34,16 +39,6 @@ const Navbar = () => (
             window.location.pathname === "/" ? "nav-link active" : "nav-link"
           }>
                     <span className="nav-link">Home</span>
-                </Link>
-                <Link to='/term' className={
-            window.location.pathname === "/" ? "nav-link active" : "nav-link"
-          }>
-                    <span className="nav-link">TermTest</span>
-                </Link>
-                <Link to='/addterm' className={
-            window.location.pathname === "/" ? "nav-link active" : "nav-link"
-          }>
-                     <span className="nav-link">Add Term</span>
                 </Link>
                 <Link to='/login' className={
             window.location.pathname === "/" ? "nav-link active" : "nav-link"
