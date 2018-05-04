@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const browseStyles = {
     fontSize: '1.45em',
-    color: '#548f97'
+    color: 'white'
 };
 
 const browseItems = ['Library','Data', 'Server', 'Backend','Language','Framework','Language Feature','World Wide Web','Software','Frontend','Git','Miscellaneous',
@@ -47,6 +47,8 @@ class TagMenu extends Component {
         <SelectField
             value={this.state.value}
             onChange={this.handleChange}
+            underlineShow={false}
+            selectedMenuItemStyle={{color: '#489b77'}}
             floatingLabelText="By Tag"
             floatingLabelStyle={browseStyles}
         >
@@ -108,6 +110,8 @@ class LetterMenu extends Component {
             value={this.state.value}
             onChange={this.handleChange}
             maxHeight={200}
+            underlineShow={false}
+            selectedMenuItemStyle={{color: '#489b77'}}
             floatingLabelText="By Letter"
             floatingLabelStyle={browseStyles}
         >
@@ -193,8 +197,8 @@ render() {return (
         <h2 className="title">Browse Terms</h2>
         <div className="holder">
             <div className="stack">
-                <TagMenu className="menu" callback={this.childFilter}/>
-                <LetterMenu className="menu" callback={this.childLetter}/>
+                <div className="menu"><TagMenu callback={this.childFilter}/></div>
+                <div className="menu"><LetterMenu callback={this.childLetter}/></div>
             </div>
             <div>
                 <button className="browse-button" onClick={this.browsingData}>Browse</button>
