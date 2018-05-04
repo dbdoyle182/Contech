@@ -1,41 +1,82 @@
 .browse {
     margin: 60px 20px;
-    padding: 10px 20px 30px 20px;
+    padding: 0 0 20px 0;
     position: relative;
     background: #fff;
     box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
     transition: all .3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
-.browse-by {
-    color: #696969;
-    text-shadow: -1px 1px #d2d2d2;
-    font-size: 1.25em;
-    margin: 20px 0 0 0;
+.browse .title {
+    background: #ccc;
+    margin: 0 0 10px 0;
+    padding: 20px;
+    color: white;
+    font-size: 1.45em;
+    letter-spacing: .25px;
+    text-shadow: 0px 1px 3px #4a4a4a;
+    text-align: left;
 }
 
 .stack {
     display: flex;
     flex-direction: column;
+    margin: 0 20px 10px 20px;
+    align-items: center;
+    text-align: left;
 }
 
 .browse:hover {
     box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
 }
 
+.browse-button {
+    background: #77c9d4;
+    color: white;
+    padding: 15px 20px;
+    margin: 20px 0;
+    letter-spacing: 1px;
+    font-size: 1em;
+    font-family: 'Lora', serif;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px #a0a0a0;
+    transition: all .2s ease-in-out;
+    border: none;
+}
+
+.browse-button:hover {
+    background: #548f97;
+    box-shadow: 0px 1px 5px #a0a0a0;
+}
+
 @media only screen and (min-width: 1020px)  {
 
     .browse {
-        margin: 60px 60px;
-        flex-direction: row;
+        margin: 60px 80px;
     }
 
-    .browse-by {
-        margin: 30px 50px 0 50px;
+    .stack {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .browse .title {
+        font-size: 1.85em;
+    }
+
+    .browse button {
+        font-size: 1.15em;
+        margin: 0;
+    }
+
+    .holder {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: 1% 5% 1% 5%;
     }
   
 }

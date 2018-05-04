@@ -6,9 +6,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const browseStyles = {
-    fontSize: '1.25em',
-    color: '#57bc90',
-    fontWeight: 'bold'
+    fontSize: '1.45em',
+    color: '#548f97'
 };
 
 const browseItems = ['Library','Data', 'Server', 'Backend','Language','Framework','Language Feature','World Wide Web','Software','Frontend','Git','Miscellaneous',
@@ -48,7 +47,7 @@ class TagMenu extends Component {
         <SelectField
             value={this.state.value}
             onChange={this.handleChange}
-            floatingLabelText="Tag"
+            floatingLabelText="By Tag"
             floatingLabelStyle={browseStyles}
         >
             {tags}
@@ -109,7 +108,7 @@ class LetterMenu extends Component {
             value={this.state.value}
             onChange={this.handleChange}
             maxHeight={200}
-            floatingLabelText="Letter"
+            floatingLabelText="By Letter"
             floatingLabelStyle={browseStyles}
         >
             {letters}
@@ -191,15 +190,15 @@ browsingData () {
     
 render() {return (
     <div className="browse">
-
-        <div className="browse-by">
-            <h2>Browse Terms by: </h2>
-        </div>
-        <div className="stack">
-            <TagMenu className="menu" callback={this.childFilter}/>
-            <LetterMenu className="menu" callback={this.childLetter}/>
-            <br /> <br />
-            <button onClick={this.browsingData}>Browse</button>
+        <h2 className="title">Browse Terms</h2>
+        <div className="holder">
+            <div className="stack">
+                <TagMenu className="menu" callback={this.childFilter}/>
+                <LetterMenu className="menu" callback={this.childLetter}/>
+            </div>
+            <div>
+                <button className="browse-button" onClick={this.browsingData}>Browse</button>
+            </div>
         </div>
         <div>
             {this.state.results && this.state.results.map(result => {
