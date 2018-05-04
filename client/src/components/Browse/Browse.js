@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const browseStyles = {
-    fontSize: '1.45em',
+    fontSize: '1.05em',
     color: 'white'
 };
 
@@ -14,7 +14,6 @@ const browseItems = ['Library','Data', 'Server', 'Backend','Language','Framework
 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 const tags = [
-    <MenuItem key ={101} value={null} primaryText="" />,
     <MenuItem key={1} value={0} primaryText="Library" />,
     <MenuItem key={2} value={1} primaryText="Data" />,
     <MenuItem key={3} value={2} primaryText="Server" />,
@@ -49,8 +48,8 @@ class TagMenu extends Component {
             onChange={this.handleChange}
             underlineShow={false}
             selectedMenuItemStyle={{color: '#489b77'}}
-            floatingLabelText="By Tag"
-            floatingLabelStyle={browseStyles}
+            hintText="By Tag"
+            hintStyle={browseStyles}
         >
             {tags}
         </SelectField>
@@ -63,7 +62,6 @@ class TagMenu extends Component {
 }
 
 const letters = [
-    <MenuItem key={100} value={null} primaryText="" />,
     <MenuItem key={13} value={12} primaryText="A" />,
     <MenuItem key={14} value={13} primaryText="B" />,
     <MenuItem key={15} value={14} primaryText="C" />,
@@ -112,8 +110,8 @@ class LetterMenu extends Component {
             maxHeight={200}
             underlineShow={false}
             selectedMenuItemStyle={{color: '#489b77'}}
-            floatingLabelText="By Letter"
-            floatingLabelStyle={browseStyles}
+            hintText="By Letter"
+            hintStyle={browseStyles}
         >
             {letters}
         </SelectField>
