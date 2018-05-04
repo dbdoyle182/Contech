@@ -15,7 +15,7 @@ const browseItems = ['Library','Data', 'Server', 'Backend','Language','Framework
 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 const tags = [
-    <MenuItem value={null} primaryText="" />,
+    <MenuItem key ={101} value={null} primaryText="" />,
     <MenuItem key={1} value={0} primaryText="Library" />,
     <MenuItem key={2} value={1} primaryText="Data" />,
     <MenuItem key={3} value={2} primaryText="Server" />,
@@ -62,7 +62,7 @@ class TagMenu extends Component {
 }
 
 const letters = [
-    <MenuItem value={null} primaryText="" />,
+    <MenuItem key={100} value={null} primaryText="" />,
     <MenuItem key={13} value={12} primaryText="A" />,
     <MenuItem key={14} value={13} primaryText="B" />,
     <MenuItem key={15} value={14} primaryText="C" />,
@@ -203,7 +203,7 @@ render() {return (
         </div>
         <div>
             {this.state.results && this.state.results.map(result => {
-                return (<div><Link to={'/search/' + result.word}>{result.word}</Link></div>)
+                return (<div key={result._id}><Link to={'/search/' + result.word}>{result.word}</Link></div>)
             })}
         </div>
         
