@@ -6,9 +6,9 @@
 
 .main-header {
     background: linear-gradient(57deg, #77c9d4, #57bc90);
-    padding: 0 0 90px 0;
-    -webkit-clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
-    clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
+    padding: 0 0 20px 0;
+    /* -webkit-clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
+    clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%); */
 }
 
 .main-title {
@@ -36,6 +36,11 @@
 }
 
 @media only screen and (min-width: 1020px)  {
+
+    .main-header {
+        padding: 0 0 70px 0;
+        margin: 0 0 20px 0;
+    }
 
     .flex-container {
         display: flex;
