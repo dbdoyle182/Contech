@@ -25,10 +25,9 @@ class WordOfTheDay extends Component {
     render() {
     
         return (
-<<<<<<< HEAD
             <div className="wordoftheday">
                 <h2 className="title">Featured Term</h2>
-                <h1 className="word">AJAX</h1>
+                <h1 className="word">Bootstrap</h1>
                 {/* {this.state.word.word} */}
                 <p className="definition">A web development technique for creating interactive web applications.</p>
                 {/* {this.state.word.summary} */}
@@ -38,15 +37,5 @@ class WordOfTheDay extends Component {
         )
     }
 };
-=======
-    <div className="wordoftheday">
-        <h2 className="title">Word of the Moment</h2>
-        <h1 className="word">{this.state.word.word}</h1>
-        <p className="definition">{this.state.word.summary}</p>
-      </div>
-    );
-  }
-}
->>>>>>> 208a651abc4a56b3165e36022e9d78960f348e0a
 
 export default WordOfTheDay;
