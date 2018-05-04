@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, TextField, RaisedButton, MenuItem, RadioButton, RadioButtonGroup} from 'material-ui';
+import { Card, TextField, RaisedButton, RadioButton, RadioButtonGroup} from 'material-ui';
 import axios from 'axios';
 
 const filtertags = ['Git','Framework','Library','Language','Data','Software','World Wide Web', 'Language Feature', 'Miscellaneous','Frontend','Backend'];
@@ -44,9 +44,7 @@ class TermFormPage extends Component {
                 .then(res => {
                     const filters = res.data;
                     const filterArray = [];
-                    filters.map(filter => {
-                        filterArray.push(filter.word)
-                    })
+                    filters.map(filter => filterArray.push(filter.word))
                     this.setState({
                         filter1: filterArray
                     })
@@ -60,9 +58,7 @@ class TermFormPage extends Component {
                 .then(res => {
                     const filters = res.data;
                     const filterArray = [];
-                    filters.map(filter => {
-                        filterArray.push(filter.word)
-                    })
+                    filters.map(filter => filterArray.push(filter.word))
                     this.setState({
                         filter2: filterArray
                     })
@@ -77,10 +73,23 @@ class TermFormPage extends Component {
 
     processForm(event) {
         event.preventDefault();
-        
-
-        console.log(this.state)
+        axios.post('/newTerm', ({
+            word: this.state.word,
+            summary: this.state.summary,
+            definition: this.state.definition,
+            tags1: this.state.tags1,
+            tags2: this.state.tags2,
+            related1: this.state.related1,
+            related2: this.state.related2
+        }))
+            .then(
+                window.location.replace('/')
+            )
+            .catch(err => {
+                console.log(err)
+            })
     }
+    
 
     selectItems() {
         return filtertags.map(tag => (
@@ -93,7 +102,6 @@ class TermFormPage extends Component {
     }
 
     selectFilter1() {
-        console.log(this.state.filter1)
         return this.state.filter1.map(tag => (
             <RadioButton
                 key={this.state.filter1.indexOf(tag)}
