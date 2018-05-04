@@ -22,7 +22,7 @@ class Quiz extends Component {
                     quiz: res.data[0]
                  })
                 
-                console.log(this.state.quiz.question)
+                
             })
             .catch(err =>{
                 console.log(err)
@@ -39,7 +39,7 @@ class Quiz extends Component {
             clicked: true
         })
 
-        console.log(this.state.correct)
+        
     }
     
     render() {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Card, TextField, RaisedButton, MenuItem, RadioButton, RadioButtonGroup} from 'material-ui';
+import { Card, TextField, RaisedButton, RadioButton, RadioButtonGroup} from 'material-ui';
 import axios from 'axios';
+import Auth from '../utils/Auth';
+import { Link } from 'react-router-dom';
 
 const filtertags = ['Git','Framework','Library','Language','Data','Software','World Wide Web', 'Language Feature', 'Miscellaneous','Frontend','Backend'];
 
@@ -44,9 +46,7 @@ class TermFormPage extends Component {
                 .then(res => {
                     const filters = res.data;
                     const filterArray = [];
-                    filters.map(filter => {
-                        filterArray.push(filter.word)
-                    })
+                    filters.map(filter => filterArray.push(filter.word))
                     this.setState({
                         filter1: filterArray
                     })
@@ -60,9 +60,7 @@ class TermFormPage extends Component {
                 .then(res => {
                     const filters = res.data;
                     const filterArray = [];
-                    filters.map(filter => {
-                        filterArray.push(filter.word)
-                    })
+                    filters.map(filter => filterArray.push(filter.word))
                     this.setState({
                         filter2: filterArray
                     })
@@ -128,8 +126,8 @@ class TermFormPage extends Component {
     render() {
         
         return (
-            
-            <Card className='container'>
+        Auth.isUserAuthenticated() ?    
+            (<Card className='container'>
                 <form action='/' onSubmit={this.processForm}>
                 <h2 className='card-heading'>Add a Term</h2>
 
@@ -208,7 +206,7 @@ class TermFormPage extends Component {
                     <RaisedButton type='submit' label='Add this term' primary/>
                 </div>
             </form>
-        </Card>
+        </Card>) :(<h1>Be sure to <Link to='/login'>Log In</Link> or <Link to='/signup'>Sign Up</Link> to access this page!</h1>)
         )
     }
 }

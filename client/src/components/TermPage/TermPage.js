@@ -29,6 +29,7 @@ class TermPage extends Component {
                     word: res.data[0],
                     comments: res.data[0].comments
                 })
+                
             })
             .catch(err => console.log(err));
     }
