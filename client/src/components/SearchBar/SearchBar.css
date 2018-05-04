@@ -15,7 +15,7 @@
 }
 
 .search:focus-within {
-    margin: 0 35px;
+    margin: 0 25px;
     box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
 }
 
@@ -50,9 +50,10 @@
 @media only screen and (min-width: 1020px)  {
 
     .search {
-        margin: 0 300px;
+        margin: 0 285px;
     }
 
+    .search:hover,
     .search:focus-within {
         margin: 0 250px;
         box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
