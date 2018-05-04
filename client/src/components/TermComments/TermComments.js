@@ -59,24 +59,26 @@ class TermComments extends Component {
     render() {
         return (
             <div className="termComments">
+            <h3>Comments</h3>
                 {(this.props.comments).map(comment => {
                     
                     return (
-                    <div key={comment._id}>
-                        <div>{comment.authorName}</div>
-                        <div style={{ whiteSpace:'pre-wrap', textAlign: 'left'}} >{comment.body}</div>
+                    <div className="commentContainer" key={comment._id}>
+                        <div className="commentAuthor">{comment.authorName}</div>
+                        <div className="commentBody">{comment.body}</div>
                     </div>
                     )
                 })}
-                    <h4>FORM</h4>
                 {Auth.isUserAuthenticated() ?
-                    (<div>
-                        <h2>Commenting as: {this.state.user.username}</h2>
-                        <form onSubmit={this.onSubmit.bind(this)} >
-                            <textarea style={{ width:'80%', height:'100px'}}name='comment' type='text' value={this.state.title} onChange={this.handleChange.bind(this)} />
-                            <button type='submit'>Submit</button>
-                        </form>
-                    </div>) : (
+                    (
+                        <div>
+                            <h4>Add a comment</h4>
+                            <h2>Commenting as: {this.state.user.username}</h2>
+                            <form onSubmit={this.onSubmit.bind(this)} >
+                                <textarea style={{ width:'80%', height:'100px'}}name='comment' type='text' value={this.state.title} onChange={this.handleChange.bind(this)} />
+                                <button type='submit'>Submit</button>
+                            </form>
+                        </div>) : (
                         <div><Link to='/login'>Log in</Link> or <Link to='/signup'>Sign up</Link> to post a comment!</div>
                     )
                 }

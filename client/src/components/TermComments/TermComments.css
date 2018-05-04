@@ -1,38 +1,79 @@
 .termComments {
     background: #fff;
+    text-align: center;
     margin: 15px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     width: 100%;
 }
 
 .termComments h3 {
-    background-color: #015249;
-    color: white;
+    background: linear-gradient(57deg, #77c9d4, #57bc90);
+    color: #015249;
     font-size: 1.7rem;
-    line-height: 1.5;
-    text-align: center;
-
+    font-weight: 600;
+    line-height: 1.8;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 30px;
 }
 
-
-.termComments button {
-    text-align: center;
-}
-
-.termComments .commentContainer {
+.termComments p {
     margin: 15px;
-    text-align: left;
-
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    font-family: 'Lora', serif;
 }
+
+.commentContainer {
+    display: block;
+    text-align: left;
+    min-height: 35px;
+    padding: 15px;
+}
+
+.commentAuthor {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #015249;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px; 
+    padding: 20px 10px;
+    margin-right: 20px;
+    color: white;
+}
+
+.commentBody {
+    display:inline-block;
+    white-space: pre-wrap;
+    background-color: #f5f5f5;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px; 
+    padding: 20px 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    width: 60%;
+    height: auto;
+}
+
 .termComments:hover {
     transition: all .3s ease-out;
-    transform: scale(1.02);
+    box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
 }
 
 @media only screen and (min-width: 700px)  {
 
-    .termComments {
-      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    .termComments p {
+        margin: 30px;
+        font-size: 1.3rem
+    }
+
+    .commentAuthor {
+        padding: 20px 15px;
+    }
+
+    .commentBody {
+        width: 80%;
+        padding: 20px 15px;
     }
   
 }
