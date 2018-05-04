@@ -55,6 +55,16 @@ class TermComments extends Component {
 
         
     }
+
+    deleteComment(id) {
+        axios.delete('/newComment/' + id)
+            .then(res => {
+                console.log('Your comment has been deleted')
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
     
     render() {
         return (
@@ -65,6 +75,8 @@ class TermComments extends Component {
                     <div key={comment._id}>
                         <div>{comment.authorName}</div>
                         <div style={{ whiteSpace:'pre-wrap', textAlign: 'left'}} >{comment.body}</div>
+                        {this.state.user.username === comment.authorName &&
+                        <button onClick={() => this.deleteComment(comment._id)}>Delete</button>}
                     </div>
                     )
                 })}
