@@ -31,7 +31,7 @@ router.delete('/newComment/:id', (req,res) => {
     .catch(err => res.status(422).json(err));
 });
 
-router.put('/newComment/:id', (req, res) => {
+router.post('/updateComment/:id', (req, res) => {
   db.Comment
     .findOneAndUpdate({ _id: req.params.id }, req.body)
     .then(dbComment => res.json(dbComment))
