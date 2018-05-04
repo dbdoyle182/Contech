@@ -70,6 +70,7 @@ class TermComments extends Component {
                     <h4>FORM</h4>
                 {Auth.isUserAuthenticated() &&
                     <div>
+                        <h2>Commenting as: {this.state.user.username}</h2>
                         <form onSubmit={this.onSubmit.bind(this)} >
                             <textarea name='comment' type='text' value={this.state.title} onChange={this.handleChange.bind(this)} />
                             <button type='submit'>Submit</button>
