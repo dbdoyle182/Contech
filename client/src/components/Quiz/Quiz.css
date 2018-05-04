@@ -2,7 +2,7 @@
     background: #fff;
     min-height: 15em;
     text-align: center;
-    margin: 15px;
+    margin: 30px 25px;
     box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
     transition: all .3s ease-in-out;
     font-size: 1.5em;
@@ -17,8 +17,9 @@
     margin: 0 0 10px 0;
     padding: 20px;
     color: white;
-    font-size: 1.25em;
+    font-size: 1.05em;
     background: #57bc90;
+    letter-spacing: .45px;
 }
 
 .question {
@@ -61,7 +62,12 @@ li:hover {
 @media only screen and (min-width: 1020px)  {
 
     .quiz {
-      width: 40%;
+      width: 43%;
+      margin: 50px 45px;
+    }
+
+    .quiz .title {
+        font-size: 1.15em;
     }
   
 }
