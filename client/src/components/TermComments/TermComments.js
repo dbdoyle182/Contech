@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./TermComments.css";
 import Auth from "../../utils/Auth";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class TermComments extends Component {
     constructor(props, context) {
@@ -59,7 +60,7 @@ class TermComments extends Component {
         return (
             <div className="termComments">
                 {(this.props.comments).map(comment => {
-                    console.log(comment.body.split('\n').join('<br>'))
+                    
                     return (
                     <div key={comment._id}>
                         <div>{comment.authorName}</div>
@@ -68,14 +69,16 @@ class TermComments extends Component {
                     )
                 })}
                     <h4>FORM</h4>
-                {Auth.isUserAuthenticated() &&
-                    <div>
+                {Auth.isUserAuthenticated() ?
+                    (<div>
                         <h2>Commenting as: {this.state.user.username}</h2>
                         <form onSubmit={this.onSubmit.bind(this)} >
-                            <textarea name='comment' type='text' value={this.state.title} onChange={this.handleChange.bind(this)} />
+                            <textarea style={{ width:'80%', height:'100px'}}name='comment' type='text' value={this.state.title} onChange={this.handleChange.bind(this)} />
                             <button type='submit'>Submit</button>
                         </form>
-                    </div>
+                    </div>) : (
+                        <div><Link to='/login'>Log in</Link> or <Link to='/signup'>Sign up</Link> to post a comment!</div>
+                    )
                 }
             </div>
         )};
