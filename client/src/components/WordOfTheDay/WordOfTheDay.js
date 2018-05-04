@@ -25,11 +25,16 @@ constructor(props, context) {
     render() {
     
         return (
-    <div className="wordoftheday">
-        <h2 className="title">Word of the Moment</h2>
-        <h1 className="word">{this.state.word.word}</h1>
-        <p className="definition">{this.state.word.summary}</p>
-    </div>)
+            <div className="wordoftheday">
+                <h2 className="title">Featured Term</h2>
+                <h1 className="word">AJAX</h1>
+                {/* {this.state.word.word} */}
+                <p className="definition">A web development technique for creating interactive web applications.</p>
+                {/* {this.state.word.summary} */}
+                <button>Learn More</button>
+                <button>New Term</button>
+            </div>
+        )
     }
 };
 

@@ -1,12 +1,17 @@
+.search-container {
+    margin: 60px 0;
+}
+
 .search {
-    margin: 60px 20px;
+    margin: 0px 40px;
     position: relative;
     background: #fff;
     box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
     transition: all .3s ease-in-out;
 }
 
-.search:hover {
+.search:focus-within {
+    margin: 0 25px;
     box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
 }
 
@@ -41,7 +46,12 @@
 @media only screen and (min-width: 1020px)  {
 
     .search {
-        margin: 60px 60px;
+        margin: 0 300px;
+    }
+
+    .search:focus-within {
+        margin: 0 200px;
+        box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
     }
   
 }

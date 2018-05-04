@@ -76,12 +76,12 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-        <div className=''>
+        <div className='search-container'>
             <div className="search">
                 <form className='search-box' onSubmit={this.handleFormSubmit}>
                     <AutoComplete
                         hintText="Search for a Term..."
-                        hintStyle={{margin: '10px 0 10px 10px'}}
+                        hintStyle={{margin: '10px 0 10px 3px'}}
                         textFieldStyle={searchStyles}
                         underlineShow={false}
                         filter={AutoComplete.fuzzyFilter}

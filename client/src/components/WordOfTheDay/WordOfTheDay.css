@@ -1,11 +1,12 @@
 .wordoftheday {
-    background: #015249;
+    background: white;
     min-height: 15em;
     text-align: center;
     margin: 15px;
     box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
     transition: all .3s ease-in-out;
     font-size: 1.5em;
+    padding: 0 0 30px 0;
 }
 
 .wordoftheday:hover {
@@ -13,33 +14,66 @@
 }
 
 .wordoftheday .title {
-    margin: 0 0 30px 0;
     padding: 20px;
     color: white;
-    text-shadow: 2px 2px #505050;
+    text-shadow: -1px 0px #888;
+    font-size: 1.25em;
+    background: #015249;
 }
 
 .word {
-    margin: 50px 65px 0 65px;
-    padding: 10px 0;
-    background: white;
-    border-radius: 0 10px 0 10px;
-    box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
+    margin: 30px 105px 20px 105px;
+    letter-spacing: 2px;
+    padding: 0 0 5px 0;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0px 0px 8px 2px #fff;
     font-family: 'Roboto Mono', monospace;
+    font-size: 2.5em;
+    color: #015249;
+    text-shadow: 0px 1px 5px #a0a0a0;
 }
 
 .definition {
-    font-style: italic;
     padding: 10px;
     font-size: 20px;
-    color: white;
+    color: #444343;
     font-family: 'Roboto Mono', monospace;
+    line-height: 1.5;
+}
+
+.wordoftheday button {
+    background: #015249;
+    color: white;
+    padding: 10px 20px;
+    /* border-radius: 4px; */
+    margin: 30px 10px 0 10px; 
+    font-size: .6em;
+    font-family: 'Lora', serif;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px #a0a0a0;
+    transition: all .3s ease-in-out;
+    border: none;
+}
+
+.wordoftheday button:hover {
+    background: #003d36;
+    box-shadow: 0px 1px 5px #a0a0a0;
+    box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
 }
 
 @media only screen and (min-width: 1020px)  {
 
     .wordoftheday {
       width: 40%;
+    }
+
+    .word {
+        margin: 50px 185px 20px 185px;
+    }
+
+    .wordoftheday button {
+        margin: 40px 15px 0 15px; 
+        font-size: .65em;
     }
   
 }
