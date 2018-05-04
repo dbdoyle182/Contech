@@ -1,22 +1,56 @@
 .termRelevant {
-    background: #c5c5c5;
-    padding: 45px 20px;
-    text-align: center;
+    padding: 10px 10px;
     margin: 15px;
-    box-shadow: 0px 3px 9px #737373;
+    text-align: center;
+    width: 100%;
+}
+.termRelevant h4 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    padding-bottom: 5px;
 }
 
-.termRelevant:hover {
-    box-shadow: -12px 13px 16px #5d5d5d;
-    transition: all .3s ease-out;
-    transform: scale(1.02);
+.termRelevant button {
+    font-size: 1rem;
+    background-color: #015249;
+    border: 1px solid #015249;
+    padding: 8px;
+    margin: 5px;
+}    
+
+.relevantLink {
+    text-decoration: none;
+    color: white;
 }
 
-@media only screen and (min-width: 1020px)  {
+/* Teal #77C9D4 */
+/* Green #57BC90 */
+
+@media only screen and (min-width: 700px)  {
 
     .termRelevant {
-      width: 25%;
-      box-shadow: -8px 8px 8px #7d7d7d;
+        text-align: center;
+    }
+
+    .termRelevant button {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 830px)  {
+
+    .termRelevant {
+        text-align: left;
+    }
+
+    .termRelevant button {
+        margin-left: 5px;
+        width: auto;
+    }
+    
+    .termRelevant button:nth-of-type(1) {
+        margin-left: 0px;
     }
   
 }

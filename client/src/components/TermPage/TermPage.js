@@ -7,6 +7,7 @@ import TermExtended from "../TermExtended";
 import TermComments from "../TermComments";
 import SearchBar from "../SearchBar";
 import axios from 'axios';
+import "./TermPage.css";
 
 class TermPage extends Component {
     constructor(props, context) {
@@ -53,12 +54,12 @@ class TermPage extends Component {
         <Card className='container'>
             <CardTitle />
             <SearchBar/>
-            <div className="TermPage-flex-container">
-                <div className="row">
-                    <div>
+            <div className="entire-container">
+                <div className="row-container">
+                    <div className="float-left">
                         <TermMain word={this.state.word.word} summary={this.state.word.summary}/>
                     </div>
-                    <div className="TermPage-flex-container25">
+                    <div className="float-right">
                         <TermTags tags1={this.state.word.tags1} tags2={this.state.word.tags2} filterHandler={this.filterHandler}/>
                         <TermRelevant relevant1={this.state.word.related1} relevant2={this.state.word.related2} />
                     </div>
