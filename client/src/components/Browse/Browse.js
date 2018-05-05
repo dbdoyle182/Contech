@@ -202,11 +202,6 @@ render() {return (
             </div>
         </div>
         <div className="browse-results">
-            {/* <div className="browse-word"><Link to={'/search/'} className="browse-link">React</Link></div>
-            <div className="browse-word"><Link to={'/search/'} className="browse-link">Bootstrap</Link></div>
-            <div className="browse-word"><Link to={'/search/'} className="browse-link">Template Literal</Link></div>
-            <div className="browse-word"><Link to={'/search/'} className="browse-link">Git</Link></div>
-            <div className="browse-word"><Link to={'/search/'} className="browse-link">Materialize</Link></div> */}
             {this.state.results && this.state.results.map(result => {
                 return (<div key={result._id} className="browse-word"><Link to={'/search/' + result.word} className="browse-link">{result.word}</Link></div>)
             })}

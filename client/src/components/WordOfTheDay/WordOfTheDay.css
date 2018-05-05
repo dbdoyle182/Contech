@@ -40,6 +40,11 @@
     line-height: 1.5;
 }
 
+.wordoftheday .word-link {
+    text-decoration-line: none;
+    color: white;
+}
+
 .wordoftheday button {
     background: #015249;
     color: white;

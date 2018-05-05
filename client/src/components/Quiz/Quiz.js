@@ -47,17 +47,12 @@ class Quiz extends Component {
     return (
     <div className="quiz">
         <h2 className="title">{moment().format('dddd')}'s Quiz</h2>
-        <h1 className="question">Which of the following is NOT a programming language?</h1>
-        {/* {this.state.quiz.question} */}
+        <h1 className="question">{this.state.quiz.question}</h1>
         <ul>
-            <li onClick={this.handleClick.bind(this)} value={this.state.quiz.choice1}>PHP</li>
-            {/* {this.state.quiz.choice1} */}
-            <li onClick={this.handleClick.bind(this)} value={this.state.quiz.choice2}>JavaScript</li>
-            {/* {this.state.quiz.choice2} */}
-            <li onClick={this.handleClick.bind(this)} value={this.state.quiz.choice3}>Bootstrap</li>
-            {/* {this.state.quiz.choice3} */}
-            <li onClick={this.handleClick.bind(this)} value={this.state.quiz.choice4}>C#</li>
-            {/* {this.state.quiz.choice4} */}
+            <li onClick={this.handleClick.bind(this)} value={this.state.quiz.choice1}>{this.state.quiz.choice1}</li>
+            <li onClick={this.handleClick.bind(this)} value={this.state.quiz.choice2}>{this.state.quiz.choice2}</li>
+            <li onClick={this.handleClick.bind(this)} value={this.state.quiz.choice3}>{this.state.quiz.choice3}</li>
+            <li onClick={this.handleClick.bind(this)} value={this.state.quiz.choice4}>{this.state.quiz.choice4}</li>
         </ul>
 
         {(this.state.correct === true && this.state.clicked === true) && <div className="right">That is correct!</div>}
