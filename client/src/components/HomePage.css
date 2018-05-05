@@ -7,7 +7,7 @@
 .main-header {
     background: linear-gradient(57deg, rgba(119, 201, 212, 0.4), rgba(87, 188, 144, 0.92)), url('../img/study.jpg') no-repeat center;
     background-size: cover;
-    /* background: linear-gradient(57deg, #77c9d4, #57bc90); */
+    /* background: linear-gradient(57deg, #77c9d4, #57bc90); */ 
     padding: 0 0 30px 0;
 }
 
