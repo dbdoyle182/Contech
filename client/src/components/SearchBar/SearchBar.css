@@ -89,13 +89,12 @@
 @media only screen and (min-width: 1020px)  {
 
     .search {
-        margin: 0 225px;
-        box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
+        margin: 0 235px;
     }
 
     .search:hover,
     .search:focus-within {
-        margin: 0 205px;
+        margin: 0 225px;
     }
   
 }
