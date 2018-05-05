@@ -77,7 +77,7 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-        <div className='search-container'>
+        <div>
             <div className="search">
                 <form className='search-box' onSubmit={this.handleFormSubmit}>
                     <AutoComplete
@@ -87,7 +87,7 @@ class SearchBar extends React.Component {
                         underlineShow={false}
                         filter={AutoComplete.fuzzyFilter}
                         dataSource={this.state.auto}
-                  maxSearchResults={5}
+                        maxSearchResults={5}
                         onUpdateInput={this.handleChange}
                         fullWidth={true}
                         required
@@ -106,7 +106,7 @@ class SearchBar extends React.Component {
                 })}
             </div>)}
             {this.state.resultsNum === 0 && (
-                <div><h2>There were no available responses</h2></div>
+                <div className="no-search-results"><h2>No Results Found</h2></div>
             )}
             
         </div>
