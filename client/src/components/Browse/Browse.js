@@ -46,6 +46,7 @@ class TagMenu extends Component {
         <SelectField
             value={this.state.value}
             onChange={this.handleChange}
+            maxHeight={200}
             underlineShow={false}
             selectedMenuItemStyle={{color: '#489b77'}}
             hintText="By Tag"
@@ -197,17 +198,19 @@ render() {return (
             <div className="stack">
                 <div className="menu"><TagMenu callback={this.childFilter}/></div>
                 <div className="menu"><LetterMenu callback={this.childLetter}/></div>
-            </div>
-            <div>
-                <button className="browse-button" onClick={this.browsingData}>Browse</button>
+                <div><button className="browse-button" onClick={this.browsingData}>Browse</button></div>
             </div>
         </div>
-        <div>
+        <div className="browse-results">
+            {/* <div className="browse-word"><Link to={'/search/'} className="browse-link">React</Link></div>
+            <div className="browse-word"><Link to={'/search/'} className="browse-link">Bootstrap</Link></div>
+            <div className="browse-word"><Link to={'/search/'} className="browse-link">Template Literal</Link></div>
+            <div className="browse-word"><Link to={'/search/'} className="browse-link">Git</Link></div>
+            <div className="browse-word"><Link to={'/search/'} className="browse-link">Materialize</Link></div> */}
             {this.state.results && this.state.results.map(result => {
-                return (<div key={result._id}><Link to={'/search/' + result.word}>{result.word}</Link></div>)
+                return (<div key={result._id} className="browse-word"><Link to={'/search/' + result.word} className="browse-link">{result.word}</Link></div>)
             })}
-        </div>
-        
+        </div> 
     </div>
 )}
 };
