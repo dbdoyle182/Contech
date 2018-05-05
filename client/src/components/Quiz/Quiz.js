@@ -55,8 +55,8 @@ class Quiz extends Component {
             <li onClick={this.handleClick.bind(this)} value={this.state.quiz.choice4}>{this.state.quiz.choice4}</li>
         </ul>
 
-        {(this.state.correct === true && this.state.clicked === true) && <div>That is correct!</div>}
-        {(this.state.correct === false && this.state.clicked === true) && <div>Wrong, try again!</div>}
+        {(this.state.correct === true && this.state.clicked === true) && <div className="right">That is correct!</div>}
+        {(this.state.correct === false && this.state.clicked === true) && <div className="wrong">Wrong, try again!</div>}
         
     </div>
     )

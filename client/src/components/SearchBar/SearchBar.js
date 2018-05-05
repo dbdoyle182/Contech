@@ -6,9 +6,8 @@ import AutoComplete from 'material-ui/AutoComplete';
 import Auth from '../../utils/Auth';
 
 const searchStyles = {
-    fontSize: '25px',
-    padding: '15px 0 10px 0',
-    transition: 'all .3s ease-in-out'
+    fontSize: '20px',
+    padding: '15px 0 10px 0'
 };
 
 class SearchBar extends React.Component {
@@ -79,19 +78,18 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-        <div className=''>
+        <div>
             <div className="search">
-                <form onSubmit={this.handleFormSubmit}>
+                <form className='search-box' onSubmit={this.handleFormSubmit}>
                     <AutoComplete
                         hintText="Search for a Term..."
-                        hintStyle={{margin: '10px 0 10px 10px'}}
+                        hintStyle={{margin: '10px 0 10px 3px'}}
                         textFieldStyle={searchStyles}
                         underlineShow={false}
                         filter={AutoComplete.fuzzyFilter}
                         dataSource={this.state.auto}
                         maxSearchResults={5}
                         onUpdateInput={this.handleChange}
-                        className='search-box'
                         fullWidth={true}
                         required
                     />
@@ -110,9 +108,9 @@ class SearchBar extends React.Component {
             </div>)}
             {this.state.resultsNum === 0 && (
                 Auth.isUserAuthenticated() ? (
-                    <div>Would you like to add <Link to='/addterm'>{this.state.search}</Link> to our library?</div>
+                    <div className="no-search-results">Would you like to add <Link to='/addterm' className="results-link">{this.state.search}</Link> to our library?</div>
                 ) : (
-                    <div>Sorry, that word isn't available. <Link to='/login'>Log In</Link> or <Link to='/signup'>Sign up</Link> to add to our library.</div>
+                    <div className="no-search-results">Sorry, that word isn't available. <Link to='/login' className="results-link">Log In</Link> or <Link to='/signup' className="results-link">Sign up</Link> to add to our library.</div>
                 )
 
             )}

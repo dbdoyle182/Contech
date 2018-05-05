@@ -13,7 +13,9 @@ const HomePage = () => (
         <div className="main-header">
             <h1 className="main-title">ConTECH</h1>
             <h3 className="subtitle">Putting tech into context.</h3>
-            <SearchBar/>
+            <div className="search-container">
+                <SearchBar/>
+            </div>
             <Browse/>
         </div>
         <div className="flex-container">

@@ -6,16 +6,14 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const browseStyles = {
-    fontSize: '1.25em',
-    color: '#57bc90',
-    fontWeight: 'bold'
+    fontSize: '1.05em',
+    color: 'white'
 };
 
 const browseItems = ['Library','Data', 'Server', 'Backend','Language','Framework','Language Feature','World Wide Web','Software','Frontend','Git','Miscellaneous',
 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 const tags = [
-    <MenuItem key ={101} value={null} primaryText="" />,
     <MenuItem key={1} value={0} primaryText="Library" />,
     <MenuItem key={2} value={1} primaryText="Data" />,
     <MenuItem key={3} value={2} primaryText="Server" />,
@@ -48,8 +46,11 @@ class TagMenu extends Component {
         <SelectField
             value={this.state.value}
             onChange={this.handleChange}
-            floatingLabelText="Tag"
-            floatingLabelStyle={browseStyles}
+            maxHeight={200}
+            underlineShow={false}
+            selectedMenuItemStyle={{color: '#489b77'}}
+            hintText="By Tag"
+            hintStyle={browseStyles}
         >
             {tags}
         </SelectField>
@@ -62,7 +63,6 @@ class TagMenu extends Component {
 }
 
 const letters = [
-    <MenuItem key={100} value={null} primaryText="" />,
     <MenuItem key={13} value={12} primaryText="A" />,
     <MenuItem key={14} value={13} primaryText="B" />,
     <MenuItem key={15} value={14} primaryText="C" />,
@@ -109,8 +109,10 @@ class LetterMenu extends Component {
             value={this.state.value}
             onChange={this.handleChange}
             maxHeight={200}
-            floatingLabelText="Letter"
-            floatingLabelStyle={browseStyles}
+            underlineShow={false}
+            selectedMenuItemStyle={{color: '#489b77'}}
+            hintText="By Letter"
+            hintStyle={browseStyles}
         >
             {letters}
         </SelectField>
@@ -191,22 +193,19 @@ browsingData () {
     
 render() {return (
     <div className="browse">
-
-        <div className="browse-by">
-            <h2>Browse Terms by: </h2>
+        <h2 className="title">Browse Terms</h2>
+        <div className="holder">
+            <div className="stack">
+                <div className="menu"><TagMenu callback={this.childFilter}/></div>
+                <div className="menu"><LetterMenu callback={this.childLetter}/></div>
+                <div><button className="browse-button" onClick={this.browsingData}>Browse</button></div>
+            </div>
         </div>
-        <div className="stack">
-            <TagMenu className="menu" callback={this.childFilter}/>
-            <LetterMenu className="menu" callback={this.childLetter}/>
-            <br /> <br />
-            <button onClick={this.browsingData}>Browse</button>
-        </div>
-        <div>
+        <div className="browse-results">
             {this.state.results && this.state.results.map(result => {
-                return (<div key={result._id}><Link to={'/search/' + result.word}>{result.word}</Link></div>)
+                return (<div key={result._id} className="browse-word"><Link to={'/search/' + result.word} className="browse-link">{result.word}</Link></div>)
             })}
-        </div>
-        
+        </div> 
     </div>
 )}
 };

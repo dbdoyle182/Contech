@@ -2,10 +2,11 @@
     background: #fff;
     min-height: 15em;
     text-align: center;
-    margin: 15px;
+    margin: 40px 25px;
     box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
     transition: all .3s ease-in-out;
     font-size: 1.5em;
+    padding: 0 0 30px 0;
 }
 
 .quiz:hover {
@@ -13,14 +14,18 @@
 }
 
 .quiz .title {
-    margin: 0 0 20px 0;
-    padding: 20px;
-    color: #57bc90;
-    text-shadow: -1px 0px #a09f9f;
+    margin: 0 0 10px 0;
+    padding: 15px;
+    color: white;
+    font-size: .95em;
+    background: #57bc90;
+    letter-spacing: .45px;
 }
 
 .question {
     padding: 15px;
+    color: #444343;
+    line-height: 1.5;
 }
 
 ul {
@@ -28,24 +33,53 @@ ul {
     font-size: 20px;
     list-style: none;
     padding: 15px;
+    margin: 0 0 10px 0;
 }
 
 li {
-    background: #57bc90;
+    background: linear-gradient(57deg, #77c9d4, #57bc90);
     margin: 5px;
     box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
     padding: 10px;
     color: white;
+    cursor: pointer;
 }
 
 li:hover {
-    background: #2e835e;
+    background: #489b77;
+}
+
+.wrong {
+    color: #b12727;
+    font-size: .8em;
+}
+
+.right {
+    color: green;
+    font-size: .8em;
+}
+
+@media only screen and (min-width: 700px)  {
+
+    .quiz {
+        margin: 30px 45px;
+    }
+
+    ul {
+        padding: 15px 35px;
+    }
+  
 }
 
 @media only screen and (min-width: 1020px)  {
 
     .quiz {
-      width: 40%;
+      width: 43%;
+      margin: 30px 35px 50px 35px;
+    }
+
+    .quiz .title {
+        font-size: 1.05em;
     }
   
 }
