@@ -1,23 +1,48 @@
-@media only screen and (min-width: 1020px)  {
+.entire-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:94%;
+    margin: auto;
+}
 
-    .TermPage-flex-container {
+.row-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.float-left {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.float-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 700px)  {
+    .row-container {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        width: 100%;
+        justify-content: space-between;
+        width: 90%;
     }
-    .row {
+    .float-left {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
+        width: 70%;
     }
-    .TermPage-flex-container25 {
+    .float-right {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-end;
+        width: 30%;
     }
-  
 }

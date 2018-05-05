@@ -3,7 +3,7 @@ import "./TermExtended.css";
 
 const TermExtended = props => (
     <div className="termExtended">
-            <h2>{props.word}</h2>
+            <h3>Extended Definition: {props.word}</h3>
             <p>{props.definition}</p>
     </div>
 );

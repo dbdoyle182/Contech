@@ -49,6 +49,17 @@
     color: #2b2b2b;
 }
 
+.results-link {
+    color: #013992;
+    text-decoration-line: none;
+    border-bottom: 1px solid #013992;
+    transition: all .2s ease-in-out;
+}
+
+.results-link:hover {
+    color: #0058e4; 
+}
+
 @media only screen and (min-width: 600px)  {
 
     .search {

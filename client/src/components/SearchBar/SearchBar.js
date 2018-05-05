@@ -3,6 +3,7 @@ import "./SearchBar.css";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AutoComplete from 'material-ui/AutoComplete';
+import Auth from '../../utils/Auth';
 
 const searchStyles = {
     fontSize: '20px',
@@ -106,7 +107,12 @@ class SearchBar extends React.Component {
                 })}
             </div>)}
             {this.state.resultsNum === 0 && (
-                <div className="no-search-results"><h2>No Results Found</h2></div>
+                Auth.isUserAuthenticated() ? (
+                    <div className="no-search-results">Would you like to add <Link to='/addterm' className="results-link">{this.state.search}</Link> to our library?</div>
+                ) : (
+                    <div className="no-search-results">Sorry, that word isn't available. <Link to='/login' className="results-link">Log In</Link> or <Link to='/signup' className="results-link">Sign up</Link> to add to our library.</div>
+                )
+
             )}
             
         </div>
