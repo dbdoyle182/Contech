@@ -16,18 +16,19 @@
     margin-bottom: 30px;
 }
 
-.termComments p {
-    margin: 15px;
-    font-size: 1.2rem;
-    line-height: 1.7rem;
-    font-family: 'Lora', serif;
-}
-
 .commentContainer {
     display: block;
     text-align: left;
     min-height: 35px;
     padding: 15px;
+}
+
+.addComment {
+    text-align: left;
+}
+
+.commenting{
+    text-align: right;
 }
 
 .commentAuthor {
@@ -49,10 +50,16 @@
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px; 
-    padding: 20px 10px;
+    padding: 20px 10px 20px 10px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     width: 60%;
     height: auto;
+}
+
+.commentBar {
+    font-size: 0.7rem;
+    text-align: right;
+    padding-bottom: 10px;
 }
 
 .termComments:hover {
@@ -62,18 +69,13 @@
 
 @media only screen and (min-width: 700px)  {
 
-    .termComments p {
-        margin: 30px;
-        font-size: 1.3rem
-    }
-
     .commentAuthor {
         padding: 20px 15px;
     }
 
     .commentBody {
         width: 80%;
-        padding: 20px 15px;
+        padding: 10px 15px 20px 15px;
     }
   
 }

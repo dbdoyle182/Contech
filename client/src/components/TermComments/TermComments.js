@@ -65,15 +65,18 @@ class TermComments extends Component {
                     return (
                     <div className="commentContainer" key={comment._id}>
                         <div className="commentAuthor">{comment.authorName}</div>
-                        <div className="commentBody">{comment.body}</div>
+                        <div className="commentBody">
+                        <div className="commentBar">October 20, 2017 (pencil) (trashcan)</div>
+                        <div>{comment.body}</div>
+                        </div>
                     </div>
                     )
                 })}
                 {Auth.isUserAuthenticated() ?
                     (
                         <div>
-                            <h4>Add a comment</h4>
-                            <h2>Commenting as: {this.state.user.username}</h2>
+                            <span className="addComment">Add a comment</span>
+                            <span className="commenting">Commenting as: {this.state.user.username}</span>
                             <form onSubmit={this.onSubmit.bind(this)} >
                                 <textarea style={{ width:'80%', height:'100px'}}name='comment' type='text' value={this.state.title} onChange={this.handleChange.bind(this)} />
                                 <button type='submit'>Submit</button>
