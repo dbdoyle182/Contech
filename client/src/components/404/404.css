@@ -1,6 +1,5 @@
-body,
 html {
-  background: #000;
+  background: #ccc;
   position: relative;
   margin: 0;
   width: 100%;
@@ -11,7 +10,7 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: #000;
   font-family: sans-serif;
   max-width: 340px;
   -webkit-user-select: none;
@@ -31,7 +30,7 @@ html {
 #container .message h3 {
   color: #55a2ac;
   font-size: 0.9em;
-  font-weight: lighter;
+  font-weight: bold;
   line-height: 1;
   font-family: "Roboto Mono", sans-serif;
 }
@@ -45,16 +44,16 @@ html {
 #container .button a {
   position: relative;
   flex: 1;
-  color: white;
+  color: #000;
   text-decoration: none;
   border-radius: 3px;
-  border: 1px solid white;
+  border: 1px solid #000;
   margin: 0 20px;
   text-align: center;
   padding: 10px 0;
 }
 
 #container .button a:hover {
-  border: 1px solid #ffffff;
+  border: 2px solid #55a2ac;
   color: #626464;
 }
