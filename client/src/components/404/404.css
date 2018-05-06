@@ -1,0 +1,59 @@
+html {
+  background: #ccc;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+#container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-family: sans-serif;
+  max-width: 340px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+#container .message {
+  font-size: 16px;
+  text-align: center;
+}
+#container .message h1 {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 150px;
+}
+
+#container .message h3 {
+  color: #55a2ac;
+  font-size: 0.9em;
+  font-weight: bold;
+  line-height: 1;
+  font-family: "Roboto Mono", sans-serif;
+}
+
+#container .button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+#container .button a {
+  position: relative;
+  flex: 1;
+  color: #000;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid #000;
+  margin: 0 20px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+#container .button a:hover {
+  border: 2px solid #55a2ac;
+  color: #626464;
+}

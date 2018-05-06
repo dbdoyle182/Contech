@@ -1,17 +1,23 @@
 .search {
-    margin: 60px 20px;
+    margin: 0px 20px;
     position: relative;
     background: #fff;
-}
-
-.search-box {
-    color: #414141;
     box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
     transition: all .3s ease-in-out;
 }
 
-.search-box:hover {
+.search:hover {
     box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
+}
+
+.search:focus-within {
+    box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
+}
+
+.search-box {
+    color: #414141;
+    transition: all .3s ease-in-out;
+    margin: 0 30px;
 }
 
 .search-btn {
@@ -20,7 +26,7 @@
     margin-top: -2em;
     position: absolute;
     top: 50%;
-    right: 2%;
+    right: 4%;
     opacity: 0.5;
     background-color: transparent;
     border: 0;
@@ -36,10 +42,59 @@
     cursor: pointer;
 } 
 
+.no-search-results {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 25px 0 0 0;
+    color: #2b2b2b;
+}
+
+.results-link {
+    color: #013992;
+    text-decoration-line: none;
+    border-bottom: 1px solid #013992;
+    transition: all .2s ease-in-out;
+}
+
+.results-link:hover {
+    color: #0058e4; 
+}
+
+@media only screen and (min-width: 600px)  {
+
+    .search {
+        margin: 0 70px;
+    }
+
+    .search:hover,
+    .search:focus-within {
+        margin: 0 50px;
+    }
+  
+}
+
+@media only screen and (min-width: 700px)  {
+
+    .search {
+        margin: 0 100px;
+    }
+
+    .search:hover,
+    .search:focus-within {
+        margin: 0 80px;
+    }
+  
+}
+
 @media only screen and (min-width: 1020px)  {
 
     .search {
-        margin: 60px 60px;
+        margin: 0 235px;
+    }
+
+    .search:hover,
+    .search:focus-within {
+        margin: 0 225px;
     }
   
 }

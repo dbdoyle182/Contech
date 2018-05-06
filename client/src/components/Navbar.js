@@ -10,9 +10,9 @@ const Navbar = () => (
         <nav className="flex">
             <div className='flex-start'>
                 <Link to='/' className={
-            window.location.pathname === "/" ? "nav-link active" : "nav-link"
+            window.location.pathname === "/" ? "nav-link active logo" : "nav-link logo"
           }>
-                    <span className="logo-text">ConTech</span>
+                    <span className="logo-text">ConTECH</span>
                 </Link>
             </div>
         {Auth.isUserAuthenticated() ? (

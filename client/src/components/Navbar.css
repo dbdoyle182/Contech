@@ -2,6 +2,8 @@ header {
     position: relative;
     height: 50px;
     background-color: rgb(56, 56, 56);
+    background: #32555a;
+    padding: 10px 0 0 0;
 }
 
 .flex {
@@ -41,5 +43,31 @@ header {
 
 .nav-link {
     color: white;
-    padding: 7px 10px;
+    margin: 0 0 0 5px;
+    text-align: center;
+    transition: all .2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: gray;
+}
+
+.logo {
+    margin: 0;
+}
+
+@media only screen and (min-width: 1020px)  {
+
+    .nav-link {
+        margin: 0 0 0 20px;
+        font-size: 1.1em;
+    }
+
+    .logo {
+        margin: 0;
+    }
+  
+    .logo-text {
+        font-size: 1.3em;
+    }
 }

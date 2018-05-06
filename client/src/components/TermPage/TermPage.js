@@ -34,6 +34,18 @@ class TermPage extends Component {
             .catch(err => console.log(err));
     }
 
+    componentDidUpdate() {
+        axios.get(this.props.match.params.input)
+            .then(res => {
+                this.setState({
+                    word: res.data[0],
+                    comments: res.data[0].comments
+                })
+                
+            })
+            .catch(err => console.log(err));
+    }
+
     filterHandler(filter) {
         axios.get('/filterBy/' + filter)
             .then(res => {
