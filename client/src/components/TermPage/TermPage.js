@@ -51,16 +51,16 @@ class TermPage extends Component {
         }
     }
 
-    // componentDidUpdate() {
-    //     axios.get(this.props.match.params.input)
-    //         .then(res => {
-    //             this.setState({
-    //                 comments: res.data[0].comments
-    //             })
+    componentDidUpdate() {
+        axios.get(this.props.match.params.input)
+            .then(res => {
+                this.setState({
+                    comments: res.data[0].comments
+                })
                 
-    //         })
-    //         .catch(err => console.log(err));
-    // }
+            })
+            .catch(err => console.log(err));
+    }
 
     filterHandler(filter) {
         axios.get('/filterBy/' + filter)
@@ -113,6 +113,8 @@ class TermPage extends Component {
                 console.log(err)
             })
     }
+
+    
 
 
 
