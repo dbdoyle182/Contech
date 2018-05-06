@@ -1,38 +1,116 @@
 .termComments {
     background: #fff;
+    text-align: center;
     margin: 15px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     width: 100%;
 }
 
 .termComments h3 {
+    background: linear-gradient(57deg, #77c9d4, #57bc90);
+    color: #015249;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.8;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 30px;
+}
+
+.commentContainer {
+    display: block;
+    text-align: left;
+    min-height: 35px;
+    padding: 15px;
+}
+
+.addComment {
+    text-align: left;
+}
+
+.commenting{
+    text-align: right;
+}
+
+.commentAuthor {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #015249;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px; 
+    padding: 20px 10px;
+    margin-right: 20px;
+    color: white;
+}
+
+.editBox {
+    width: 60%;
+    min-height: 100px;
+    height: auto;
+    white-space: pre-wrap;
+    background-color: #fff;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px; 
+    border: transparent;
+    padding: 20px 10px 20px 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.commentIcon {
+    width: 25px;
+    margin-left: 10px;
+}
+
+.commentBody {
+    display:inline-block;
+    white-space: pre-wrap;
+    background-color: #f5f5f5;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px; 
+    padding: 20px 10px 20px 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    width: 60%;
+    height: auto;
+}
+
+.commentBar {
+    font-size: 0.7rem;
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+.deleteComment {
+    margin-top: 5px;
+    margin-left: 75%;
     background-color: #015249;
     color: white;
-    font-size: 1.7rem;
-    line-height: 1.5;
-    text-align: center;
-
+    border: none;
+    padding: 10px;
 }
 
-
-.termComments button {
-    text-align: center;
-}
-
-.termComments .commentContainer {
-    margin: 15px;
-    text-align: left;
-
-}
 .termComments:hover {
     transition: all .3s ease-out;
-    transform: scale(1.02);
+    box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
 }
 
 @media only screen and (min-width: 700px)  {
 
-    .termComments {
-      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    .commentAuthor {
+        padding: 20px 15px;
     }
-  
+
+    .commentBody {
+        width: 80%;
+        padding: 10px 15px 20px 15px;
+    }
+
+    .editBox {
+        width: 80%;
+        padding: 10px 15px 20px 15px;
+    }
+    .deleteComment {
+        margin-left: 85%;
+    }  
 }
