@@ -111,12 +111,13 @@ class TermComments extends Component {
                         <div>{moment(comment.createdAt).format('dddd-MMM-YYYY  HH:mm')}</div>
                         {this.state.update === true && this.state.commentEdit === comment._id ? <textarea onChange={this.handleChange.bind(this)} value={this.state.comment} name='comment'></textarea>
                         : <div style={{ whiteSpace:'pre-wrap', textAlign: 'left'}} >{comment.body}</div>}
-                        {this.state.user.username === comment.authorName &&
                         <div>
-                            {this.state.update === false && <button onClick={() => this.updateComment(comment._id, comment.body)}>Update</button>}
-                            <button onClick={() => this.deleteComment(comment._id)}>Delete</button>
+                            {(this.state.update === false && this.state.user.username === comment.authorName) && <button onClick={() => this.updateComment(comment._id, comment.body)}>Update</button>}
+                            {this.state.user.admin ? <button onClick={() => this.deleteComment(comment._id)}>Delete</button>
+                            : this.state.user.username === comment.authorName && <button onClick={() => this.deleteComment(comment._id)}>Delete</button>
+                        }
                             {(this.state.update === true && this.state.commentEdit === comment._id) && <button onClick={() => this.updateComment(comment._id, this.state.comment)}>Submit</button>}
-                        </div>}
+                        </div>
                     </div>
                     )
                 })}

@@ -93,12 +93,15 @@ router.post("/newTerm", (req, res) => {
 
 // Update Route for adding content to a term.
 
-router.post('search/:input', (req, res) => {
-  const input = req.params.input
+router.post('/updateTerm/:id', (req, res) => {
+  console.log(req.body)
   db.Term.findOneAndUpdate({
-    word: input
+    _id: req.params.id 
   },
-    req.body
+    {
+      definition: req.body.definition,
+      summary: req.body.summary
+    }
   )
     .then(data => {
       res.json(data);
@@ -108,7 +111,7 @@ router.post('search/:input', (req, res) => {
     })
 });
 
-router.delete('/search/:input', (req, res) => {
+router.delete('/deleteTerm/:input', (req, res) => {
   const input = req.params.input
   db.Term.findOneAndRemove({
     word: input
