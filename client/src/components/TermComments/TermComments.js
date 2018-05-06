@@ -108,16 +108,16 @@ class TermComments extends Component {
                     return (
                     <div className="commentContainer" key={comment._id}>
                         <div className="commentAuthor">{comment.authorName}</div>
-                        {this.state.update === true && this.state.commentEdit === comment._id ? <textarea onChange={this.handleChange.bind(this)} value={this.state.comment} name='comment'></textarea>
+                        {this.state.update === true && this.state.commentEdit === comment._id ? <textarea className="editBox" onChange={this.handleChange.bind(this)} value={this.state.comment} name='comment'></textarea>
                         : <div className="commentBody">
-                            <div className="commentBar">October 20, 2017 (pencil) (trashcan)</div>
-                            <div>{comment.body}</div>
+                            <div className="commentBar">October 20, 2017 {this.state.update === false && <img className="commentIcon"  onClick={() => this.updateComment(comment._id, comment.body)} src='./images/pencil.svg' alt="edit" />} <img onClick={() => this.deleteComment(comment._id)} className="commentIcon" src='./images/trashcan.svg' alt="delete" /></div>
+                            <div>
+                                {comment.body}
+                            </div>
                         </div>}
                         {this.state.user.username === comment.authorName &&
                         <div>
-                            {this.state.update === false && <button onClick={() => this.updateComment(comment._id, comment.body)}>Update</button>}
-                            <button onClick={() => this.deleteComment(comment._id)}>Delete</button>
-                            {(this.state.update === true && this.state.commentEdit === comment._id) && <button onClick={() => this.updateComment(comment._id, this.state.comment)}>Submit</button>}
+                            {(this.state.update === true && this.state.commentEdit === comment._id) && <button className="deleteComment" onClick={() => this.updateComment(comment._id, this.state.comment)}>Submit</button>}
                         </div>}
                     </div>
                     )
@@ -137,16 +137,5 @@ class TermComments extends Component {
                 }
             </div>
         )};
-
 }
-/*
- <div className="termComments">
-            <h3>User Comments</h3>
-            <button>Add a comment</button>
-            <div className="commentContainer">
-                <p>Sample comment 1 by a user</p>
-                <p>Sample crazy comment 2 by a user</p>
-            </div>
-    </div>
-*/
 export default TermComments;
