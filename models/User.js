@@ -25,6 +25,10 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  admin: {
+    type: Boolean,
+    default: false
+  },
   //Keep track of all posts associated with a given user
   posts: [
     {
