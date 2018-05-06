@@ -1,5 +1,5 @@
 .search {
-    margin: 0px 20px;
+    /* margin: 0 20px; */
     position: relative;
     background: #fff;
     box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
@@ -62,39 +62,39 @@
 
 @media only screen and (min-width: 600px)  {
 
-    .search {
+    /* .search {
         margin: 0 70px;
     }
 
     .search:hover,
     .search:focus-within {
         margin: 0 50px;
-    }
+    } */
   
 }
 
 @media only screen and (min-width: 700px)  {
 
-    .search {
+    /* .search {
         margin: 0 100px;
     }
 
     .search:hover,
     .search:focus-within {
         margin: 0 80px;
-    }
+    } */
   
 }
 
 @media only screen and (min-width: 1020px)  {
 
-    .search {
+    /* .search {
         margin: 0 235px;
     }
 
     .search:hover,
     .search:focus-within {
         margin: 0 225px;
-    }
+    } */
   
 }
