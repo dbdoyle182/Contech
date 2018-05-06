@@ -1,0 +1,74 @@
+.login-page form {
+    padding: 5%;
+    min-height: 85vh;
+    text-align: center;
+    font-family: 'Lora', serif;
+    background: #ccc;
+}
+
+.card-heading {
+    font-size: 2em;
+}
+
+.field-container {
+    background: white;
+    padding: 5% 0;
+    box-shadow: 0px 1px 4px 0 rgba(0,0,0,.15);
+}
+
+.field-line {
+    margin: 10px 0;
+}
+
+.button-line {
+    margin: 20px 0 10px 0;
+}
+
+.button-line button {
+    background: #3f686e;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0 20px 0;
+    letter-spacing: 1px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px #a0a0a0;
+    transition: all .2s ease-in-out;
+    border: none;
+}
+
+.button-line button:hover {
+    background: #32555a;
+    box-shadow: 0px 1px 5px #a0a0a0;
+}
+
+.form-link {
+    color: #0058e4;
+    text-decoration-line: none;
+    border-bottom: 1px solid #0058e4;
+    transition: all .2s ease-in-out;
+}
+
+.form-link:hover {
+    color: #013992; 
+}
+
+.success-message {
+    color: green;
+    margin: 30px 0 0 0;
+    font-size: 1.1em;
+}
+
+.error-message {
+    color: #af1111;
+    margin: 30px 0 0 0;
+    font-size: 1.1em;
+}
+
+@media only screen and (min-width: 1020px)  {
+    .field-container {
+        background: white;
+        padding: 5% 0;
+        margin: 0 30%;
+    }
+}

@@ -1,10 +1,8 @@
 import React  from 'react';
-import { Card, TextField, RaisedButton, CardText } from 'material-ui';
+import { Card, TextField, CardText } from 'material-ui';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-
-
+import "./LoginForm.css";
 
 
 const LoginForm = ({
@@ -15,8 +13,9 @@ const LoginForm = ({
     user
 }) => (
     // Feel free to change anything outside of the form tags. You can also change any of the classNames in accordance with style
-    <Card className='container'>
+    <Card className='container login-page'>
         <form action='/' onSubmit={onSubmit}>
+        <div className="field-container">
             <h2 className='card-heading'>Login</h2>
 
             {successMessage && <p className='success-message'>{successMessage}</p>}
@@ -44,10 +43,11 @@ const LoginForm = ({
             </div>
 
             <div className='button-line'>
-                <RaisedButton type='submit' label='Log in' primary />
+                <button type='submit' label='log in' primary>Log In</button>
             </div>
 
-            <CardText>Need an account?<Link to={'/signup'}>Create one</Link></CardText>
+            <CardText>Don't Have an Account? <Link to={'/signup'} className="form-link">Create One</Link></CardText>
+        </div>
         </form>
     </Card>
 );
