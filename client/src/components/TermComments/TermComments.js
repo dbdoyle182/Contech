@@ -3,6 +3,7 @@ import "./TermComments.css";
 import Auth from "../../utils/Auth";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 class TermComments extends Component {
     constructor(props, context) {
@@ -107,6 +108,7 @@ class TermComments extends Component {
                     return (
                     <div key={comment._id}>
                         <div>{comment.authorName}</div>
+                        <div>{moment(comment.createdAt).format('dddd-MMM-YYYY  HH:mm')}</div>
                         {this.state.update === true && this.state.commentEdit === comment._id ? <textarea onChange={this.handleChange.bind(this)} value={this.state.comment} name='comment'></textarea>
                         : <div style={{ whiteSpace:'pre-wrap', textAlign: 'left'}} >{comment.body}</div>}
                         {this.state.user.username === comment.authorName &&

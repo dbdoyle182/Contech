@@ -22,7 +22,7 @@ router.get("/search/:input", (req, res) => {
   const input = req.params.input;
   db.Term.find({
     word: new RegExp('^'+input+'$', "i")
-  }).populate('comments').populate('users')
+  }).populate('comments')
     .then(data => {
       res.json(data);
     })
@@ -90,5 +90,35 @@ router.post("/newTerm", (req, res) => {
       res.json(err);
     });
 });
+
+// Update Route for adding content to a term.
+
+router.post('search/:input', (req, res) => {
+  const input = req.params.input
+  db.Term.findOneAndUpdate({
+    word: input
+  },
+    req.body
+  )
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.json(err)
+    })
+});
+
+router.delete('/search/:input', (req, res) => {
+  const input = req.params.input
+  db.Term.findOneAndRemove({
+    word: input
+  })
+    .then(data => {
+      res.json(data)
+    })
+    .catch(data => {
+      res.json(err)
+    })
+})
 
 module.exports = router;
