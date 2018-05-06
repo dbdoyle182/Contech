@@ -3,6 +3,7 @@ import "./TermComments.css";
 import Auth from "../../utils/Auth";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 class TermComments extends Component {
     constructor(props, context) {
@@ -110,7 +111,7 @@ class TermComments extends Component {
                         <div className="commentAuthor">{comment.authorName}</div>
                         {this.state.update === true && this.state.commentEdit === comment._id ? <textarea className="editBox" onChange={this.handleChange.bind(this)} value={this.state.comment} name='comment'></textarea>
                         : <div className="commentBody">
-                            <div className="commentBar">October 20, 2017 {this.state.update === false && <img className="commentIcon"  onClick={() => this.updateComment(comment._id, comment.body)} src='./images/pencil.svg' alt="edit" />} <img onClick={() => this.deleteComment(comment._id)} className="commentIcon" src='./images/trashcan.svg' alt="delete" /></div>
+                            <div className="commentBar">{moment(comment.createdAt).format('dddd-MMM-YYYY  HH:mm')} {this.state.update === false && <img className="commentIcon"  onClick={() => this.updateComment(comment._id, comment.body)} src='./images/pencil.svg' alt="edit" />} <img onClick={() => this.deleteComment(comment._id)} className="commentIcon" src='./images/trashcan.svg' alt="delete" /></div>
                             <div>
                                 {comment.body}
                             </div>

@@ -33,12 +33,35 @@
 }
 
 .search-container {
-  margin: 60px 0;
+  margin: 60px 20px;
+  transition: all .3s ease-in-out;
 }
 
 @media only screen and (min-width: 400px) {
   .main-title {
     font-size: 4.5em;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .search-container {
+    margin: 60px 70px;
+  }
+
+  .search-container:hover,
+  .search-container:focus-within {
+      margin: 60px 50px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .search-container {
+    margin: 60px 100px;
+  }
+
+  .search-container:hover,
+  .search-container:focus-within {
+      margin: 60px 80px;
   }
 }
 
@@ -66,5 +89,14 @@
 
   .subtitle {
     font-size: 1.2em;
+  }
+
+  .search-container {
+    margin: 60px 235px;
+  }
+
+  .search-container:hover,
+  .search-container:focus-within {
+      margin: 60px 225px;
   }
 }

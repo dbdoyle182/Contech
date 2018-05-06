@@ -110,7 +110,7 @@ class SearchBar extends React.Component {
                 Auth.isUserAuthenticated() ? (
                     <div className="no-search-results">Would you like to add <Link to='/addterm' className="results-link">{this.state.search}</Link> to our library?</div>
                 ) : (
-                    <div className="no-search-results">Sorry, that word isn't available. <Link to='/login' className="results-link">Log In</Link> or <Link to='/signup' className="results-link">Sign up</Link> to add to our library.</div>
+                    <div className="no-search-results">Sorry, that word isn't available. <Link to='/login' className="results-link">Log In</Link> or <Link to='/signup' className="results-link">Sign up</Link> to add it to our library.</div>
                 )
 
             )}
