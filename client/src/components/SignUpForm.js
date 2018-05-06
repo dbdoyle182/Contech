@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, TextField, RaisedButton, CardText } from 'material-ui';
+import { Card, TextField, CardText } from 'material-ui';
 import PropTypes from 'prop-types';
+import "./SignUpForm.css";
 
 
 const SignUpForm = ({
@@ -11,8 +12,9 @@ const SignUpForm = ({
     user,
 }) => (
     // Same deal as the login form, try and avoid altering the the structure of the form page.
-    <Card className='container'>
+    <Card className='container signup-page'>
         <form action='/' onSubmit={onSubmit}>
+        <div className="field-container">
             <h2 className='card-heading'>Sign Up</h2>
 
             {errors.summary && <p className='error-message'>{errors.summary}</p>}
@@ -59,10 +61,11 @@ const SignUpForm = ({
             </div>
 
             <div className='button-line'>
-                <RaisedButton type='submit' label='Create New Account' primary />
+                <button type='submit' label='Create New Account' primary>Create New Account</button>
             </div>
 
-            <CardText>Already have an account? <Link to={'/login'}>Log in</Link></CardText>
+            <CardText>Already have an account? <Link to={'/login'} className="form-link">Log in</Link></CardText>
+        </div>
         </form>
     </Card>
 );
