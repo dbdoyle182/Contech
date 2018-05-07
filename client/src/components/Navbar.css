@@ -1,73 +1,73 @@
 header {
-    position: relative;
-    height: 50px;
-    background-color: rgb(56, 56, 56);
-    background: #32555a;
-    padding: 10px 0 0 0;
+  position: relative;
+  height: 50px;
+  background-color: rgb(56, 56, 56);
+  background: #32555a;
+  padding: 10px 0 0 0;
+  font-family: "Rubik", sans-serif;
 }
 
 .flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10px;
 }
 
 .flex-start {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 5%;
 }
 .flex-end {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 5%;
 }
 
 .logo-text,
 .nav-link {
-    color: white;
-    text-decoration: transparent;
-    text-decoration-color: transparent;
+  color: white;
+  text-decoration: transparent;
+  text-decoration-color: transparent;
 }
 
 .active {
-    color: red;
+  color: red;
 }
 
 .logo-text {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .nav-link {
-    color: white;
-    margin: 0 0 0 5px;
-    text-align: center;
-    transition: all .2s ease-in-out;
+  color: white;
+  margin: 0 0 0 5px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
 }
 
 .nav-link:hover {
-    color: gray;
+  color: gray;
 }
 
 .logo {
-    margin: 0;
+  margin: 0;
 }
 
-@media only screen and (min-width: 1020px)  {
+@media only screen and (min-width: 1020px) {
+  .nav-link {
+    margin: 0 0 0 20px;
+    font-size: 1.1em;
+  }
 
-    .nav-link {
-        margin: 0 0 0 20px;
-        font-size: 1.1em;
-    }
+  .logo {
+    margin: 0;
+  }
 
-    .logo {
-        margin: 0;
-    }
-  
-    .logo-text {
-        font-size: 1.3em;
-    }
+  .logo-text {
+    font-size: 1.3em;
+  }
 }
