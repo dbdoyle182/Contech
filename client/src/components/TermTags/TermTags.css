@@ -33,6 +33,10 @@
   }
 }
 
+span {
+  font-family: "Rubik", sans-serif;
+}
+
 @media only screen and (min-width: 830px) {
   .termTags {
     text-align: left;
