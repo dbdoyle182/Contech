@@ -17,7 +17,6 @@ const tags = [
     <MenuItem key={100} value={38} primaryText="By Tag" />,
     <MenuItem key={1} value={0} primaryText="Library" />,
     <MenuItem key={2} value={1} primaryText="Data" />,
-    <MenuItem key={3} value={2} primaryText="Server" />,
     <MenuItem key={4} value={3} primaryText="Backend" />,
     <MenuItem key={5} value={4} primaryText="Language" />,
     <MenuItem key={6} value={5} primaryText="Framework" />,
