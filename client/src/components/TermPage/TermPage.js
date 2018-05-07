@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardTitle } from 'material-ui/Card';
+import { CardTitle } from 'material-ui/Card';
 import TermMain from "../TermMain";
 import TermTags from "../TermTags";
 import TermRelevant from "../TermRelevant";
