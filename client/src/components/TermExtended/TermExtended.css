@@ -21,6 +21,7 @@
   line-height: 1.7rem;
   font-family: "Rubik", sans-serif;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .termExtended:hover {

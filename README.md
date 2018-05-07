@@ -1,11 +1,7 @@
 # ConTech
 Putting Tech into context.
 
-By:
-Alexander Bradley
-Daniel Doyle
-Brad Ferrel
-Abby Olaleye
+Contributors: Alexander Bradley | Daniel Doyle | Brad Ferrell | Abby Olaleye
 
 Live Link:
 

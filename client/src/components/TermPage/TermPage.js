@@ -184,9 +184,11 @@ class TermPage extends Component {
 
     render() { return (
         
-        <Card className='container'>
+        <div className='container'>
             <CardTitle />
-            <SearchBar/>
+            <div className="searchContainer">
+                <SearchBar/>
+            </div>
             <div className="entire-container">
                 <div className="row-container">
                     <div className="float-left">
@@ -226,7 +228,7 @@ class TermPage extends Component {
                     commentEdit={this.state.commentEdit}
                     />
             </div>
-        </Card>
+        </div>
     )}
 }
 

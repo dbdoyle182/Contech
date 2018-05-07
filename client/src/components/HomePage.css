@@ -1,6 +1,11 @@
 .homepage {
+<<<<<<< HEAD
+  font-family: "Lora", serif;
+  background: rgb(240, 240, 240);
+=======
   font-family: "Rubik", sans-serif;
   background: #ccc;
+>>>>>>> ffc30a66695b02f59e622a556df7e64f5addb387
   padding: 0 0 20px 0;
 }
 
