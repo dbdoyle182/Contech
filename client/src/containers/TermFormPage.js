@@ -126,7 +126,7 @@ class TermFormPage extends Component {
     render() {
         
         return (
-        Auth.isUserAuthenticated() ?    
+        // Auth.isUserAuthenticated() ?    
             (<Card className='container'>
                 <form action='/' onSubmit={this.processForm}>
                 <h2 className='card-heading'>Add a Term</h2>
@@ -206,7 +206,8 @@ class TermFormPage extends Component {
                     <RaisedButton type='submit' label='Add this term' primary/>
                 </div>
             </form>
-        </Card>) :(<h1>Be sure to <Link to='/login'>Log In</Link> or <Link to='/signup'>Sign Up</Link> to access this page!</h1>)
+        </Card>) 
+        // :(<h1>Be sure to <Link to='/login'>Log In</Link> or <Link to='/signup'>Sign Up</Link> to access this page!</h1>)
         )
     }
 }
