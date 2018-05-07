@@ -1,56 +1,54 @@
 .termRelevant {
-    padding: 10px 10px;
-    margin: 15px;
-    text-align: center;
-    width: 100%;
+  padding: 10px 10px;
+  margin: 15px;
+  text-align: center;
+  width: 100%;
 }
 .termRelevant h4 {
-    font-size: 1.5rem;
-    line-height: 1.8rem;
-    padding-bottom: 5px;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  padding-bottom: 5px;
+  font-family: "Rubik", sans-serif;
 }
 
 .termRelevant button {
-    font-size: 1rem;
-    background-color: #015249;
-    border: 1px solid #015249;
-    padding: 8px;
-    margin: 5px;
-}    
+  font-size: 1rem;
+  background-color: #015249;
+  border: 1px solid #015249;
+  padding: 8px;
+  margin: 5px;
+}
 
 .relevantLink {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 /* Teal #77C9D4 */
 /* Green #57BC90 */
 
-@media only screen and (min-width: 700px)  {
+@media only screen and (min-width: 700px) {
+  .termRelevant {
+    text-align: center;
+  }
 
-    .termRelevant {
-        text-align: center;
-    }
-
-    .termRelevant button {
-        margin-left: 0px;
-        width: 100%;
-    }
+  .termRelevant button {
+    margin-left: 0px;
+    width: 100%;
+  }
 }
 
-@media only screen and (min-width: 830px)  {
+@media only screen and (min-width: 830px) {
+  .termRelevant {
+    text-align: left;
+  }
 
-    .termRelevant {
-        text-align: left;
-    }
+  .termRelevant button {
+    margin-left: 5px;
+    width: auto;
+  }
 
-    .termRelevant button {
-        margin-left: 5px;
-        width: auto;
-    }
-    
-    .termRelevant button:nth-of-type(1) {
-        margin-left: 0px;
-    }
-  
+  .termRelevant button:nth-of-type(1) {
+    margin-left: 0px;
+  }
 }
