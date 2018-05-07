@@ -3,7 +3,7 @@
   min-height: 90vh;
   text-align: center;
   font-family: "Rubik", sans-serif;
-  background: #ccc;
+  background: rgb(240, 240, 240);
 }
 
 .card-heading {
@@ -59,18 +59,8 @@
   font-size: 1.1em;
 }
 
-<<<<<<< HEAD
 @media only screen and (min-width: 1020px)  {
     .field-container {
         margin: 0 30%;
     }
 }
-=======
-@media only screen and (min-width: 1020px) {
-  .field-container {
-    background: white;
-    padding: 5% 0;
-    margin: 0 30%;
-  }
-}
->>>>>>> 207d0e84c031b15cf3fae78e863b47fac4ec5728
