@@ -198,7 +198,7 @@ class TermPage extends Component {
 
     render() { return (
         
-        <div className='container'>
+        <Card className='container'>
             <CardTitle />
             <div className="searchContainer">
                 <SearchBar/>
@@ -242,7 +242,7 @@ class TermPage extends Component {
                     commentEdit={this.state.commentEdit}
                     />
             </div>
-        </div>
+        </Card>
     )}
 }
 
