@@ -5,101 +5,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-class TermComments extends Component {
-    constructor(props, context) {
-        super(props, context);
+const TermComments = props =>  (
 
-        this.state = {
-            comment: '',
-            user: {},
-            update: false,
-            commentEdit: ''
-        }
-
-        this.updateComment = this.updateComment.bind(this)
-        this.onSubmit = this.onSubmit.bind(this)
-    }
-    
-    componentDidMount() {
-        
-        if(Auth.isUserAuthenticated()) {
-            const username = localStorage.getItem('username')
-            axios.get(`/user/${username}`)
-                .then(res => {
-                    this.setState({ user: res.data[0]})
-                })
-                .catch(err => console.log(err))
-        }
-        
-    }
-
-    onSubmit(event) {
-        event.preventDefault();
-        const postRoute = '/newComment/' + this.props.id
-        
-
-        axios.post(postRoute, ({
-            body: this.state.comment,
-            author: this.state.user._id,
-            authorName: this.state.user.username
-        })).then(res => {
-            console.log('Comment posted')
-            this.setState({
-                comment: ''
-            })
-        }).catch(err => {
-            console.log(err)
-        })
-    }
-
-    handleChange(event) {
-        const { name, value } = event.target;
-
-        this.setState({
-            [name]: value
-            });
-
-        
-    }
-
-    deleteComment(id) {
-        axios.delete('/newComment/' + id)
-            .then(res => {
-                console.log('Your comment has been deleted')
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
-
-    updateComment(id, comment) {
-        if(this.state.update === false) {
-            this.setState({
-                update: true,
-                comment: comment,
-                commentEdit: id
-            })
-        }
-        if(this.state.update === true) {
-            const postRoute = '/updateComment/' + id;
-            axios.post(postRoute, ({
-                body: this.state.comment
-            }))
-                .then(res => {
-                    console.log('Your comment has been updated')
-                    this.setState({
-                        update: false
-                    })
-                })
-                .catch(err => {
-                    console.log(err)
-                })
-        }
-    }
-    
-    render() {
-        return (
-            <div className="termComments">
+    <div className="termComments">
             <h3>Comments</h3>
                 {(this.props.comments).map(comment => {
                     
@@ -133,7 +41,6 @@ class TermComments extends Component {
                         <div><Link to='/login'>Log in</Link> or <Link to='/signup'>Sign up</Link> to post a comment!</div>
                     )
                 }
-            </div>
-        )};
-}
+    </div>
+)
 export default TermComments;
