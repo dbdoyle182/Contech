@@ -1,41 +1,40 @@
 .termMain {
-    background: #015249;
-    color: white;
-    padding: 30px 30px;
-    text-align: center;
-    margin: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
-    width: 100%;
-    font-size: 2.8rem;
+  background: #015249;
+  color: white;
+  padding: 30px 30px;
+  text-align: center;
+  margin: 15px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  font-size: 2.8rem;
 }
 
 .termMain h2 {
-    font-size: 3.2rem;
-    padding-bottom: 12px;
-    font-family: 'Roboto Mono', monospace;
+  font-size: 3.2rem;
+  padding-bottom: 12px;
+  font-family: "Roboto Mono", monospace;
 }
 
 .termMain p {
-    font-size: 1.8rem;
-    line-height: 2rem;
-    font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  font-family: "Rubik", sans-serif;
 }
 
 .termMain:hover {
-    transition: all .3s ease-out;
-    box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
+  transition: all 0.3s ease-out;
+  box-shadow: -2px 8px 22px 0 rgba(0, 0, 0, 0.15);
 }
 
-@media only screen and (min-width: 700px)  {
+@media only screen and (min-width: 700px) {
+  .termMain {
+    text-align: left;
+  }
 
-    .termMain {
-        text-align: left;
-    }
-
-    .termMain h2 {
-        font-size: 3.6rem;
-    }
-    .termMain p {
-        font-size: 1.8rem;
-    }
+  .termMain h2 {
+    font-size: 3.6rem;
+  }
+  .termMain p {
+    font-size: 1.8rem;
+  }
 }

@@ -1,38 +1,36 @@
 .termExtended {
-    background: #fff;
-    text-align: center;
-    margin: 15px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-    width: 100%;
+  background: #fff;
+  text-align: center;
+  margin: 15px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
 .termExtended h3 {
-    background: linear-gradient(57deg, #77c9d4, #57bc90);
-    color: #015249;
-    font-size: 1.7rem;
-    font-weight: 600;
-    line-height: 1.8;
-    font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(57deg, #77c9d4, #57bc90);
+  color: #015249;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.8;
+  font-family: "Roboto Mono", monospace;
 }
 
 .termExtended p {
-    margin: 15px;
-    font-size: 1.2rem;
-    line-height: 1.7rem;
-    font-family: 'Lora', serif;
-    white-space: pre-wrap;
+  margin: 15px;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  font-family: "Rubik", sans-serif;
+  white-space: pre-wrap;
 }
 
 .termExtended:hover {
-    transition: all .3s ease-out;
-    box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
+  transition: all 0.3s ease-out;
+  box-shadow: -2px 8px 22px 0 rgba(0, 0, 0, 0.15);
 }
 
-@media only screen and (min-width: 700px)  {
-
-    .termExtended p {
-        margin: 30px;
-        font-size: 1.3rem
-    }
-  
+@media only screen and (min-width: 700px) {
+  .termExtended p {
+    margin: 30px;
+    font-size: 1.3rem;
+  }
 }
