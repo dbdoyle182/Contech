@@ -8,10 +8,11 @@
 .termTags h4 {
   font-size: 1.5rem;
   line-height: 1.8rem;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 .termTags span {
+  display: block;
   font-size: 1rem;
   background-color: #015249;
   border: 1px solid #015249;
@@ -22,23 +23,13 @@
 /* Teal #77C9D4 */
 /* Green #57BC90 */
 
-@media only screen and (min-width: 700px) {
-  .termTags {
-    text-align: center;
-  }
-  .termTags span {
-    margin-left: 0px;
-    display: block;
-  }
-}
-
-@media only screen and (min-width: 830px) {
+@media only screen and (min-width: 950px) {
   .termTags {
     text-align: left;
   }
   .termTags span {
     margin-left: 5px;
-    display: inline;
+    display: inline-block;
   }
   .termTags span:nth-of-type(1) {
     margin-left: 0px;

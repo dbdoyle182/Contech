@@ -150,6 +150,10 @@
   cursor: pointer;
 }
 
+.loginToComment {
+    margin-bottom: 15px;
+}
+
 @media only screen and (min-width: 500px) {
   .commentBody {
     width: 65%;
@@ -173,9 +177,6 @@
   .editBox {
     width: 70%;
     padding: 10px 15px 20px 15px;
-  }
-  .submitComment {
-    /*margin-left: 88%;*/
   }
 }
 
