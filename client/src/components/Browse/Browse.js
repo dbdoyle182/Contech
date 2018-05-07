@@ -221,7 +221,7 @@ render() {return (
             {this.state.results !== 'No Results' && this.state.results.map(result => {
                 return (<div key={result._id} className="browse-word"><Link to={'/search/' + result.word} className="browse-link">{result.word}</Link></div>)
             })}
-            {(this.state.results === 'No Results' || this.state.length === 0) && <div>There were no results :|</div>}
+            {(this.state.results === 'No Results' || this.state.length === 0) && <div className="no-results-found">No Results Found</div>}
         </div> 
     </div>
 )}
