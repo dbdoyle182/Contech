@@ -64,8 +64,11 @@ class TagMenu extends Component {
       value: null,
     };
   
+    // Handles change in the filter select dropdown
     handleChange = (event, index, value) => {
         this.setState({value});
+
+        // Passes the value back to the parent component
         this.props.callback(value)     
     };
 
@@ -97,9 +100,11 @@ class LetterMenu extends Component {
       value: null,
     };
   
+    // Handles the change in the letter select dropdown
     handleChange = (event, index, value) => {
         this.setState({value});
 
+        // Passes the selection back to the parent component
         this.props.callback(value)
     }
   
@@ -139,27 +144,30 @@ constructor(props, context) {
     this.browsingData = this.browsingData.bind(this)
 }
 
-componentDidMount() {}
+
+// Sets the state with the passed back value from letter selection
+
 childLetter (letter) {
     this.setState({
         letter: letter
     })
 }
+// Same as above but for the filter selection
 
 childFilter (filter) {
     this.setState({
         filter: filter
     })
 }
+// Checks user selection and determines the correct ajax call
 
 browsingData () {
-
+    const filter = browseItems[this.state.filter]
+    const letter = browseItems[this.state.letter]
     if(this.state.letter !== ''
     && this.state.letter !== 38
     && this.state.filter !== ''
     && this.state.filter !== 38) {
-        const filter = browseItems[this.state.filter]
-        const letter = browseItems[this.state.letter]
         axios.get('/browseBy/' + filter + '/' + letter)
             .then(res => {
                 this.setState({
@@ -171,7 +179,6 @@ browsingData () {
                 console.log(err)
             })
     } else if(this.state.filter !== '' && this.state.filter !== 38) {
-        const filter = browseItems[this.state.filter]
         axios.get('/filterBy/' + filter)
             .then(res => {
                 this.setState({
@@ -183,7 +190,6 @@ browsingData () {
                 console.log(err)
             })
     } else if(this.state.letter !== '' && this.state.letter !== 38) { 
-        const letter = browseItems[this.state.letter]
         axios.get('/searchBy/' + letter)
             .then(res => {
                 this.setState({
@@ -216,8 +222,7 @@ render() {return (
             {this.state.results !== 'No Results' && this.state.results.map(result => {
                 return (<div key={result._id} className="browse-word"><Link to={'/search/' + result.word} className="browse-link">{result.word}</Link></div>)
             })}
-            {this.state.results === 'No Results' && <div>There were no results :|</div>}
-            {this.state.length === 0 && <div>There were no results :|</div>}
+            {(this.state.results === 'No Results' || this.state.length === 0) && <div>There were no results :|</div>}
         </div> 
     </div>
 )}
