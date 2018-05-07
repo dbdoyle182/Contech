@@ -14,9 +14,9 @@ const browseItems = ['Library','Data', 'Server', 'Backend','Language','Framework
 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 const tags = [
+    <MenuItem key={100} value={38} primaryText="By Tag" />,
     <MenuItem key={1} value={0} primaryText="Library" />,
     <MenuItem key={2} value={1} primaryText="Data" />,
-    <MenuItem key={3} value={2} primaryText="Server" />,
     <MenuItem key={4} value={3} primaryText="Backend" />,
     <MenuItem key={5} value={4} primaryText="Language" />,
     <MenuItem key={6} value={5} primaryText="Framework" />,
@@ -28,41 +28,8 @@ const tags = [
     <MenuItem key={12} value={11} primaryText="Miscellaneous" />
 ];
 
-class TagMenu extends Component {
-    state = {
-      value: null,
-    };
-  
-    handleChange = (event, index, value) => {
-        this.setState({value});
-        this.props.callback(value)     
-    };
-
-    
-  
-    render() {
-      return (
-        <div>
-        <SelectField
-            value={this.state.value}
-            onChange={this.handleChange}
-            maxHeight={200}
-            underlineShow={false}
-            selectedMenuItemStyle={{color: '#489b77'}}
-            hintText="By Tag"
-            hintStyle={browseStyles}
-        >
-            {tags}
-        </SelectField>
-        <div>
-        
-        </div>
-        </div>
-      );
-    }
-}
-
 const letters = [
+    <MenuItem key={101} value={38} primaryText="By Letter" />,
     <MenuItem key={13} value={12} primaryText="A" />,
     <MenuItem key={14} value={13} primaryText="B" />,
     <MenuItem key={15} value={14} primaryText="C" />,
@@ -91,14 +58,52 @@ const letters = [
     <MenuItem key={38} value={37} primaryText="Z" />
 ];
 
+class TagMenu extends Component {
+    state = {
+      value: null,
+    };
+  
+    // Handles change in the filter select dropdown
+    handleChange = (event, index, value) => {
+        this.setState({value});
+
+        // Passes the value back to the parent component
+        this.props.callback(value)     
+    };
+
+    render() {
+      return (
+        <div>
+        <SelectField
+            value={this.state.value}
+            onChange={this.handleChange}
+            maxHeight={200}
+            underlineShow={false}
+            selectedMenuItemStyle={{color: '#489b77'}}
+            hintText="By Tag"
+            hintStyle={browseStyles}
+        >
+            {tags}
+        </SelectField>
+        <div>
+        
+        </div>
+        </div>
+      );
+    }
+}
+
+
 class LetterMenu extends Component {
     state = {
       value: null,
     };
   
+    // Handles the change in the letter select dropdown
     handleChange = (event, index, value) => {
         this.setState({value});
 
+        // Passes the selection back to the parent component
         this.props.callback(value)
     }
   
@@ -129,7 +134,8 @@ constructor(props, context) {
     this.state = {
         filter: '',
         letter: '',
-        results: []
+        results: [],
+        length: 1
     }
 
     this.childLetter = this.childLetter.bind(this)
@@ -137,57 +143,67 @@ constructor(props, context) {
     this.browsingData = this.browsingData.bind(this)
 }
 
-componentDidMount() {}
+
+// Sets the state with the passed back value from letter selection
+
 childLetter (letter) {
     this.setState({
         letter: letter
     })
 }
+// Same as above but for the filter selection
 
 childFilter (filter) {
     this.setState({
         filter: filter
     })
 }
+// Checks user selection and determines the correct ajax call
 
 browsingData () {
-    
-    if(this.state.letter !== '' && this.state.letter !== undefined && this.state.letter !== null
-    && this.state.filter !== '' && this.state.filter !== undefined && this.state.filter !== null) {
-        const filter = browseItems[this.state.filter]
-        const letter = browseItems[this.state.letter]
+    const filter = browseItems[this.state.filter]
+    const letter = browseItems[this.state.letter]
+    if(this.state.letter !== ''
+    && this.state.letter !== 38
+    && this.state.filter !== ''
+    && this.state.filter !== 38) {
         axios.get('/browseBy/' + filter + '/' + letter)
             .then(res => {
                 this.setState({
-                    results: res.data
+                    results: res.data,
+                    length: res.data.length
                 })
             })
             .catch(err => {
                 console.log(err)
             })
-    } else if(this.state.filter !== '' && this.state.filter !== undefined && this.state.filter !== null) {
-        const filter = browseItems[this.state.filter]
+    } else if(this.state.filter !== '' && this.state.filter !== 38) {
         axios.get('/filterBy/' + filter)
             .then(res => {
                 this.setState({
-                    results: res.data
+                    results: res.data,
+                    length: res.data.length
                 })
             })
             .catch(err => {
                 console.log(err)
             })
-    } else if(this.state.letter !== '' && this.state.letter !== undefined && this.state.letter !== null) { 
-        const letter = browseItems[this.state.letter]
+    } else if(this.state.letter !== '' && this.state.letter !== 38) { 
         axios.get('/searchBy/' + letter)
             .then(res => {
                 this.setState({
-                    results: res.data
+                    results: res.data,
+                    length: res.data.length
                 })
             })
             .catch(err => {
                 console.log(err)
             })
-    } 
+    } else {
+        this.setState({
+            results: 'No Results'
+        })
+    }
 }
     
     
@@ -202,9 +218,10 @@ render() {return (
             </div>
         </div>
         <div className="browse-results">
-            {this.state.results && this.state.results.map(result => {
+            {this.state.results !== 'No Results' && this.state.results.map(result => {
                 return (<div key={result._id} className="browse-word"><Link to={'/search/' + result.word} className="browse-link">{result.word}</Link></div>)
             })}
+            {(this.state.results === 'No Results' || this.state.length === 0) && <div className="no-results-found">No Results Found</div>}
         </div> 
     </div>
 )}

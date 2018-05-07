@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Card, TextField, RaisedButton, RadioButton, RadioButtonGroup} from 'material-ui';
+import { Card, TextField, RadioButton, RadioButtonGroup} from 'material-ui';
 import axios from 'axios';
 import Auth from '../utils/Auth';
 import { Link } from 'react-router-dom';
+import "./TermFormPage.css";
 
 const filtertags = ['Git','Framework','Library','Language','Data','Software','World Wide Web', 'Language Feature', 'Miscellaneous','Frontend','Backend'];
 
@@ -127,15 +128,22 @@ class TermFormPage extends Component {
         
         return (
         Auth.isUserAuthenticated() ?    
-            (<Card className='container'>
-                <form action='/' onSubmit={this.processForm}>
-                <h2 className='card-heading'>Add a Term</h2>
+            (<Card className='container termform-page'>
+            <form action='/' onSubmit={this.processForm}>
+            <div className="field-container">
+            <h2 className='card-heading'>Add a Term</h2>
 
-                {this.state.errors.summary && <p className='error-message'>{this.state.errors.summary}</p>}
-
-                <div className='field-line'>
+            {this.state.errors.summary && <p className='error-message'>{this.state.errors.summary}</p>}
+            <div className="form-options">
+                <div className='field-line message'>
                     <TextField
-                        floatingLabelText='Word'
+                        floatingLabelText="Enter the name of the term you would like to add..."
+                        floatingLabelStyle={{fontSize: "1.3em"}}
+                        floatingLabelFixed={true}
+                        multiLine={true}
+                        rows={2}
+                        rowsMax={2}
+                        fullWidth={true}
                         name='word'
                         errorText={this.state.errors.term}
                         onChange={this.changeWord}
@@ -143,10 +151,12 @@ class TermFormPage extends Component {
                     />
                 </div>
 
-                <div className='field-line'>
+                <div className='field-line message'>
                     <TextField  
-                        floatingLabelText='Summary'
-                        name='summary'
+                        floatingLabelText="Enter a short summary that describes the term..."
+                        floatingLabelStyle={{fontSize: "1.3em"}}
+                        floatingLabelFixed={true}
+                        fullWidth={true}
                         multiLine={true}
                         rows={2}
                         rowsMax={4}
@@ -156,9 +166,12 @@ class TermFormPage extends Component {
                     />
                 </div>
 
-                <div className='field-line'>
+                <div className='field-line message'>
                     <TextField  
-                        floatingLabelText='Definition'
+                        floatingLabelText="Enter an extended definition of the term..."
+                        floatingLabelFixed={true}
+                        floatingLabelStyle={{fontSize: "1.3em"}}
+                        fullWidth={true}
                         name='definition'
                         multiLine={true}
                         rows={2}
@@ -170,7 +183,7 @@ class TermFormPage extends Component {
                 </div>
 
                 <div className='field-line'>
-                    <h4>First Category</h4>
+                    <h4 className="options-header">First Tag</h4>
                     <RadioButtonGroup name='tags1' value={this.state.tags1} onChange={this.changeWord}>
                         {this.selectItems()}
                     </RadioButtonGroup>
@@ -178,7 +191,7 @@ class TermFormPage extends Component {
                 </div>
 
                 {this.state.tags1 !== '' && <div className='field-line'>
-                    <h4>Second Category</h4>
+                    <h4 className="options-header">Second Tag</h4>
                     <RadioButtonGroup name='tags2' value={this.state.tags2} onChange={this.changeWord}>
                         {this.selectItems()}
                     </RadioButtonGroup>
@@ -202,11 +215,14 @@ class TermFormPage extends Component {
                     <br />
                 </div>}
 
-                <div className='button-line'>
-                    <RaisedButton type='submit' label='Add this term' primary/>
                 </div>
+
+                <div className='button-line'>
+                    <button type='submit' label='Add this term' primary>Add This Term</button>
+                </div>
+            </div>
             </form>
-        </Card>) :(<h1>Be sure to <Link to='/login'>Log In</Link> or <Link to='/signup'>Sign Up</Link> to access this page!</h1>)
+        </Card>) :(<h1 className="warning-message">Be sure to <Link to='/login' className="form-link">Log In</Link> or <Link to='/signup' className="form-link">Sign Up</Link> to access this page!</h1>)
         )
     }
 }

@@ -51,7 +51,7 @@ const Navbar = () => (
                     <span className="nav-link">Sign Up</span>
                 </Link>
             </div>
-            )}
+        )}
         </nav>
     </header>
 

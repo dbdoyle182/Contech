@@ -1,13 +1,14 @@
 .termRelevant {
-    padding: 10px 10px;
-    margin: 15px;
-    text-align: center;
-    width: 100%;
+  padding: 10px 10px;
+  margin: 15px;
+  text-align: center;
+  width: 100%;
 }
 .termRelevant h4 {
-    font-size: 1.5rem;
-    line-height: 1.8rem;
-    padding-bottom: 5px;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  padding-bottom: 5px;
+  font-family: "Rubik", sans-serif;
 }
 
 .termRelevant button {
@@ -20,8 +21,12 @@
 }    
 
 .relevantLink {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
+}
+
+span {
+  font-family: "Rubik", sans-serif;
 }
 
 /* Teal #77C9D4 */
