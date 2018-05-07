@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import "./TermComments.css";
 import Auth from "../../utils/Auth";
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
