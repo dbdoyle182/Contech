@@ -26,6 +26,7 @@ class SearchBar extends React.Component {
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
+    // Load all terms from database to feed to autocomplete functionality
     componentDidMount() {
         axios.get('/term/all')
             .then(res => { 
@@ -40,7 +41,7 @@ class SearchBar extends React.Component {
             
         }
     
-
+    // Handles user input in search bar
     handleChange = inputValue => {
         
         const input = inputValue
@@ -49,23 +50,16 @@ class SearchBar extends React.Component {
         });
     };
 
+    // Handles user submission in the search bar
     handleFormSubmit = event => {
         event.preventDefault();
         axios.get(`/search/${this.state.search}`)
             .then(res => {
-
-                if (res.data.length > 1) {
-                    
-                    this.setState({ 
-                        results: res.data,
-                        resultsNum: res.data.length
-                    })
-                } else if (res.data.length === 1) {
+                if (res.data.length === 1) {
                     
                     window.location.replace(`/search/${res.data[0].word}`)
                     // Redirect to the page with res.data.word
-                } else {
-                    
+                } else { 
                     this.setState({ 
                         results: res.data,
                         resultsNum: res.data.length
@@ -96,16 +90,6 @@ class SearchBar extends React.Component {
                     <button type="submit" className="search-btn" ></button>
                 </form>
             </div>
-            {this.state.resultsNum > 1 &&
-            (<div>
-                {this.state.results.map(result => {
-                    return (
-                        <div key={result._id}>
-                            <h5><Link to={`/term/${result.word}`}>{result.word}</Link></h5>
-                        </div>
-                    )
-                })}
-            </div>)}
             {this.state.resultsNum === 0 && (
                 Auth.isUserAuthenticated() ? (
                     <div className="no-search-results">Would you like to add <Link to='/addterm' className="results-link">{this.state.search}</Link> to our library?</div>

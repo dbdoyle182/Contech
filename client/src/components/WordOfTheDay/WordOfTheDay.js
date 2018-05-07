@@ -10,9 +10,12 @@ class WordOfTheDay extends Component {
     this.state = {
         word: {}
     }
+    
+    this.selectRandomWord = this.selectRandomWord.bind(this)
 }
     
-    componentDidMount() {
+    // Loads all terms from database, selects a random term from that response and sets the state with chosen term
+    selectRandomWord () {
         axios.get('/term/all')
             .then(res => {
                 const number = Math.floor(Math.random() * res.data.length)
@@ -21,10 +24,10 @@ class WordOfTheDay extends Component {
             })
             .catch(err => console.log(err));
     }
-
-    // function refreshPage(){ 
-    //     window.location.reload(); 
-    // }
+    
+    componentDidMount() {
+        this.selectRandomWord();
+    }
     
     
     render() {
@@ -35,7 +38,7 @@ class WordOfTheDay extends Component {
                 <h1 className="word">{this.state.word.word}</h1>
                 <p className="definition">{this.state.word.summary}</p>
                 <button><Link to={`/search/${this.state.word.word}`} className="word-link">Learn More</Link></button>
-                <button type="button" onClick={() => window.location.reload()}>Next Term</button>
+                <button type="button" onClick={this.selectRandomWord}>Next Term</button>
             </div>
         )
     }
