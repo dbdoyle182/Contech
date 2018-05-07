@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardTitle } from 'material-ui/Card';
+import { CardTitle } from 'material-ui/Card';
 import TermMain from "../TermMain";
 import TermTags from "../TermTags";
 import TermRelevant from "../TermRelevant";
@@ -16,27 +16,31 @@ class TermPage extends Component {
         super(props, context);
 
         this.state = {
+            // Page information
             word: {},
             comments: [],
-            browseResults: [],
+            user: {},
+            // Used during term information changes
             editWord: false,
+            // Used with comments
             comment: '',
             commentEdit: '',
-            user: {},
             update: false,
             commentId: ''
         }
-
-        this.filterHandler = this.filterHandler.bind(this)
+        // Functions used in updating term db
         this.handleChange = this.handleChange.bind(this)
         this.updateTerm = this.updateTerm.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+
+        // Functions used in posting, deleting and updating comments db
         this.commentChange = this.commentChange.bind(this)
         this.commentSubmit = this.commentSubmit.bind(this)
         this.deleteComment = this.deleteComment.bind(this)
         this.updateComment = this.updateComment.bind(this)
     }
 
+    // Updates the entire term page component when any of our post and update routes are completed
     refreshWordInfo() {
         axios.get(this.props.match.params.input)
         .then(res => {
@@ -48,6 +52,8 @@ class TermPage extends Component {
         })
         .catch(err => console.log(err));
     }
+
+    // Loads in term information and user information upon component mount
     componentDidMount() {
         this.refreshWordInfo()
 
@@ -56,36 +62,12 @@ class TermPage extends Component {
             axios.get(`/user/${username}`)
                 .then(res => {
                     this.setState({ user: res.data[0]})
-                    console.log(this.state.user)
                 })
                 .catch(err => console.log(err))
         }
     }
 
-    // componentDidUpdate() {
-    //     axios.get(this.props.match.params.input)
-    //         .then(res => {
-    //             this.setState({
-    //                 comments: res.data[0].comments
-    //             })
-                
-    //         })
-    //         .catch(err => console.log(err));
-    // }
-
-    filterHandler(filter) {
-        axios.get('/filterBy/' + filter)
-            .then(res => {
-                this.setState({
-                    browseResults: res.data
-                })
-                console.log(this.state.browseResults)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
-
+    // Handles change when editing the term summary and definition
     handleChange(event) {
         const field = event.target.name;
         const word = this.state.word;
@@ -96,6 +78,7 @@ class TermPage extends Component {
         });
     }
 
+    // Triggers the edit state for the term information
     updateTerm(event) {
         if(this.state.editWord) {
             this.setState({
@@ -108,6 +91,7 @@ class TermPage extends Component {
         }
     }
 
+    // Handles the post route for updates to the term information
     handleSubmit(event) {
         const postRoute = '/updateTerm/' + this.state.word._id
     
@@ -125,6 +109,7 @@ class TermPage extends Component {
             })
     }
 
+    // Handles the post route for user comments
     commentSubmit(event) {
         event.preventDefault();
         const postRoute = '/newComment/' + this.state.word._id
@@ -134,31 +119,11 @@ class TermPage extends Component {
             body: this.state.comment,
             author: this.state.user._id,
             authorName: this.state.user.username
-        })).then(res => {
-            console.log('Comment posted')
-            this.setState({
-                comment: ''
-            })
-            this.refreshWordInfo()
-        }).catch(err => {
-            console.log(err)
-        })
-    }
-
-    commentChange(event) {
-        const { name, value } = event.target;
-
-        this.setState({
-            [name]: value
-            });
-
-        
-    }
-
-    deleteComment(id) {
-        axios.delete('/newComment/' + id)
+        }))
             .then(res => {
-                console.log('Your comment has been deleted')
+                this.setState({
+                    comment: ''
+                })
                 this.refreshWordInfo()
             })
             .catch(err => {
@@ -166,6 +131,28 @@ class TermPage extends Component {
             })
     }
 
+    // Handles the form for the comments and tracks changes
+    commentChange(event) {
+        const { name, value } = event.target;
+
+        this.setState({
+            [name]: value
+            });
+    }
+
+    // Handles the delete route for the comments
+    deleteComment(id) {
+        axios.delete('/newComment/' + id)
+            .then(res => {
+                this.refreshWordInfo()
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+
+    // Handles the update route for the comments
     updateComment(id, comment) {
         if(this.state.update === false) {
             this.setState({
@@ -180,7 +167,6 @@ class TermPage extends Component {
                 body: this.state.commentEdit
             }))
                 .then(res => {
-                    console.log('Your comment has been updated')
                     this.setState({
                         update: false
                     })
@@ -198,9 +184,11 @@ class TermPage extends Component {
 
     render() { return (
         
-        <Card className='container'>
+        <div className='container'>
             <CardTitle />
-            <SearchBar/>
+            <div className="searchContainer">
+                <SearchBar/>
+            </div>
             <div className="entire-container">
                 <div className="row-container">
                     <div className="float-left">
@@ -215,7 +203,7 @@ class TermPage extends Component {
                         />
                     </div>
                     <div className="float-right">
-                        <TermTags tags1={this.state.word.tags1} tags2={this.state.word.tags2} filterHandler={this.filterHandler}/>
+                        <TermTags tags1={this.state.word.tags1} tags2={this.state.word.tags2} />
                         <TermRelevant relevant1={this.state.word.related1} relevant2={this.state.word.related2} />
                     </div>
                 </div>
@@ -240,7 +228,7 @@ class TermPage extends Component {
                     commentEdit={this.state.commentEdit}
                     />
             </div>
-        </Card>
+        </div>
     )}
 }
 

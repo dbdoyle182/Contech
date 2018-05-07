@@ -61,7 +61,7 @@ const SignUpForm = ({
             </div>
 
             <div className='button-line'>
-                <button type='submit' label='Create New Account' primary>Create New Account</button>
+                <button type='submit' label='Create New Account'>Create New Account</button>
             </div>
 
             <CardText>Already have an account? <Link to={'/login'} className="form-link">Log in</Link></CardText>
