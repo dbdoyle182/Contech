@@ -15,12 +15,12 @@ const TermComments = props =>  (
                 <div className="commentAuthor">{comment.authorName}</div>
                 {props.update === true && props.commentId === comment._id ? <textarea className="editBox" onChange={props.handleChange} value={props.commentEdit} name='commentEdit'></textarea>
                 : <div className="commentBody">
-                    <div className="commentBar">{moment(comment.createdAt).format('MMMM Do YYYY  hh:mma')} {props.update === false && <img className="commentIcon"  onClick={() => props.updateComment(comment._id, comment.body)} src='/images/pencil.png' alt="edit" />} <img onClick={() => props.deleteComment(comment._id)} className="commentIcon" src='/images/trashcan.png' alt="delete" /></div>
+                    <div className="commentBar">{moment(comment.createdAt).format('MMMM Do YYYY  hh:mma')} {props.update === false && props.username === comment.authorName && <img className="commentIcon"  onClick={() => props.updateComment(comment._id, comment.body)} src='/images/pencil.png' alt="edit" />} {(props.admin === true || props.username === comment.authorName) && <img onClick={() => props.deleteComment(comment._id)} className="commentIcon" src='/images/trashcan.png' alt="delete" />}</div>
                     <div>
                         {comment.body}
                     </div>
                 </div>}
-                {props.username === comment.authorName &&
+                {(props.username === comment.authorName) &&
                 <div>
                     {(props.update === true && props.commentId === comment._id) && <button className="deleteComment" onClick={() => props.updateComment(comment._id, props.commentEdit)}>Done</button>}
                 </div>}
