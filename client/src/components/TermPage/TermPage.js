@@ -120,9 +120,11 @@ class TermPage extends Component {
 
     render() { return (
         
-        <Card className='container'>
+        <div className='container'>
             <CardTitle />
-            <SearchBar/>
+            <div className="searchContainer">
+                <SearchBar/>
+            </div>
             <div className="entire-container">
                 <div className="row-container">
                     <div className="float-left">
@@ -149,7 +151,7 @@ class TermPage extends Component {
                 />
                 <TermComments id={this.state.word._id} comments={this.state.comments}/>
             </div>
-        </Card>
+        </div>
     )}
 }
 

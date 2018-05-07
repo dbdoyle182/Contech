@@ -16,19 +16,20 @@
     margin-bottom: 30px;
 }
 
+.termComments h4 {
+    color: #015249;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.8;
+    font-family: 'Roboto Mono', monospace;
+    margin: 20px 0px;
+}
+
 .commentContainer {
     display: block;
     text-align: left;
     min-height: 35px;
     padding: 15px;
-}
-
-.addComment {
-    text-align: left;
-}
-
-.commenting{
-    text-align: right;
 }
 
 .commentAuthor {
@@ -44,7 +45,7 @@
 }
 
 .editBox {
-    width: 60%;
+    width: 38%;
     min-height: 100px;
     height: auto;
     white-space: pre-wrap;
@@ -71,11 +72,15 @@
     border-radius: 15px; 
     padding: 20px 10px 20px 10px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-    width: 60%;
+    width: 65%;
     height: auto;
 }
 
 .commentBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
     font-size: 0.7rem;
     text-align: right;
     padding-bottom: 10px;
@@ -87,6 +92,7 @@
     background-color: #015249;
     color: white;
     border: none;
+    border-radius: 5px; 
     padding: 10px;
 }
 
@@ -95,22 +101,91 @@
     box-shadow: -2px 8px 22px 0 rgba(0,0,0,.15);
 }
 
+.addCommentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 70%;
+    margin: auto;
+}
+
+.addComment {
+    font-size: 1.5rem;
+}
+
+.commenting{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 5px;
+}
+
+.newComment {
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+    white-space: pre-wrap;
+    background-color: #fff;
+    padding: 20px 10px 20px 10px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.submitComment {
+    margin-top: 5px;
+    /*margin-left: 75%; */
+    background-color: white;
+    font-size: 1.1rem;
+    color: #015249;
+    border: 1.5px solid #015249;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 500px)  {
+    .commentBody {
+        width: 65%;
+    }
+    .editBox {
+        width: 65%;
+    }
+}
+
 @media only screen and (min-width: 700px)  {
 
     .commentAuthor {
         padding: 20px 15px;
     }
+    .deleteComment {
+        margin-left: 85%;
+    }  
+    .commentBody {
+        width: 70%;
+        padding: 10px 15px 20px 15px;
+    }
+    .editBox {
+        width: 70%;
+        padding: 10px 15px 20px 15px;
+    }
+    .submitComment {
+        /*margin-left: 88%;*/
+    }
+}
 
+@media only screen and (min-width: 900px)  {
     .commentBody {
         width: 80%;
         padding: 10px 15px 20px 15px;
     }
-
     .editBox {
         width: 80%;
         padding: 10px 15px 20px 15px;
     }
-    .deleteComment {
-        margin-left: 85%;
-    }  
+    .addCommentContainer {
+        width: 60%;
+        margin: auto;
+    }
 }
