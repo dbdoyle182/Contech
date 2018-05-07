@@ -12,7 +12,6 @@ const LoginForm = ({
     successMessage,
     user
 }) => (
-    // Feel free to change anything outside of the form tags. You can also change any of the classNames in accordance with style
     <Card className='container login-page'>
         <form action='/' onSubmit={onSubmit}>
         <div className="field-container">
