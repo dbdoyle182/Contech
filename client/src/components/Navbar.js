@@ -15,7 +15,7 @@ const Navbar = () => (
                     <span className="logo-text">ConTECH</span>
                 </Link>
             </div>
-        {/* {Auth.isUserAuthenticated() ? ( */}
+        {Auth.isUserAuthenticated() ? (
             <div className='flex-end'>
                 <Link to='/' className={
             window.location.pathname === "/" ? "nav-link active" : "nav-link"
@@ -33,7 +33,7 @@ const Navbar = () => (
                     <span className="nav-link">Log Out</span>
                 </Link>
             </div>
-        {/* ) : ( */}
+        ) : (
             <div className='flex-end'>
                 <Link to='/' className={
             window.location.pathname === "/" ? "nav-link active" : "nav-link"
@@ -51,7 +51,7 @@ const Navbar = () => (
                     <span className="nav-link">Sign Up</span>
                 </Link>
             </div>
-            {/* )} */}
+        )}
         </nav>
     </header>
 
