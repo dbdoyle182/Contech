@@ -90,7 +90,7 @@ router.post("/newTerm", (req, res) => {
     });
 });
 
-// Update Route for adding content to a term
+//Update Route for adding content to a term
 router.post('/updateTerm/:id', (req, res) => {
   console.log(req.body)
   db.Term.findOneAndUpdate({
@@ -109,7 +109,7 @@ router.post('/updateTerm/:id', (req, res) => {
     })
 });
 
-//Delete route for removing a term
+//Delete Route for removing a term
 router.delete('/deleteTerm/:input', (req, res) => {
   const input = req.params.input
   db.Term.findOneAndRemove({
