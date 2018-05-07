@@ -2,6 +2,9 @@
   "name": "untitled-dev-dictionary",
   "version": "1.0.0",
   "description": "TBA",
+  "engines": {
+    "node": "8.9.4"
+  },
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
