@@ -43,6 +43,7 @@ li {
   padding: 10px;
   color: white;
   cursor: pointer;
+  word-wrap: break-word;
 }
 
 li:hover {
