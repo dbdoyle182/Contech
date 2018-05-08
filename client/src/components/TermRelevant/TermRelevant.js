@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const TermRelevant = props => (
   <div className="termRelevant">
-    <h4>Relevant Terms</h4>
+    <h4>Related Terms</h4>
     <div className="flex-relevant">
     {props.relevant1 && (
       <Link
