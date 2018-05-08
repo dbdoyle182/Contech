@@ -6,11 +6,7 @@ const TermRelevant = props => (
   <div className="termRelevant">
     <h4>Relevant Terms</h4>
     {props.relevant1 && (
-      <button
-        onClick={() => {
-          window.location.reload();
-        }}
-      >
+      <button>
         <Link
           className="relevantLink"
           to={"/term/" + props.relevant1}
@@ -21,11 +17,7 @@ const TermRelevant = props => (
       </button>
     )}
     {props.relevant2 && (
-      <button
-        onClick={() => {
-          window.location.reload();
-        }}
-      >
+      <button>
         <Link
           className="relevantLink"
           to={"/term/" + props.relevant2}

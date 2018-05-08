@@ -32,7 +32,7 @@ class TermPage extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.updateTerm = this.updateTerm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.refreshWordInfo = this.refreshWordInfo.bind(this);
     // Functions used in posting, deleting and updating comments db
     this.commentChange = this.commentChange.bind(this);
     this.commentSubmit = this.commentSubmit.bind(this);
@@ -52,6 +52,11 @@ class TermPage extends Component {
         });
       })
       .catch(err => console.log(err));
+  }
+  componentDidUpdate() {
+    if (this.props.match.params.input !== this.state.word.word) {
+      this.refreshWordInfo()
+    }
   }
 
   // Loads in term information and user information upon component mount
