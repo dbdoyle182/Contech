@@ -7,26 +7,22 @@ const TermRelevant = props => (
     <h4>Relevant Terms</h4>
     <div className="flex-relevant">
     {props.relevant1 && (
-      <button>
-        <Link
-          className="relevantLink"
-          to={"/term/" + props.relevant1}
-          replace
-        >
-          {props.relevant1} ►
-        </Link>
-      </button>
+      <Link
+        className="relevantLink"
+        to={"/term/" + props.relevant1}
+        replace
+      >
+        {props.relevant1} ►
+      </Link>
     )}
     {props.relevant2 && (
-      <button>
-        <Link
-          className="relevantLink"
-          to={"/term/" + props.relevant2}
-          replace
-        >
-          {props.relevant2} ►
-        </Link>
-      </button>
+      <Link
+        className="relevantLink"
+        to={"/term/" + props.relevant2}
+        replace
+      >
+        {props.relevant2} ►
+      </Link>
     )}
     </div>
   </div>

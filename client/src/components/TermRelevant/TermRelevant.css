@@ -9,8 +9,9 @@
   font-family: "Rubik", sans-serif;
 }
 
-.termRelevant button {
+.relevantLink {
   font-size: 1rem;
+  font-family: "Rubik", sans-serif;
   background-color: #015249;
   border: 1px solid #015249;
   padding: 8px;
@@ -20,7 +21,7 @@
   cursor: pointer;
 }
 
-.termRelevant button:hover {
+.relevantLink:hover {
   background-color: #003630;
   border: 1px solid #003630;
 }
@@ -35,9 +36,6 @@
   flex-direction: column;
 }
 
-/* Teal #77C9D4 */
-/* Green #57BC90 */
-
 @media only screen and (min-width: 1020px) {
   .termRelevant {
     text-align: left;
@@ -46,7 +44,7 @@
     padding: 10px;
   }
 
-  .termRelevant button {
+  .relevantLink {
     text-align: left;
     width: 50%;
   }
