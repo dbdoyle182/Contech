@@ -1,10 +1,15 @@
-# ConTech
-Putting Tech into context.
+# ConTECH
+__Putting Tech into context.__ A Developer’s Dictionary and Interactive Reference Guide.
 
-Contributors: Alexander Bradley | Daniel Doyle | Brad Ferrell | Abby Olaleye
+#### Contributors: 
+__Alexander Bradley__ | __Daniel Doyle__ | __Brad Ferrell__ | __Abby Olaleye__
 
-Live Link: [Click me!](https://contech-app.herokuapp.com/)
+#### Overview:
+* The inspiration behind this project came from our experience when beginning UNCC’s Coding Bootcamp. 
+* If we searched for an unfamiliar term online, we could easily find ourselves inundated with vast amounts of information.
+* We found that it wasn’t just developers that ran into this issue, but also those that worked with developers.
+* __Our app is a quick reference tool that provides simplified definitions to these complex terms.__
+* __Our app is for developers, those that work with developers, or anyone that is new to the industry.__
 
-Inspiration:
+#### Live Link: [Click me!](https://contech-app.herokuapp.com/)
 
-The desire behind this project came from our experience first starting the UNCC Full Stack bootcamp and hearing many terms that just didn't quite stick. However, most resources went so far in depth we weren't sure were to start. Our application is an attempt to simplify definitions for people new to the industry.
