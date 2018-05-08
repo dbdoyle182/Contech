@@ -1,11 +1,9 @@
 .termRelevant {
-  padding: 10px 10px;
-  margin: 15px;
   text-align: center;
   width: 100%;
 }
 .termRelevant h4 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.8rem;
   padding-bottom: 5px;
   font-family: "Rubik", sans-serif;
@@ -17,8 +15,14 @@
   border: 1px solid #015249;
   padding: 8px;
   margin: 5px;
+  box-shadow: 0px 1px 4px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
-  font-family: "Rubik", sans-serif;
+}
+
+.termRelevant button:hover {
+  background-color: #003630;
+  border: 1px solid #003630;
 }
 
 .relevantLink {
@@ -26,31 +30,33 @@
   color: white;
 }
 
+.flex-relevant {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Teal #77C9D4 */
 /* Green #57BC90 */
 
-@media only screen and (min-width: 700px) {
-  .termRelevant {
-    text-align: center;
-  }
-
-  .termRelevant button {
-    margin-left: 0px;
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 830px) {
+@media only screen and (min-width: 1020px) {
   .termRelevant {
     text-align: left;
+    margin: 0 2% 0 0;
+    background: #e8e8e8;
+    padding: 10px;
   }
 
   .termRelevant button {
-    margin-left: 5px;
-    width: auto;
+    text-align: left;
+    width: 50%;
   }
 
-  .termRelevant button:nth-of-type(1) {
-    margin-left: 0px;
+  .termRelevant h4 {
+    font-size: 1.5rem;
+  }
+
+  .flex-relevant {
+    display: flex;
+    flex-direction: row;
   }
 }

@@ -3,6 +3,7 @@
   text-align: center;
   margin: 15px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-out;
   width: 100%;
 }
 
@@ -100,7 +101,6 @@
 }
 
 .termComments:hover {
-  transition: all 0.3s ease-out;
   box-shadow: -2px 8px 22px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -148,6 +148,22 @@
   padding: 10px;
   margin-bottom: 15px;
   cursor: pointer;
+}
+
+.auth-message {
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.form-link {
+  color: #0058e4;
+  text-decoration-line: none;
+  border-bottom: 1px solid #0058e4;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-link:hover {
+  color: #013992;
 }
 
 @media only screen and (min-width: 500px) {
