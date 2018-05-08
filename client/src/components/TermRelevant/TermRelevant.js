@@ -13,7 +13,7 @@ const TermRelevant = props => (
       >
         <Link
           className="relevantLink"
-          to={"/search/" + props.relevant1}
+          to={"/term/" + props.relevant1}
           replace
         >
           {props.relevant1} ►
@@ -28,7 +28,7 @@ const TermRelevant = props => (
       >
         <Link
           className="relevantLink"
-          to={"/search/" + props.relevant2}
+          to={"/term/" + props.relevant2}
           replace
         >
           {props.relevant2} ►

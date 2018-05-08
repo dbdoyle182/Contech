@@ -55,7 +55,7 @@ class SearchBar extends React.Component {
       .get(`/search/${this.state.search}`)
       .then(res => {
         if (res.data.length === 1) {
-          window.location.replace(`/search/${res.data[0].word}`);
+          window.location.replace(`/term/${res.data[0].word}`);
           // Redirect to the page with res.data.word
         } else {
           this.setState({
