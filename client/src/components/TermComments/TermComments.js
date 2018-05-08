@@ -37,7 +37,7 @@ const TermComments = props =>  (
                         <div className="buttonContainer"><button className="submitComment" type='submit'>Submit</button></div>
                     </form>
                 </div>) : (
-                <div><Link to='/login'>Log in</Link> or <Link to='/signup'>Sign up</Link> to post a comment!</div>
+                <div className="auth-message"><Link to='/login' className="form-link">Log in</Link> or <Link to='/signup' className="form-link">Sign up</Link> to post a comment!</div>
             )
         }
     </div>

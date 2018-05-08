@@ -150,6 +150,22 @@
   cursor: pointer;
 }
 
+.auth-message {
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.form-link {
+  color: #0058e4;
+  text-decoration-line: none;
+  border-bottom: 1px solid #0058e4;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-link:hover {
+  color: #013992;
+}
+
 @media only screen and (min-width: 500px) {
   .commentBody {
     width: 65%;
