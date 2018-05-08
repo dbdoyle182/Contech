@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import brace from "brace";
 import AceEditor from "react-ace";
+import "./CodeSandbox.css"
 
 import "brace/mode/jsx";
 import "brace/mode/javascript";
@@ -123,7 +124,7 @@ class CodeSandbox extends Component {
       <div className="columns">
         <div className="column">
           <div className="field">
-            <label>Mode:</label>
+            <label>Mode</label>
             <p className="control">
               <span className="select">
                 <select
@@ -142,7 +143,7 @@ class CodeSandbox extends Component {
           </div>
 
           <div className="field">
-            <label>Theme:</label>
+            <label>Theme</label>
             <p className="control">
               <span className="select">
                 <select
@@ -161,7 +162,7 @@ class CodeSandbox extends Component {
           </div>
 
           <div className="field">
-            <label>Font Size:</label>
+            <label>Font Size</label>
             <p className="control">
               <span className="select">
                 <select
@@ -169,7 +170,7 @@ class CodeSandbox extends Component {
                   onChange={this.setFontSize}
                   value={this.state.fontSize}
                 >
-                  {[14, 16, 18, 20, 24, 28, 32, 40].map(lang => (
+                  {[14, 16, 18, 20, 24].map(lang => (
                     <option key={lang} value={lang}>
                       {lang}
                     </option>
@@ -182,9 +183,10 @@ class CodeSandbox extends Component {
         <div className="examples column">
           <h2>Code Editor</h2>
           <AceEditor
+            className="editor"
             mode={this.state.mode}
             theme={this.state.theme}
-            name="blah2"
+            name="Code Editor"
             onLoad={this.onLoad}
             onChange={this.onChange}
             onSelectionChange={this.onSelectionChange}

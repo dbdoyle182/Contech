@@ -194,11 +194,11 @@
 
 @media only screen and (min-width: 900px) {
   .commentBody {
-    width: 80%;
+    width: 75%;
     padding: 10px 15px 20px 15px;
   }
   .editBox {
-    width: 80%;
+    width: 75%;
     padding: 10px 15px 20px 15px;
   }
   .addCommentContainer {

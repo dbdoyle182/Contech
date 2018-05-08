@@ -16,6 +16,7 @@
 }
 
 .termTags span {
+  display: block;
   font-size: 1rem;
   font-family: "Rubik", sans-serif;
   background-color: rgba(0, 62, 55, 0.68);
