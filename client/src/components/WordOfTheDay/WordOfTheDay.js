@@ -36,7 +36,7 @@ class WordOfTheDay extends Component {
         <h1 className="word">{this.state.word.word}</h1>
         <p className="definition">{this.state.word.summary}</p>
         <button>
-          <Link to={`/search/${this.state.word.word}`} className="word-link">
+          <Link to={`/term/${this.state.word.word}`} className="word-link">
             Learn More
           </Link>
         </button>

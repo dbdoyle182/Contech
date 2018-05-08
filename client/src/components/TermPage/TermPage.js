@@ -42,8 +42,9 @@ class TermPage extends Component {
 
   // Updates the entire term page component when any of our post and update routes are completed
   refreshWordInfo() {
+    const term = this.props.match.params.input
     axios
-      .get(this.props.match.params.input)
+      .get('/search/' + term)
       .then(res => {
         this.setState({
           word: res.data[0],

@@ -21,7 +21,7 @@ class App extends Component {
             <Route path="/signup" component={SignUpPage} />
             <Route path="/logout" component={LogoutFunction} />
             <Route path="/addterm" component={TermFormPage} />
-            <Route path="/search/:input" component={TermPage} />
+            <Route path="/term/:input" component={TermPage} />
             <Route component={NotFound} />
           </Switch>
         </div>
