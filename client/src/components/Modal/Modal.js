@@ -17,18 +17,12 @@ class Modal extends Component {
 
   render() {
     const actions = [
-      <FlatButton label="Cancel" primary={true} onClick={this.handleClose} />,
-      <FlatButton
-        label="Submit"
-        primary={true}
-        disabled={true}
-        onClick={this.handleClose}
-      />
+      <FlatButton label="Close" primary={true} onClick={this.handleClose} />,
     ];
 
     return (
       <div>
-        <RaisedButton label="Code" onClick={this.handleOpen} />
+        <RaisedButton label="Code Editor" onClick={this.handleOpen} />
         <Dialog
           title="Code Sandbox"
           actions={actions}

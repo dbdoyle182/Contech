@@ -4,6 +4,7 @@
   margin: 15px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   width: 100%;
+  padding-bottom: 15px;
 }
 
 .termExtended h3 {
@@ -22,6 +23,13 @@
   font-family: "Rubik", sans-serif;
   white-space: pre-wrap;
   text-align: left;
+}
+
+.editDefinition {
+    width: 95%;
+    height: 100px;
+    font-size: 1.2rem;
+    margin-top: 5px;
 }
 
 .termExtended:hover {

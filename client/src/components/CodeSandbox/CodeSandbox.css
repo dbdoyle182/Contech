@@ -1,0 +1,32 @@
+.column {
+    margin: auto;
+    font-family: "Rubik", sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.field {
+    display: inline-block;
+    text-align: center;
+    width:30%;
+    margin-bottom: 10px;
+}
+
+select {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.1rem;
+
+}
+
+.ace_editor {
+    width: 100%;
+}
+
+.ace_content {
+    width: 100%;
+}
+
+.editor {
+    width: 100%;
+}
+
