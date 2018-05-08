@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchBar.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import AutoComplete from "material-ui/AutoComplete";
 import Auth from "../../utils/Auth";
 
@@ -19,7 +19,9 @@ class SearchBar extends React.Component {
       auto: [],
       results: [],
       resultsNum: "",
-      browseResults: []
+      browseResults: [],
+      redirect: false,
+      searchTerm: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -55,8 +57,12 @@ class SearchBar extends React.Component {
       .get(`/search/${this.state.search}`)
       .then(res => {
         if (res.data.length === 1) {
-          window.location.replace(`/term/${res.data[0].word}`);
-          // Redirect to the page with res.data.word
+          console.log('/term/' + res.data[0].word)
+          this.setState({
+            redirect: true,
+            searchTerm: res.data[0].word
+          })
+          
         } else {
           this.setState({
             results: res.data,
@@ -109,8 +115,9 @@ class SearchBar extends React.Component {
               to add it to our library.
             </div>
           ))}
-      </div>
-    );
+    {this.state.redirect === true && <Redirect to={'/term/' + this.state.searchTerm} />}
+    </div>
+    )
   }
 }
 
