@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FlatButton, RaisedButton, Dialog } from "material-ui";
 import CodeSandbox from "../CodeSandbox";
+import "./Modal.css"
 
 class Modal extends Component {
   state = {
@@ -21,7 +22,7 @@ class Modal extends Component {
     ];
 
     return (
-      <div>
+      <div className="showHideEditorButton">
         <RaisedButton label="Code Editor" onClick={this.handleOpen} />
         <Dialog
           title="Code Sandbox"
