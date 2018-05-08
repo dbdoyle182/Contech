@@ -19,6 +19,8 @@
   padding: 8px;
   margin: 5px;
   color: white;
+  font-family: "Rubik", sans-serif;
+  cursor: pointer;
 }
 /* Teal #77C9D4 */
 /* Green #57BC90 */
@@ -31,10 +33,6 @@
     margin-left: 0px;
     display: block;
   }
-}
-
-span {
-  font-family: "Rubik", sans-serif;
 }
 
 @media only screen and (min-width: 830px) {

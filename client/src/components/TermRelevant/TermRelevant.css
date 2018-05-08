@@ -17,15 +17,13 @@
   border: 1px solid #015249;
   padding: 8px;
   margin: 5px;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
 }
 
 .relevantLink {
   text-decoration: none;
   color: white;
-}
-
-span {
-  font-family: "Rubik", sans-serif;
 }
 
 /* Teal #77C9D4 */
