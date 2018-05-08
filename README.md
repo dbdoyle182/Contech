@@ -3,7 +3,7 @@ Putting Tech into context.
 
 Contributors: Alexander Bradley | Daniel Doyle | Brad Ferrell | Abby Olaleye
 
-Live Link:
+Live Link: [Click me!](https://contech-app.herokuapp.com/)
 
 Inspiration:
 

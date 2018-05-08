@@ -67,7 +67,7 @@
 
 @media only screen and (min-width: 1020px) {
   .homepage {
-    padding: 0 0 0 0;
+    padding: 0;
   }
 
   .main-header {

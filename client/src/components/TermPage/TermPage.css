@@ -3,10 +3,16 @@
 }
 
 .searchContainer {
-    width:70%;
+    width: 70%;
     margin: auto;
     margin-bottom: 25px;
+    transition: all 0.3s ease-out;
 }
+
+.searchContainer:hover,
+.searchContainer:focus-within {
+    width: 72%;
+}  
 
 .entire-container {
     display: flex;
@@ -21,6 +27,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    margin: 1% 0;
 }
 
 .float-left {
@@ -32,8 +39,9 @@
 .float-right {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 4% 4% 1% 4%;
 }
 
 
@@ -42,7 +50,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 90%;
     }
     .float-left {
         display: flex;
@@ -52,7 +59,16 @@
     .float-right {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin: 0;
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 1020px)  {
+    .float-right {
+        margin: 0 3% 0 .5%;
         width: 30%;
     }
 }

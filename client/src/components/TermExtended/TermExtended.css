@@ -3,6 +3,7 @@
   text-align: center;
   margin: 15px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-out;
   width: 100%;
   padding-bottom: 15px;
 }
@@ -19,7 +20,7 @@
 .termExtended p {
   margin: 15px;
   font-size: 1.2rem;
-  line-height: 1.7rem;
+  line-height: 2rem;
   font-family: "Rubik", sans-serif;
   white-space: pre-wrap;
   text-align: left;
@@ -33,7 +34,6 @@
 }
 
 .termExtended:hover {
-  transition: all 0.3s ease-out;
   box-shadow: -2px 8px 22px 0 rgba(0, 0, 0, 0.15);
 }
 
