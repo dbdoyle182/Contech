@@ -1,7 +1,7 @@
 # ConTECH
 __Putting Tech into context.__ A Developer’s Dictionary and Interactive Reference Guide.
 
-#### Contributors: 
+#### _Contributors:_ 
 __Alexander Bradley__ | __Daniel Doyle__ | __Brad Ferrell__ | __Abby Olaleye__
 
 #### Overview:
