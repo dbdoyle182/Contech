@@ -268,7 +268,7 @@ class Browse extends Component {
             this.state.results.map(result => {
               return (
                 <div key={result._id} className="browse-word">
-                  <Link to={"/search/" + result.word} className="browse-link">
+                  <Link to={"/term/" + result.word} className="browse-link">
                     {result.word}
                   </Link>
                 </div>
