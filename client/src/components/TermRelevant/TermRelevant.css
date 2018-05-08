@@ -35,28 +35,13 @@
   flex-direction: column;
 }
 
-span {
-  font-family: "Rubik", sans-serif;
-}
-
 /* Teal #77C9D4 */
 /* Green #57BC90 */
-
-@media only screen and (min-width: 700px) {
-  .termRelevant {
-    text-align: center;
-    margin: 0 2% 0 0;
-  }
-
-  .termRelevant button {
-    margin-left: 0px;
-    width: 100%;
-  }
-}
 
 @media only screen and (min-width: 1020px) {
   .termRelevant {
     text-align: left;
+    margin: 0 2% 0 0;
     background: #e8e8e8;
     padding: 10px;
   }

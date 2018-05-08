@@ -59,8 +59,8 @@
   font-size: 1.1em;
 }
 
-@media only screen and (min-width: 1020px)  {
-    .field-container {
-        margin: 0 30%;
-    }
+@media only screen and (min-width: 1020px) {
+  .field-container {
+    margin: 0 30%;
+  }
 }

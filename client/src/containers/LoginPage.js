@@ -1,95 +1,92 @@
-import React, { Component } from 'react';
-import LoginForm from '../components/LoginForm.js';
-import Auth from '../utils/Auth'
+import React, { Component } from "react";
+import LoginForm from "../components/LoginForm.js";
+import Auth from "../utils/Auth";
 
 class LoginPage extends Component {
+  constructor(props, context) {
+    super(props, context);
 
-    constructor(props, context) {
-        super(props, context);
+    const storedMessage = localStorage.getItem("successMessage");
+    let successMessage = "";
 
-        const storedMessage = localStorage.getItem('successMessage');
-        let successMessage = '';
-
-        if (storedMessage) {
-            successMessage = storedMessage;
-            localStorage.removeItem('successMessage');
-        }
-
-        this.state = {
-            errors: {},
-            successMessage,
-            user: {
-                email: '',
-                password: ''
-            }
-        };
-
-        this.processForm = this.processForm.bind(this);
-        this.changeUser = this.changeUser.bind(this);
+    if (storedMessage) {
+      successMessage = storedMessage;
+      localStorage.removeItem("successMessage");
     }
 
-    processForm(event) {
-        event.preventDefault();
+    this.state = {
+      errors: {},
+      successMessage,
+      user: {
+        email: "",
+        password: ""
+      }
+    };
 
-        // create a string for an HTTP body message
-        const email = encodeURIComponent(this.state.user.email);
-        const password = encodeURIComponent(this.state.user.password);
-        const formData = `email=${email}&password=${password}`;
+    this.processForm = this.processForm.bind(this);
+    this.changeUser = this.changeUser.bind(this);
+  }
 
-        // create an AJAX request
-        const xhr = new XMLHttpRequest();
-        xhr.open('post', '/auth/login');
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.responseType = 'json';
-        xhr.addEventListener('load', () => {
-            if (xhr.status === 200) {
-                // success
+  processForm(event) {
+    event.preventDefault();
 
-                // change the component-container state
-                this.setState({
-                    errors: {}
-                });
-                
-                Auth.authenticateUser(xhr.response.token, xhr.response.user.username);
-                this.props.history.push('/')
-            } else {
-                // failure
+    // create a string for an HTTP body message
+    const email = encodeURIComponent(this.state.user.email);
+    const password = encodeURIComponent(this.state.user.password);
+    const formData = `email=${email}&password=${password}`;
 
-                // change the component state
-                const errors = xhr.response.errors ? xhr.response.errors : {};
-                errors.summary = xhr.response.message;
+    // create an AJAX request
+    const xhr = new XMLHttpRequest();
+    xhr.open("post", "/auth/login");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.responseType = "json";
+    xhr.addEventListener("load", () => {
+      if (xhr.status === 200) {
+        // success
 
-                this.setState({
-                    errors
-                });
-            }
-            });
-            xhr.send(formData);
-        }
-    
+        // change the component-container state
+        this.setState({
+          errors: {}
+        });
 
-    changeUser(event) {
-        const field = event.target.name;
-        const user = this.state.user;
-        user[field] = event.target.value;
+        Auth.authenticateUser(xhr.response.token, xhr.response.user.username);
+        this.props.history.push("/");
+      } else {
+        // failure
+
+        // change the component state
+        const errors = xhr.response.errors ? xhr.response.errors : {};
+        errors.summary = xhr.response.message;
 
         this.setState({
-            user
+          errors
         });
-    }
+      }
+    });
+    xhr.send(formData);
+  }
 
+  changeUser(event) {
+    const field = event.target.name;
+    const user = this.state.user;
+    user[field] = event.target.value;
 
-    render() {
-        return (
-            <LoginForm  
-                onSubmit={this.processForm}
-                onChange={this.changeUser}
-                errors={this.state.errors}
-                user={this.state.user}
-                successMessage={this.state.successMessage}
-            />
-        );
-    }
+    this.setState({
+      user
+    });
+  }
+
+  render() {
+    return (
+      <LoginForm
+        onSubmit={this.processForm}
+        onChange={this.changeUser}
+        errors={this.state.errors}
+        user={this.state.user}
+        successMessage={this.state.successMessage}
+      />
+    );
+  }
 }
 
 export default LoginPage;

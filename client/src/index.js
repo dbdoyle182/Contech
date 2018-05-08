@@ -1,10 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import getMuiTheme from "material-ui/styles/getMuiTheme";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import registerServiceWorker from "./registerServiceWorker";
+import injectTapEventPlugin from "react-tap-event-plugin";
 
+injectTapEventPlugin();
 
-ReactDOM.render((<MuiThemeProvider muiTheme={getMuiTheme()}><App /></MuiThemeProvider>), document.getElementById('root'));
+ReactDOM.render(
+  <MuiThemeProvider muiTheme={getMuiTheme()}>
+    <App />
+  </MuiThemeProvider>,
+  document.getElementById("root")
+);
 registerServiceWorker();

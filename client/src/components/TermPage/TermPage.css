@@ -3,7 +3,7 @@
 }
 
 .searchContainer {
-    width:70%;
+    width: 70%;
     margin: auto;
     margin-bottom: 25px;
     transition: all 0.3s ease-out;
@@ -27,7 +27,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    /* border: 1px solid black; */
+    margin: 1% 0;
 }
 
 .float-left {
@@ -41,8 +41,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 1% 5% 3% 5%;
-    /* width: 90%; */
+    margin: 4% 4% 1% 4%;
 }
 
 
@@ -51,7 +50,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        /* width: 90%; */
     }
     .float-left {
         display: flex;
@@ -63,17 +61,13 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: flex-start;
-        margin: 2% 0;
+        margin: 0;
         width: 30%;
     }
 }
 
 @media only screen and (min-width: 1020px)  {
     .float-right {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
         margin: 0 3% 0 .5%;
         width: 30%;
     }

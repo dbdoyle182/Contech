@@ -1,45 +1,44 @@
-import React, { Component } from 'react';
-import Auth from '../utils/Auth';
-import Dashboard from '../components/Dashboard';
+import React, { Component } from "react";
+import Auth from "../utils/Auth";
+import Dashboard from "../components/Dashboard";
 
 class DashboardPage extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            secretData: 'This is the secret data'
-        };
+    this.state = {
+      secretData: "This is the secret data"
+    };
+  }
+
+  componentDidMount() {
+    const username = Auth.getUsername();
+    if (username) {
+      this.setState({
+        secretData: `Welcome ${username}`
+      });
     }
-
-    componentDidMount() {
-        const username = Auth.getUsername();
-        if (username) {
-            this.setState({
-                secretData: `Welcome ${username}`
-            })
-        }
-        const xhr = new XMLHttpRequest();
-        xhr.open('get', '/api/dashboard');
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
-        xhr.responseType = 'json';
-        xhr.addEventListener('load', () => {
-            console.log('-----------')
-            console.log(xhr.response.message)
-            if (xhr.status === 200) {
-                this.setState({
-                    secretData: xhr.response.message
-                });
-            }
+    const xhr = new XMLHttpRequest();
+    xhr.open("get", "/api/dashboard");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Authorization", `bearer ${Auth.getToken()}`);
+    xhr.responseType = "json";
+    xhr.addEventListener("load", () => {
+      console.log("-----------");
+      console.log(xhr.response.message);
+      if (xhr.status === 200) {
+        this.setState({
+          secretData: xhr.response.message
         });
-        xhr.send();
-        console.log(this.state.secretData)
+      }
+    });
+    xhr.send();
+    console.log(this.state.secretData);
+  }
 
-    }
-
-    render() {
-        return (<Dashboard secretData={this.state.secretData} />)
-    }
+  render() {
+    return <Dashboard secretData={this.state.secretData} />;
+  }
 }
 
 export default DashboardPage;

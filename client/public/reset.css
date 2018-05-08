@@ -1,11 +1,7 @@
 /* 
-
 Reset Style Sheet to conform starting basis accross browsers
-
 sourced from: http://meyerweb.com/eric/tools/css/reset/ 
-  
 */
-
 html,
 body,
 div,
@@ -87,7 +83,6 @@ time,
 mark,
 audio,
 video {
-
   /* Box-model */
   padding: 0;
 
@@ -136,7 +131,6 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-
   /* Misc */
   content: "";
   content: none;
