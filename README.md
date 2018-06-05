@@ -3,9 +3,6 @@ __Putting Tech into context.__ A Developer’s Dictionary and Interactive Refere
 
 [Contech Gif]()
 
-#### _Contributors:_ 
-__Alexander Bradley__ | __Daniel Doyle__ | __Brad Ferrell__ | __Abby Olaleye__
-
 #### Overview:
 * The inspiration behind this project came from our experience when beginning UNCC’s Coding Bootcamp. 
 * If we searched for an unfamiliar term online, we could easily find ourselves inundated with vast amounts of information.
@@ -26,3 +23,9 @@ __Alexander Bradley__ | __Daniel Doyle__ | __Brad Ferrell__ | __Abby Olaleye__
 
 #### Video Walkthrough
 
+__Here is a video of a brief walkthrough of Contech__
+
+[Contech Youtube Walkthrough]()
+
+#### _Contributors:_ 
+__Alexander Bradley__ | __Daniel Doyle__ | __Brad Ferrell__ | __Abby Olaleye__
