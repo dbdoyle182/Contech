@@ -1,7 +1,7 @@
 # ConTECH
 __Putting Tech into context.__ A Developer’s Dictionary and Interactive Reference Guide.
 
-![Contech Gif](./contech.gif)
+![Contech Gif](./contechgif.gif)
 
 #### Overview:
 * The inspiration behind this project came from our experience when beginning UNCC’s Coding Bootcamp. 
