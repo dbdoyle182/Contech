@@ -25,7 +25,7 @@ __Putting Tech into context.__ A Developer’s Dictionary and Interactive Refere
 
 __Here is a video of a brief walkthrough of Contech__
 
-[Contech Youtube Walkthrough]()
+[Contech Youtube Walkthrough](https://youtu.be/g-NYxJTdiCQ)
 
 #### _Contributors:_ 
 __Alexander Bradley__ | __Daniel Doyle__ | __Brad Ferrell__ | __Abby Olaleye__
