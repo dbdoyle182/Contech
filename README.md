@@ -1,6 +1,8 @@
 # ConTECH
 __Putting Tech into context.__ A Developer’s Dictionary and Interactive Reference Guide.
 
+[Contech Gif]()
+
 #### _Contributors:_ 
 __Alexander Bradley__ | __Daniel Doyle__ | __Brad Ferrell__ | __Abby Olaleye__
 
@@ -12,4 +14,15 @@ __Alexander Bradley__ | __Daniel Doyle__ | __Brad Ferrell__ | __Abby Olaleye__
 * __Our app is for developers, those that work with developers, or anyone that is new to the industry.__
 
 #### Live Link: [Click me!](https://contech-app.herokuapp.com/)
+
+#### Test Accounts 
+
+1. Admin Level
+    * Email: testAdmin@gmail.com
+    * Password: password
+1. User Level
+    * Email: testUser@gmail.com
+    * Password: password
+
+#### Video Walkthrough
 
