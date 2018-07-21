@@ -11,6 +11,8 @@ router.get("/quizquestions", (req, res) => {
     day: moment().format("dddd")
   })
     .then(data => {
+      console.log("Quiz Route")
+      console.log(data)
       res.json(data);
     })
     .catch(err => {

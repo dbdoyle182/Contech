@@ -21,6 +21,8 @@ class Quiz extends Component {
     axios
       .get("/quizquestions")
       .then(res => {
+
+        console.log(res)
         this.setState({
           quiz: res.data[0]
         });

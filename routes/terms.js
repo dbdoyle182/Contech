@@ -8,6 +8,7 @@ const router = express.Router();
 router.get("/term/all", (req, res) => {
   db.Term.find({})
     .then(data => {
+      console.log(data);
       res.json(data);
     })
     .catch(err => {
